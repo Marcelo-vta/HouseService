@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 526dd8b300c2045449c90771bb3f1d00
+guid: 8af9a61d17e68844d9c268bb67d58644
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7534495916302137422
-    second: Roll no hands N_0
+      213: -6360356714513046793
+    second: Roll hands attached S_0
   - first:
-      213: 1389867899224841482
-    second: Roll no hands N_1
+      213: 4382041089712118482
+    second: Roll hands attached S_1
   - first:
-      213: -8941282126722953530
-    second: Roll no hands N_2
+      213: -1772838754704825983
+    second: Roll hands attached S_2
   - first:
-      213: -1257728857125408043
-    second: Roll no hands N_3
+      213: 1419461911875332013
+    second: Roll hands attached S_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -60,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -84,7 +84,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -135,89 +135,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Roll no hands N_0
+      name: Roll hands attached S_0
       rect:
         serializedVersion: 2
-        x: 10
-        y: 11
-        width: 14
+        x: 9
+        y: 10
+        width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2b70e2332e7107790800000000000000
-      internalID: -7534495916302137422
+      spriteID: 7f2edaa44497bb7a0800000000000000
+      internalID: -6360356714513046793
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Roll no hands N_1
+      name: Roll hands attached S_1
       rect:
         serializedVersion: 2
-        x: 39
-        y: 12
-        width: 14
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a0dd3029d7dc94310800000000000000
-      internalID: 1389867899224841482
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Roll no hands N_2
-      rect:
-        serializedVersion: 2
-        x: 69
-        y: 11
-        width: 12
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6ce0128574f2ae380800000000000000
-      internalID: -8941282126722953530
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Roll no hands N_3
-      rect:
-        serializedVersion: 2
-        x: 97
+        x: 38
         y: 10
-        width: 14
-        height: 13
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5d23847a446ab8ee0800000000000000
-      internalID: -1257728857125408043
+      spriteID: 2dad47f672320dc30800000000000000
+      internalID: 4382041089712118482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Roll hands attached S_2
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 10
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 181e5c5ab8c9567e0800000000000000
+      internalID: -1772838754704825983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Roll hands attached S_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 10
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da7a6859611f2b310800000000000000
+      internalID: 1419461911875332013
       vertices: []
       indices: 
       edges: []
@@ -226,7 +226,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 1e85e46dcb5bc314b8326aaed42ee572
     internalID: 0
     vertices: []
     indices: 
@@ -234,12 +234,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":9.0,"y":10.0},"gridSpritePadding":{"x":13.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Roll no hands N_0: -7534495916302137422
-      Roll no hands N_1: 1389867899224841482
-      Roll no hands N_2: -8941282126722953530
-      Roll no hands N_3: -1257728857125408043
+      Roll hands attached S_0: -6360356714513046793
+      Roll hands attached S_1: 4382041089712118482
+      Roll hands attached S_2: -1772838754704825983
+      Roll hands attached S_3: 1419461911875332013
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
