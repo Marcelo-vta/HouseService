@@ -29,6 +29,17 @@ public class PlayerMovement : MonoBehaviour
 
         animator.SetFloat("speed", (float)Math.Pow(movement.magnitude, 2));
         rb.MovePosition(rb.position + movement);
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Roll();    
+        }
+        
+    }
+
+    public void Roll()
+    {
+        speed *= 2;
     }
 
 }
