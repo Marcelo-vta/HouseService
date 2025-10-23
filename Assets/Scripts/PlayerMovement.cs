@@ -1,9 +1,12 @@
+using System;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
     public float speed;
+
+    public Animator animator;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,9 +22,13 @@ public class PlayerMovement : MonoBehaviour
         float moveHorizontal = Input.GetAxisRaw("Horizontal");
         float moveVertical = Input.GetAxisRaw("Vertical");
 
-        Vector2 moveInput = new Vector2(moveHorizontal, moveVertical);
 
-        rb.MovePosition(rb.position + moveInput.normalized * speed * Time.fixedDeltaTime);
+        Vector2 moveInput = new Vector2(moveHorizontal, moveVertical);
+        Vector2 movement = moveInput.normalized * speed * Time.fixedDeltaTime;
+
+
+        animator.SetFloat("speed", (float)Math.Pow(movement.magnitude, 2));
+        rb.MovePosition(rb.position + movement);
     }
 
 }
