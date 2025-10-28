@@ -1,28 +1,19 @@
 fileFormatVersion: 2
-guid: 84d2a4b32317de646abff977a0393a13
+guid: f11255c0f468c144fbf0a98cfe4a94bb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1750478014470835351
-    second: Zombie_Small_Side-left_Second-Death-Sheet7_0
+      213: 8647823593821616703
+    second: Bat_0
   - first:
-      213: 8085370981848239356
-    second: Zombie_Small_Side-left_Second-Death-Sheet7_1
+      213: 5681806813702538305
+    second: Bat_1
   - first:
-      213: 6501353106362120962
-    second: Zombie_Small_Side-left_Second-Death-Sheet7_2
+      213: 697682191857345388
+    second: Bat_2
   - first:
-      213: 692062470241363037
-    second: Zombie_Small_Side-left_Second-Death-Sheet7_3
-  - first:
-      213: -6268068993240494795
-    second: Zombie_Small_Side-left_Second-Death-Sheet7_4
-  - first:
-      213: 2196628113349756980
-    second: Zombie_Small_Side-left_Second-Death-Sheet7_5
-  - first:
-      213: -6219930347113345630
-    second: Zombie_Small_Side-left_Second-Death-Sheet7_6
+      213: 6993031405965254486
+    second: Bat_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -144,13 +135,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Zombie_Small_Side-left_Second-Death-Sheet7_0
+      name: Bat_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 16
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,86 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 79c4aafca72fa4810800000000000000
-      internalID: 1750478014470835351
+      spriteID: f3abafd8dbd330870800000000000000
+      internalID: 8647823593821616703
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zombie_Small_Side-left_Second-Death-Sheet7_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cfcc052e112053070800000000000000
-      internalID: 8085370981848239356
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Zombie_Small_Side-left_Second-Death-Sheet7_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 20bb8106432793a50800000000000000
-      internalID: 6501353106362120962
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Zombie_Small_Side-left_Second-Death-Sheet7_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d54ad156623ba9900800000000000000
-      internalID: 692062470241363037
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Zombie_Small_Side-left_Second-Death-Sheet7_4
+      name: Bat_1
       rect:
         serializedVersion: 2
         x: 64
         y: 0
-        width: 16
-        height: 16
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,20 +172,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 53d8246d5785309a0800000000000000
-      internalID: -6268068993240494795
+      spriteID: 144422d8135d9de40800000000000000
+      internalID: 5681806813702538305
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zombie_Small_Side-left_Second-Death-Sheet7_5
+      name: Bat_2
       rect:
         serializedVersion: 2
-        x: 80
+        x: 128
         y: 0
-        width: 16
-        height: 16
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 43849df71adfb7e10800000000000000
-      internalID: 2196628113349756980
+      spriteID: c63e5cbc14aaea900800000000000000
+      internalID: 697682191857345388
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zombie_Small_Side-left_Second-Death-Sheet7_6
+      name: Bat_3
       rect:
         serializedVersion: 2
-        x: 96
+        x: 192
         y: 0
-        width: 16
-        height: 16
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -291,8 +216,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2ad03accd4e5ea9a0800000000000000
-      internalID: -6219930347113345630
+      spriteID: 65f95b7530d3c0160800000000000000
+      internalID: 6993031405965254486
       vertices: []
       indices: 
       edges: []
@@ -301,7 +226,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 6325b73be46c6df48b71424230c8810b
+    spriteID: 4b18b8b8869105c4383908ff96fb4c06
     internalID: 0
     vertices: []
     indices: 
@@ -311,15 +236,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Zombie_Small_Side-left_Second-Death-Sheet7_0: 1750478014470835351
-      Zombie_Small_Side-left_Second-Death-Sheet7_1: 8085370981848239356
-      Zombie_Small_Side-left_Second-Death-Sheet7_2: 6501353106362120962
-      Zombie_Small_Side-left_Second-Death-Sheet7_3: 692062470241363037
-      Zombie_Small_Side-left_Second-Death-Sheet7_4: -6268068993240494795
-      Zombie_Small_Side-left_Second-Death-Sheet7_5: 2196628113349756980
-      Zombie_Small_Side-left_Second-Death-Sheet7_6: -6219930347113345630
+      Bat_0: 8647823593821616703
+      Bat_1: 5681806813702538305
+      Bat_2: 697682191857345388
+      Bat_3: 6993031405965254486
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

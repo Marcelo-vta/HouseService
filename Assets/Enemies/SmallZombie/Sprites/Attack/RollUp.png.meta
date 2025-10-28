@@ -1,28 +1,31 @@
 fileFormatVersion: 2
-guid: 84d2a4b32317de646abff977a0393a13
+guid: cebcb075a2f1d6248823192c4e9800bc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1750478014470835351
-    second: Zombie_Small_Side-left_Second-Death-Sheet7_0
+      213: -8911004934504723209
+    second: RollUp_0
   - first:
-      213: 8085370981848239356
-    second: Zombie_Small_Side-left_Second-Death-Sheet7_1
+      213: 5043773722455128188
+    second: RollUp_1
   - first:
-      213: 6501353106362120962
-    second: Zombie_Small_Side-left_Second-Death-Sheet7_2
+      213: 4719693169959490039
+    second: RollUp_2
   - first:
-      213: 692062470241363037
-    second: Zombie_Small_Side-left_Second-Death-Sheet7_3
+      213: -817858931510481849
+    second: RollUp_3
   - first:
-      213: -6268068993240494795
-    second: Zombie_Small_Side-left_Second-Death-Sheet7_4
+      213: 4350168326027173801
+    second: RollUp_4
   - first:
-      213: 2196628113349756980
-    second: Zombie_Small_Side-left_Second-Death-Sheet7_5
+      213: -6492091957304289793
+    second: RollUp_5
   - first:
-      213: -6219930347113345630
-    second: Zombie_Small_Side-left_Second-Death-Sheet7_6
+      213: -3939064243855468229
+    second: RollUp_6
+  - first:
+      213: 4671514954238772901
+    second: RollUp_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -144,155 +147,177 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Zombie_Small_Side-left_Second-Death-Sheet7_0
+      name: RollUp_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 79c4aafca72fa4810800000000000000
-      internalID: 1750478014470835351
+      spriteID: bd6bd2efc8f7b9947b1e8af8fa68b907
+      internalID: -8911004934504723209
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zombie_Small_Side-left_Second-Death-Sheet7_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cfcc052e112053070800000000000000
-      internalID: 8085370981848239356
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Zombie_Small_Side-left_Second-Death-Sheet7_2
+      name: RollUp_1
       rect:
         serializedVersion: 2
         x: 32
         y: 0
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 20bb8106432793a50800000000000000
-      internalID: 6501353106362120962
+      spriteID: 2fd430a76945d52468620daaa9b4b2ab
+      internalID: 5043773722455128188
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zombie_Small_Side-left_Second-Death-Sheet7_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d54ad156623ba9900800000000000000
-      internalID: 692062470241363037
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Zombie_Small_Side-left_Second-Death-Sheet7_4
+      name: RollUp_2
       rect:
         serializedVersion: 2
         x: 64
         y: 0
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 53d8246d5785309a0800000000000000
-      internalID: -6268068993240494795
+      spriteID: eaf8de81983d428499ffcd02130e55ef
+      internalID: 4719693169959490039
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zombie_Small_Side-left_Second-Death-Sheet7_5
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 43849df71adfb7e10800000000000000
-      internalID: 2196628113349756980
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Zombie_Small_Side-left_Second-Death-Sheet7_6
+      name: RollUp_3
       rect:
         serializedVersion: 2
         x: 96
         y: 0
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 2ad03accd4e5ea9a0800000000000000
-      internalID: -6219930347113345630
+      spriteID: ab4b229d4ab41c54c97d725b6b6a3b14
+      internalID: -817858931510481849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RollUp_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b6ffc0f831931249a04f4afd30dbb9a
+      internalID: 4350168326027173801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RollUp_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7a9bfb018586744698621a4c17762ef
+      internalID: -6492091957304289793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RollUp_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a312d6c93e7caeb4ab7adfc32ccae4c0
+      internalID: -3939064243855468229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RollUp_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb086d12bd491284f9c4e5cf46e66de6
+      internalID: 4671514954238772901
       vertices: []
       indices: 
       edges: []
@@ -301,7 +326,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 6325b73be46c6df48b71424230c8810b
+    spriteID: c4378205b6dfbc349ac6bb0a8e04d93a
     internalID: 0
     vertices: []
     indices: 
@@ -311,15 +336,16 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Zombie_Small_Side-left_Second-Death-Sheet7_0: 1750478014470835351
-      Zombie_Small_Side-left_Second-Death-Sheet7_1: 8085370981848239356
-      Zombie_Small_Side-left_Second-Death-Sheet7_2: 6501353106362120962
-      Zombie_Small_Side-left_Second-Death-Sheet7_3: 692062470241363037
-      Zombie_Small_Side-left_Second-Death-Sheet7_4: -6268068993240494795
-      Zombie_Small_Side-left_Second-Death-Sheet7_5: 2196628113349756980
-      Zombie_Small_Side-left_Second-Death-Sheet7_6: -6219930347113345630
+      RollUp_0: -8911004934504723209
+      RollUp_1: 5043773722455128188
+      RollUp_2: 4719693169959490039
+      RollUp_3: -817858931510481849
+      RollUp_4: 4350168326027173801
+      RollUp_5: -6492091957304289793
+      RollUp_6: -3939064243855468229
+      RollUp_7: 4671514954238772901
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
