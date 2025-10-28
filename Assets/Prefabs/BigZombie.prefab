@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5569936590185450540}
   - component: {fileID: 4962101250986440156}
   - component: {fileID: 787505913878409257}
+  - component: {fileID: 70025206000168383}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -113,6 +114,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &70025206000168383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3527003680069649463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f7a7c1b976b10144a07f3dc07efea3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BigZombieScript
+  speed: 1
 --- !u!1 &5621743510935345467
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,7 +136,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5624991351185727281}
-  - component: {fileID: 3852757129979599078}
   - component: {fileID: 6604844551034612531}
   - component: {fileID: 367327651967349856}
   m_Layer: 0
@@ -149,19 +162,6 @@ Transform:
   - {fileID: 2845894711848384087}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3852757129979599078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5621743510935345467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f7a7c1b976b10144a07f3dc07efea3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BigZombieScript
-  speed: 1
 --- !u!50 &6604844551034612531
 Rigidbody2D:
   serializedVersion: 5
