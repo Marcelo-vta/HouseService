@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4704495121650614477}
   - component: {fileID: 5657596893447215073}
   - component: {fileID: 3515186688867471383}
+  - component: {fileID: 8397061108295473231}
   - component: {fileID: 387424153580850725}
   m_Layer: 0
   m_Name: SmallZombie
@@ -98,7 +99,7 @@ CapsuleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 1}
+  m_Size: {x: 0.5, y: 0.5}
   m_Direction: 0
 --- !u!95 &3515186688867471383
 Animator:
@@ -122,6 +123,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8397061108295473231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5787165749693009800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45a79198b71bbac4c9f73104f731b760, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SmallZombieLongAttack
+  longAttackMaxSpeed: 10
+  smallZombieMovement: {fileID: 387424153580850725}
+  animator: {fileID: 3515186688867471383}
+  anim: {fileID: 7400000, guid: f83e0d93d830cd74bbe66139722cdda9, type: 2}
 --- !u!114 &387424153580850725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,6 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SmallZombieScript
   speed: 3
+  smallZombieLongAttack: {fileID: 8397061108295473231}
 --- !u!1 &8696927893097297662
 GameObject:
   m_ObjectHideFlags: 0

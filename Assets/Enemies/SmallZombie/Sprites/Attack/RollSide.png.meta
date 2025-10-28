@@ -1,43 +1,37 @@
 fileFormatVersion: 2
-guid: f407779f2f4942f4b8f7a9b914d1e748
+guid: 6be4ee255503fa84c99c424c1f79f88d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5290602322535107443
-    second: Zombie_Small_Side-left_Second-Attack-Sheet11_0
+      213: -6078650463430268606
+    second: RollSide_0
   - first:
-      213: -365206466551637186
-    second: Zombie_Small_Side-left_Second-Attack-Sheet11_1
+      213: 8277120603994034377
+    second: RollSide_1
   - first:
-      213: 3467900710702443518
-    second: Zombie_Small_Side-left_Second-Attack-Sheet11_2
+      213: 424275413191635902
+    second: RollSide_2
   - first:
-      213: -8751257098356403718
-    second: Zombie_Small_Side-left_Second-Attack-Sheet11_3
+      213: 7066301673585421397
+    second: RollSide_3
   - first:
-      213: 5283416025664956736
-    second: Zombie_Small_Side-left_Second-Attack-Sheet11_4
+      213: 4495699537168317124
+    second: RollSide_4
   - first:
-      213: -290468621577551367
-    second: Zombie_Small_Side-left_Second-Attack-Sheet11_5
+      213: 4248486196869993324
+    second: RollSide_5
   - first:
-      213: -8334928022498998235
-    second: Zombie_Small_Side-left_Second-Attack-Sheet11_6
+      213: 5561688211045648342
+    second: RollSide_6
   - first:
-      213: -1191669784605995553
-    second: Zombie_Small_Side-left_Second-Attack-Sheet11_7
+      213: -2570618602067073621
+    second: RollSide_7
   - first:
-      213: 2838218277316359748
-    second: Zombie_Small_Side-left_Second-Attack-Sheet11_8
+      213: -5725624567227160846
+    second: RollSide_8
   - first:
-      213: 5787922824986873239
-    second: Zombie_Small_Side-left_Second-Attack-Sheet11_9
-  - first:
-      213: 7553987739190975081
-    second: Zombie_Small_Side-left_Second-Attack-Sheet11_10
-  - first:
-      213: -1446043527420964729
-    second: Zombie_Small_Side-left_Second-Attack-Sheet11_11
+      213: -5159287278932053652
+    second: RollSide_9
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -159,13 +153,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Zombie_Small_Side-left_Second-Attack-Sheet11_0
+      name: RollSide_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 62
-        height: 18
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,20 +168,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d84307de7310496b0800000000000000
-      internalID: -5290602322535107443
+      spriteID: 249a97d0c9b44aba0800000000000000
+      internalID: -6078650463430268606
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zombie_Small_Side-left_Second-Attack-Sheet11_1
+      name: RollSide_1
       rect:
         serializedVersion: 2
-        x: 62
+        x: 32
         y: 0
-        width: 62
-        height: 18
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,20 +190,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e3b938357a68eeaf0800000000000000
-      internalID: -365206466551637186
+      spriteID: 9c09124d55d3ed270800000000000000
+      internalID: 8277120603994034377
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zombie_Small_Side-left_Second-Attack-Sheet11_2
+      name: RollSide_2
       rect:
         serializedVersion: 2
-        x: 124
+        x: 64
         y: 0
-        width: 62
-        height: 18
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,20 +212,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: efb6eb99255702030800000000000000
-      internalID: 3467900710702443518
+      spriteID: eb3383a8d3453e500800000000000000
+      internalID: 424275413191635902
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zombie_Small_Side-left_Second-Attack-Sheet11_3
+      name: RollSide_3
       rect:
         serializedVersion: 2
-        x: 186
+        x: 96
         y: 0
-        width: 62
-        height: 18
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -240,20 +234,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: af1d952090a4d8680800000000000000
-      internalID: -8751257098356403718
+      spriteID: 55caec9eeeb801260800000000000000
+      internalID: 7066301673585421397
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zombie_Small_Side-left_Second-Attack-Sheet11_4
+      name: RollSide_4
       rect:
         serializedVersion: 2
-        x: 248
+        x: 128
         y: 0
-        width: 62
-        height: 18
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -262,20 +256,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 049ad52f1e6725940800000000000000
-      internalID: 5283416025664956736
+      spriteID: 4ca3ec9e8eee36e30800000000000000
+      internalID: 4495699537168317124
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zombie_Small_Side-left_Second-Attack-Sheet11_5
+      name: RollSide_5
       rect:
         serializedVersion: 2
-        x: 310
+        x: 160
         y: 0
-        width: 62
-        height: 18
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -284,20 +278,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9f10970e35c08fbf0800000000000000
-      internalID: -290468621577551367
+      spriteID: c631695cfa7a5fa30800000000000000
+      internalID: 4248486196869993324
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zombie_Small_Side-left_Second-Attack-Sheet11_6
+      name: RollSide_6
       rect:
         serializedVersion: 2
-        x: 372
+        x: 192
         y: 0
-        width: 62
-        height: 18
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -306,20 +300,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5288f76bf13645c80800000000000000
-      internalID: -8334928022498998235
+      spriteID: 6d78adaf5f51f2d40800000000000000
+      internalID: 5561688211045648342
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zombie_Small_Side-left_Second-Attack-Sheet11_7
+      name: RollSide_7
       rect:
         serializedVersion: 2
-        x: 434
+        x: 224
         y: 0
-        width: 62
-        height: 18
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -328,20 +322,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fdd4ef605a6567fe0800000000000000
-      internalID: -1191669784605995553
+      spriteID: ba5e7ca4004535cd0800000000000000
+      internalID: -2570618602067073621
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zombie_Small_Side-left_Second-Attack-Sheet11_8
+      name: RollSide_8
       rect:
         serializedVersion: 2
-        x: 496
+        x: 256
         y: 0
-        width: 62
-        height: 18
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -350,52 +344,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 44676765c70636720800000000000000
-      internalID: 2838218277316359748
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Zombie_Small_Side-left_Second-Attack-Sheet11_9
-      rect:
-        serializedVersion: 2
-        x: 558
-        y: 0
-        width: 62
-        height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 79dc7b2c425d25050800000000000000
-      internalID: 5787922824986873239
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Zombie_Small_Side-left_Second-Attack-Sheet11_10
-      rect:
-        serializedVersion: 2
-        x: 620
-        y: 0
-        width: 62
-        height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 96a522873d725d860800000000000000
-      internalID: 7553987739190975081
+      spriteID: 2f6ec21bace7a80b0800000000000000
+      internalID: -5725624567227160846
       vertices: []
       indices: 
       edges: []
@@ -404,7 +354,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: abfad55d687070244bb358b14664c6b2
+    spriteID: a45c1fcf0c89e2e4b9bd55154f5555da
     internalID: 0
     vertices: []
     indices: 
@@ -414,19 +364,17 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":62.0,"y":18.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Zombie_Small_Side-left_Second-Attack-Sheet11_0: -5290602322535107443
-      Zombie_Small_Side-left_Second-Attack-Sheet11_1: -365206466551637186
-      Zombie_Small_Side-left_Second-Attack-Sheet11_10: 7553987739190975081
-      Zombie_Small_Side-left_Second-Attack-Sheet11_2: 3467900710702443518
-      Zombie_Small_Side-left_Second-Attack-Sheet11_3: -8751257098356403718
-      Zombie_Small_Side-left_Second-Attack-Sheet11_4: 5283416025664956736
-      Zombie_Small_Side-left_Second-Attack-Sheet11_5: -290468621577551367
-      Zombie_Small_Side-left_Second-Attack-Sheet11_6: -8334928022498998235
-      Zombie_Small_Side-left_Second-Attack-Sheet11_7: -1191669784605995553
-      Zombie_Small_Side-left_Second-Attack-Sheet11_8: 2838218277316359748
-      Zombie_Small_Side-left_Second-Attack-Sheet11_9: 5787922824986873239
+      RollSide_0: -6078650463430268606
+      RollSide_1: 8277120603994034377
+      RollSide_2: 424275413191635902
+      RollSide_3: 7066301673585421397
+      RollSide_4: 4495699537168317124
+      RollSide_5: 4248486196869993324
+      RollSide_6: 5561688211045648342
+      RollSide_7: -2570618602067073621
+      RollSide_8: -5725624567227160846
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
