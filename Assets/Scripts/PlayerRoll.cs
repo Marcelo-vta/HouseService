@@ -10,11 +10,15 @@ public class PlayerRoll : MonoBehaviour
     private float rollTimer = 0f;
     private float currentSpeed;
 
+    public GameObject hurtbox;
     public PlayerMovement playerMovement;
     public Animator animator;
     public AnimationClip anim;
 
     private Vector2 direction;
+
+    public GameObject hands;
+
 
     void Start()
     {
@@ -37,7 +41,6 @@ public class PlayerRoll : MonoBehaviour
 
             // Normalized time [0, 1]
             float t = rollTimer / rollDuration;
-
             // Normalized time [0, 1]
 
             // Mathematical curve (matches your graph’s shape):
@@ -45,11 +48,17 @@ public class PlayerRoll : MonoBehaviour
             float decay = Mathf.Pow(1 - t, 3) / (t + 0.01f);
             currentSpeed = Mathf.Lerp(baseSpeed, rollMaxSpeed, decay);
 
+            if(t >= 0.8)
+            {
+                hurtbox.SetActive(true);
+            }
+
             // Stop rolling when done
             if (rollTimer >= rollDuration)
             {
                 isRolling = false;
                 currentSpeed = baseSpeed;
+                hands.SetActive(true);
             }
         }
 
@@ -64,6 +73,9 @@ public class PlayerRoll : MonoBehaviour
         {
             isRolling = true;
             rollTimer = 0f;
+
+            hurtbox.SetActive(false);
+            hands.SetActive(false);
         }
     }
 

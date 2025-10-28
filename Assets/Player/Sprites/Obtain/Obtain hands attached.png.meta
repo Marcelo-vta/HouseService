@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a7e7634404d40f545a2f2bb842f753e3
+guid: 21420a7ae29cf448581041f67960b067
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1375780263428255235
-    second: Interact no hands N_0
+      213: 6858728819307055923
+    second: Obtain hands attached_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,7 +126,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Interact no hands N_0
+      name: Obtain hands attached_0
       rect:
         serializedVersion: 2
         x: 9
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 30e62a24cd0c71310800000000000000
-      internalID: 1375780263428255235
+      spriteID: 33b0885a5891f2f50800000000000000
+      internalID: 6858728819307055923
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Interact no hands N_0: 1375780263428255235
+      Obtain hands attached_0: 6858728819307055923
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
