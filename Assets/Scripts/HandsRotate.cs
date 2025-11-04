@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 public class HandsRotate : MonoBehaviour
 {
@@ -9,12 +11,16 @@ public class HandsRotate : MonoBehaviour
     public Sprite handBackSprite;
     public Sprite handFrontSprite;
 
+    public GameObject weapon;
+    public SpriteRenderer weaponSpriteRenderer;
+    public Transform weaponTransform;
+
     public PlayerRoll playerRoll;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        weaponSpriteRenderer = weapon.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -34,12 +40,16 @@ public class HandsRotate : MonoBehaviour
         if (handsBack)
         {
             spriteRenderer.sortingOrder = -1;
+            weaponSpriteRenderer.sortingOrder = -2;
+
             spriteRenderer.sprite = handBackSprite;
         }
 
         if (!handsBack)
         {
             spriteRenderer.sortingOrder = 10;
+            weaponSpriteRenderer.sortingOrder = 9;
+
             spriteRenderer.sprite = handFrontSprite;
         }
 
