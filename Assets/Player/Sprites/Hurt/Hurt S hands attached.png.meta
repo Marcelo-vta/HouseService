@@ -1,19 +1,25 @@
 fileFormatVersion: 2
-guid: 02f98fd824cf47248994a0e236324f9b
+guid: ebabeb252beb44e598b8f33e2fe293b8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4444671421498437199
-    second: Attack - Slash 1H - W no hands_0
+      213: 1686474776739441087
+    second: Hurt S hands attached_0
   - first:
-      213: -7390931488420865378
-    second: Attack - Slash 1H - W no hands_1
+      213: 4574364789717039710
+    second: Hurt S hands attached_1
   - first:
-      213: 104921321212076886
-    second: Attack - Slash 1H - W no hands_2
+      213: -4752484053751987006
+    second: Hurt S hands attached_2
   - first:
-      213: -6648913705252620118
-    second: Attack - Slash 1H - W no hands_3
+      213: -1307200362304648880
+    second: Hurt S hands attached_3
+  - first:
+      213: -4459066761263082866
+    second: Hurt S hands attached_4
+  - first:
+      213: -5532592541221354980
+    second: Hurt S hands attached_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -135,11 +141,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Attack - Slash 1H - W no hands_0
+      name: Hurt S hands attached_0
       rect:
         serializedVersion: 2
-        x: 38
-        y: 25
+        x: 10
+        y: 10
         width: 16
         height: 16
       alignment: 0
@@ -150,18 +156,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1b1514a14ea5152c0800000000000000
-      internalID: -4444671421498437199
+      spriteID: fb9e536cfdf876710800000000000000
+      internalID: 1686474776739441087
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack - Slash 1H - W no hands_1
+      name: Hurt S hands attached_1
       rect:
         serializedVersion: 2
-        x: 121
-        y: 25
+        x: 39
+        y: 10
         width: 16
         height: 16
       alignment: 0
@@ -172,18 +178,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e9adc6958f22e6990800000000000000
-      internalID: -7390931488420865378
+      spriteID: e5a732c4a886b7f30800000000000000
+      internalID: 4574364789717039710
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack - Slash 1H - W no hands_2
+      name: Hurt S hands attached_2
       rect:
         serializedVersion: 2
-        x: 204
-        y: 25
+        x: 68
+        y: 10
         width: 16
         height: 16
       alignment: 0
@@ -194,18 +200,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 653e530c261c47100800000000000000
-      internalID: 104921321212076886
+      spriteID: 2c4876fcee8cb0eb0800000000000000
+      internalID: -4752484053751987006
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack - Slash 1H - W no hands_3
+      name: Hurt S hands attached_3
       rect:
         serializedVersion: 2
-        x: 287
-        y: 25
+        x: 97
+        y: 10
         width: 16
         height: 16
       alignment: 0
@@ -216,8 +222,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: aa8f03866305ab3a0800000000000000
-      internalID: -6648913705252620118
+      spriteID: 059c1924234ebdde0800000000000000
+      internalID: -1307200362304648880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurt S hands attached_4
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 10
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e829921e7663e12c0800000000000000
+      internalID: -4459066761263082866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurt S hands attached_5
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 10
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c12868d85684833b0800000000000000
+      internalID: -5532592541221354980
       vertices: []
       indices: 
       edges: []
@@ -226,7 +276,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 0a8a2d3d1d7ff4c84abc759d6b7cd87c
+    spriteID: e30645ce3f69447feb97b0f8da6dfbdb
     internalID: 0
     vertices: []
     indices: 
@@ -236,12 +286,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":38.0,"y":27.0},"gridSpritePadding":{"x":67.0,"y":50.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":10.0,"y":10.0},"gridSpritePadding":{"x":13.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Attack - Slash 1H - W no hands_0: -4444671421498437199
-      Attack - Slash 1H - W no hands_1: -7390931488420865378
-      Attack - Slash 1H - W no hands_2: 104921321212076886
-      Attack - Slash 1H - W no hands_3: -6648913705252620118
+      Hurt S hands attached_0: 1686474776739441087
+      Hurt S hands attached_1: 4574364789717039710
+      Hurt S hands attached_2: -4752484053751987006
+      Hurt S hands attached_3: -1307200362304648880
+      Hurt S hands attached_4: -4459066761263082866
+      Hurt S hands attached_5: -5532592541221354980
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

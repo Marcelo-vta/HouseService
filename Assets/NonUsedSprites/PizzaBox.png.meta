@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3f727700d16ba8445b16e8c0d93ee346
+guid: 126ee34ed58f14502854a136b249dd56
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5060734919114921621
-    second: Interact no hands S_0
+      213: -2798313033531629660
+    second: PizzaBox2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -48,10 +48,10 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -126,12 +126,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Interact no hands S_0
+      name: PizzaBox2_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 9
-        width: 14
+        x: 0
+        y: 0
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b696dbb6768a4c9b0800000000000000
-      internalID: -5060734919114921621
+      spriteID: 4af50024f156a29d0800000000000000
+      internalID: -2798313033531629660
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Interact no hands S_0: -5060734919114921621
+      PizzaBox2_0: -2798313033531629660
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

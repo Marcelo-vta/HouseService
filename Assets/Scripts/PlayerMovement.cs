@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 movement;
     private Vector2 movementBase;
 
+    public Weapon weapon;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -36,6 +38,12 @@ public class PlayerMovement : MonoBehaviour
 
             animator.SetFloat("speed", (float)Math.Pow(movement.magnitude, 2));
             rb.MovePosition(rb.position + movement);
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                weapon.Fire();
+            }
+
         }
 
         if (playerRoll.GetRolling())

@@ -1,25 +1,10 @@
 fileFormatVersion: 2
-guid: 57df550b50b5ecb419896a7cd308f224
+guid: 85e6d606fb7024d8c996adb8f6460d13
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4974516212644042210
-    second: Hurt N no hands_0
-  - first:
-      213: -1032282102816866593
-    second: Hurt N no hands_1
-  - first:
-      213: 3689746889253678931
-    second: Hurt N no hands_2
-  - first:
-      213: 1099584625731540729
-    second: Hurt N no hands_3
-  - first:
-      213: 6094988924209467255
-    second: Hurt N no hands_4
-  - first:
-      213: -3722751927595835072
-    second: Hurt N no hands_5
+      213: -2630663100416483248
+    second: Interact hands attached S_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -141,57 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hurt N no hands_0
+      name: Interact hands attached S_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 10
-        width: 14
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e1a2ee75cd7f6fab0800000000000000
-      internalID: -4974516212644042210
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hurt N no hands_1
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 10
-        width: 14
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fde7b9195e89ca1f0800000000000000
-      internalID: -1032282102816866593
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hurt N no hands_2
-      rect:
-        serializedVersion: 2
-        x: 69
+        x: 9
         y: 9
         width: 14
-        height: 15
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,74 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 35f61152f3d943330800000000000000
-      internalID: 3689746889253678931
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hurt N no hands_3
-      rect:
-        serializedVersion: 2
-        x: 98
-        y: 10
-        width: 14
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9f695392462824f00800000000000000
-      internalID: 1099584625731540729
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hurt N no hands_4
-      rect:
-        serializedVersion: 2
-        x: 127
-        y: 9
-        width: 14
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 77f02794220c59450800000000000000
-      internalID: 6094988924209467255
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hurt N no hands_5
-      rect:
-        serializedVersion: 2
-        x: 156
-        y: 10
-        width: 14
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 041efb888d0265cc0800000000000000
-      internalID: -3722751927595835072
+      spriteID: 050a2f719d10e7bd0800000000000000
+      internalID: -2630663100416483248
       vertices: []
       indices: 
       edges: []
@@ -286,12 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Hurt N no hands_0: -4974516212644042210
-      Hurt N no hands_1: -1032282102816866593
-      Hurt N no hands_2: 3689746889253678931
-      Hurt N no hands_3: 1099584625731540729
-      Hurt N no hands_4: 6094988924209467255
-      Hurt N no hands_5: -3722751927595835072
+      Interact hands attached S_0: -2630663100416483248
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
