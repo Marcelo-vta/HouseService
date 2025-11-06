@@ -1,82 +1,75 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
+using System.Collections.Generic;
 
 public class TransitionManager : MonoBehaviour
 {
-    public static TransitionManager instancia;
-    public Image fadeImage; // arraste um Image UI preta com Alpha 0
+    public Image fadeImage; // arraste o FadeImage aqui
+    public float fadeDuration = 0.8f;
 
-    private void Awake()
+    // Mapeamento de direções opostas
+    private readonly Dictionary<string, string> direcoesOpostas = new Dictionary<string, string>
     {
-        instancia = this;
+        { "SaidaNorte", "SaidaSul" },
+        { "SaidaSul", "SaidaNorte" },
+        { "SaidaLeste", "SaidaOeste" },
+        { "SaidaOeste", "SaidaLeste" }
+    };
+
+    public void StartTransition(string salaDestino, string direcao)
+    {
+        StartCoroutine(FadeAndTeleport(salaDestino, direcao));
     }
 
-    public void TrocarSala(string salaAtual, string salaDestino, string saida)
+    private IEnumerator FadeAndTeleport(string salaDestino, string direcao)
     {
-        StartCoroutine(TrocarCoroutine(salaAtual, salaDestino, saida));
-    }
+        fadeImage.gameObject.SetActive(true);
+        Color color = fadeImage.color;
 
-    IEnumerator TrocarCoroutine(string salaAtual, string salaDestino, string saida)
-    {
-        yield return StartCoroutine(Fade(true));
-
-        GameObject salaAntiga = Andar1Generator.instancia.GetSala(salaAtual);
-        GameObject salaNova = Andar1Generator.instancia.GetSala(salaDestino);
-
-        salaAntiga.SetActive(false);
-        salaNova.SetActive(true);
-
-        // Move player para a entrada correspondente da nova sala
-        string direcaoOposta = DirecaoOposta(saida);
-        Transform entradaNova = FindRecursivo(salaNova.transform, direcaoOposta);
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (entradaNova != null && player != null)
-            player.transform.position = entradaNova.position;
-
-        yield return StartCoroutine(Fade(false));
-    }
-
-    IEnumerator Fade(bool fadeIn)
-    {
-        float duracao = 0.5f;
-        float tempo = 0f;
-        Color cor = fadeImage.color;
-        float alvo = fadeIn ? 1f : 0f;
-        float inicial = fadeIn ? 0f : 1f;
-
-        while (tempo < duracao)
+        // Fade In (escurece)
+        float t = 0;
+        while (t < fadeDuration)
         {
-            cor.a = Mathf.Lerp(inicial, alvo, tempo / duracao);
-            fadeImage.color = cor;
-            tempo += Time.deltaTime;
+            t += Time.deltaTime;
+            color.a = Mathf.Lerp(0, 1, t / fadeDuration);
+            fadeImage.color = color;
             yield return null;
         }
 
-        cor.a = alvo;
-        fadeImage.color = cor;
-    }
+        // 🔁 Define direção oposta correta
+        string direcaoOposta = direcoesOpostas.ContainsKey(direcao) ? direcoesOpostas[direcao] : direcao;
 
-    string DirecaoOposta(string direcao)
-    {
-        if (direcao.Contains("Norte")) return "SaidaSul";
-        if (direcao.Contains("Sul")) return "SaidaNorte";
-        if (direcao.Contains("Leste")) return "SaidaOeste";
-        if (direcao.Contains("Oeste")) return "SaidaLeste";
-        return "SaidaSul";
-    }
+        // Teleporte
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        GameObject novaSala = GameObject.Find(salaDestino);
 
-    Transform FindRecursivo(Transform pai, string nome)
-    {
-        foreach (Transform filho in pai)
+        if (player != null && novaSala != null)
         {
-            if (filho.name == nome)
-                return filho;
-
-            Transform achado = FindRecursivo(filho, nome);
-            if (achado != null)
-                return achado;
+            Transform novaPos = novaSala.transform.Find(direcaoOposta);
+            if (novaPos != null)
+            {
+                player.transform.position = novaPos.position;
+                Debug.Log($"🚪 Player teleportado de {direcao} → {direcaoOposta} na {salaDestino}");
+            }
+            else
+            {
+                Debug.LogWarning($"⚠️ Direção oposta '{direcaoOposta}' não encontrada em {salaDestino}");
+            }
         }
-        return null;
+
+        yield return new WaitForSeconds(0.3f);
+
+        // Fade Out (clareia)
+        t = 0;
+        while (t < fadeDuration)
+        {
+            t += Time.deltaTime;
+            color.a = Mathf.Lerp(1, 0, t / fadeDuration);
+            fadeImage.color = color;
+            yield return null;
+        }
+
+        fadeImage.gameObject.SetActive(false);
     }
 }
