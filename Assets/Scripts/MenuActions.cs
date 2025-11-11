@@ -1,30 +1,30 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class MenuActions : MonoBehaviour
 {
     public void IniciaJogo()
     {
         GameController.Init();
-        SceneManager.LoadScene(1);
+        SceneController.Instance.LoadScene(1);
     }
 
     public void Options()
     {
-        SceneManager.LoadScene(2);
+        SceneController.Instance.LoadScene(2);
     }
 
     public void Credits()
     {
-        SceneManager.LoadScene(3);
+        SceneController.Instance.LoadScene(3);
     }
 
     public void Menu()
     {
-        SceneManager.LoadScene(0);
+        SceneController.Instance.LoadScene(0);
     }
-    public void SairJogo()
+
+    public void Voltar()
     {
-        Application.Quit();
+        SceneController.Instance.BackToPreviousScene();
     }
 }
