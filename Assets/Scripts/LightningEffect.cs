@@ -80,7 +80,7 @@ public class LightningEffect : MonoBehaviour
             float x = Random.Range(-1f, 1f) * shakeMagnitude;
             float y = Random.Range(-1f, 1f) * shakeMagnitude;
 
-            mainCamera.transform.localPosition = initialCamPos + new Vector3(x, y, 0);
+            mainCamera.transform.localPosition = initialCamPos + new Vector3(x, 0, 0);
             elapsed += Time.deltaTime;
             yield return null;
         }
