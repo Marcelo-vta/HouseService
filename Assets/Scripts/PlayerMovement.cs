@@ -11,6 +11,10 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 movement;
     private Vector2 movementBase;
 
+    public GameObject meleeHit;
+
+    public GameObject weapons;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -36,6 +40,15 @@ public class PlayerMovement : MonoBehaviour
 
             animator.SetFloat("speed", (float)Math.Pow(movement.magnitude, 2));
             rb.MovePosition(rb.position + movement);
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                GameObject activeWeapon = weapons.GetComponent<WeaponControl>().activeWeapon;
+                Weapon activeWeaponScript = activeWeapon.GetComponent<Weapon>();
+
+                activeWeaponScript.Fire(transform);
+            }
+
         }
 
         if (playerRoll.GetRolling())
