@@ -2,47 +2,45 @@ using UnityEngine;
 
 public class Porta : MonoBehaviour
 {
-    [Header("Configuração da Porta")]
-    public string direcao; // Exemplo: "SaidaOeste", "SaidaLeste", "SaidaSul"
-    public string salaDestino; // Nome exato do GameObject da sala destino
-    public GameObject promptUI; // UI "Aperte E"
+    public enum TipoAnchor { Entrada, Saida }
+
+    [Header("Config")]
+    public TipoAnchor tipo = TipoAnchor.Saida;   // defina no Inspector
 
     private bool jogadorPerto = false;
-    private TransitionManager transitionManager;
+    private GameObject letraE;                   // referência à imagem "letras_20"
+    private TransitionManager tm;
 
     void Start()
     {
-        // Busca automática do TransitionManager na cena
-        transitionManager = FindObjectOfType<TransitionManager>();
-        if (transitionManager == null)
-            Debug.LogWarning("⚠️ TransitionManager não encontrado na cena!");
+        tm = FindObjectOfType<TransitionManager>();
 
-        if (promptUI != null)
-            promptUI.SetActive(false);
-
-        Debug.Log($"🚪 Porta configurada: {gameObject.name} → Sala destino: {salaDestino} ({direcao})");
+        // tenta achar o filho chamado "letras_20"
+        Transform letraT = transform.Find("letras_20");
+        if (letraT != null)
+        {
+            letraE = letraT.gameObject;
+            letraE.SetActive(false); // começa invisível
+        }
     }
 
     void Update()
     {
-        if (jogadorPerto && Input.GetKeyDown(KeyCode.E))
+        if (jogadorPerto && Input.GetKeyDown(KeyCode.E) && tm != null)
         {
-            Debug.Log($"🌀 Indo para {salaDestino} pela {direcao}");
-            TransitionManager tm = FindObjectOfType<TransitionManager>();
-            if (tm != null)
-                tm.StartTransition(salaDestino, direcao);
+            if (tipo == TipoAnchor.Saida)
+                tm.GoForwardRandom();   // vai pra nova sala aleatória
+            else
+                tm.GoBack();            // volta pra sala anterior
         }
     }
-
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             jogadorPerto = true;
-            Debug.Log($"👣 Player entrou no raio da porta: {gameObject.name}");
-            if (promptUI != null)
-                promptUI.SetActive(true);
+            if (letraE != null) letraE.SetActive(true); // mostra a letra E
         }
     }
 
@@ -51,9 +49,7 @@ public class Porta : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             jogadorPerto = false;
-            Debug.Log($"🚶 Player saiu do raio da porta: {gameObject.name}");
-            if (promptUI != null)
-                promptUI.SetActive(false);
+            if (letraE != null) letraE.SetActive(false); // esconde a letra E
         }
     }
 }
