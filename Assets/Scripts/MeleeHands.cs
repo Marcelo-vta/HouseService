@@ -14,8 +14,10 @@ public class MeleeHands : MonoBehaviour
 
     public SpriteRenderer spriteRenderer;
 
-    public Sprite handBackSprite;
-    public Sprite handFrontSprite;
+    private Sprite handBackSprite;
+    private Sprite handFrontSprite;
+
+    private WeaponControl parentWeaponControl;
 
     public GameObject weapon;
     public GameObject handSpriteObject;
@@ -28,6 +30,11 @@ public class MeleeHands : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        parentWeaponControl = GetComponentInParent<WeaponControl>();
+
+        handBackSprite = parentWeaponControl.handBackSprite;
+        handFrontSprite = parentWeaponControl.handFrontSprite;
+
         weaponSpriteRenderer = weapon.GetComponent<SpriteRenderer>();
     }
 

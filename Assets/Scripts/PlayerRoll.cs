@@ -63,8 +63,6 @@ public class PlayerRoll : MonoBehaviour
         }
 
         playerMovement.setSpeed(currentSpeed);
-
-        animator.SetBool("isRolling", isRolling);
     }
 
     public void Roll()
@@ -76,6 +74,8 @@ public class PlayerRoll : MonoBehaviour
 
             hurtbox.SetActive(false);
             hands.SetActive(false);
+
+            animator.SetTrigger("roll"); 
         }
     }
 

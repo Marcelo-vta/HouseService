@@ -6,43 +6,34 @@ public class WeaponControl : MonoBehaviour
     private int currentWeaponId = -1;
     private int newWeaponId = 0;
 
-    public GameObject activeWeapon = null;
+    public Sprite handFrontSprite;
+    public Sprite handBackSprite;
+
+    private Transform activeWeaponTransform;
+    private GameObject activeWeapon;
+
+    public PlayerRoll playerRoll;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        activeWeaponTransform = transform.GetChild(0);
+        activeWeapon = activeWeaponTransform.gameObject;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (!playerRoll.GetRolling())
         {
-            newWeaponId = 0;
+            if (Input.GetMouseButtonDown(0))
+            {
+                Weapon activeWeaponScript = activeWeapon.GetComponent<Weapon>();
+
+                activeWeaponScript.Fire(transform);
+            }
+
         }
-
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            newWeaponId = 1;
-        }
-
-        if (currentWeaponId != newWeaponId)
-        {
-            Destroy(activeWeapon);
-            activeWeapon = Instantiate(weapons[newWeaponId], transform);
-
-            currentWeaponId = newWeaponId;
-        }
-
-        print("current: " + currentWeaponId);
-        print("new: " + newWeaponId);    
     }
     
-    private void SwapWeapons(GameObject[] weapons, int first_index, int second_index)
-    {
-        GameObject temp = weapons[first_index];
-
-        weapons[first_index] = weapons[second_index];
-        weapons[second_index] = temp;
-    }
 }

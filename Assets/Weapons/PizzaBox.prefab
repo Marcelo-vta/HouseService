@@ -260,8 +260,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   spriteRenderer: {fileID: 400378970559973249}
-  handBackSprite: {fileID: -3844824435529266545, guid: e9c6b6d2242234c4b979e40dd0ee001a, type: 3}
-  handFrontSprite: {fileID: -3844824435529266545, guid: e9c6b6d2242234c4b979e40dd0ee001a, type: 3}
+  handBackSprite: {fileID: -1638934897, guid: fdd8e46dca18b4c42a26051737fae32d, type: 3}
+  handFrontSprite: {fileID: -1350044096, guid: fdd8e46dca18b4c42a26051737fae32d, type: 3}
   weapon: {fileID: 4491585400571255734}
   handSpriteObject: {fileID: 2109974430040588073}
   weaponSpriteRenderer: {fileID: 0}

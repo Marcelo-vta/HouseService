@@ -3,14 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-public class HandsRotate : MonoBehaviour
+public class RangedHands : MonoBehaviour
 {
     private bool handsBack = false;
     private bool invertWeapon = false;
     public SpriteRenderer spriteRenderer;
 
-    public Sprite handBackSprite;
-    public Sprite handFrontSprite;
+    private Sprite handBackSprite;
+    private Sprite handFrontSprite;
+
+    private WeaponControl parentWeaponControl;
 
     public GameObject weapon;
     public GameObject handSpriteObject;
@@ -23,6 +25,11 @@ public class HandsRotate : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        parentWeaponControl = GetComponentInParent<WeaponControl>();
+
+        handBackSprite = parentWeaponControl.handBackSprite;
+        handFrontSprite = parentWeaponControl.handFrontSprite;
+
         weaponSpriteRenderer = weapon.GetComponent<SpriteRenderer>();
     }
 
