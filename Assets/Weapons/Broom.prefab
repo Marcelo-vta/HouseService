@@ -138,7 +138,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Weapon
   bulletPrefab: {fileID: 4062383134465746442, guid: 326272e4e319d5445afca66edc6d499b, type: 3}
   slashPrefab: {fileID: 1767328606531196417, guid: 2012192cc227b4add956d9c88a43b126, type: 3}
-  playerTransform: {fileID: 0}
   hand: {fileID: 0}
   firePoint: {fileID: 0}
   fireForce: 20
@@ -156,8 +155,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MeleeHands
   spriteRenderer: {fileID: 1774339716526549450}
-  handBackSprite: {fileID: -3844824435529266545, guid: e9c6b6d2242234c4b979e40dd0ee001a, type: 3}
-  handFrontSprite: {fileID: -3844824435529266545, guid: e9c6b6d2242234c4b979e40dd0ee001a, type: 3}
+  handBackSprite: {fileID: -1638934897, guid: fdd8e46dca18b4c42a26051737fae32d, type: 3}
+  handFrontSprite: {fileID: -1350044096, guid: fdd8e46dca18b4c42a26051737fae32d, type: 3}
   weapon: {fileID: 542345975595084495}
   handSpriteObject: {fileID: 5871152628500802034}
   weaponSpriteRenderer: {fileID: 0}
@@ -243,7 +242,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -3844824435529266545, guid: e9c6b6d2242234c4b979e40dd0ee001a, type: 3}
+  m_Sprite: {fileID: -1350044096, guid: fdd8e46dca18b4c42a26051737fae32d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
