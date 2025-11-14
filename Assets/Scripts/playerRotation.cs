@@ -40,11 +40,6 @@ public class playerRotation : MonoBehaviour
             {
                 direction = mousePos.x / Math.Abs(mousePos.x);
             }
-
-            Vector3 currentScale = transform.localScale;
-
-            currentScale.x = Math.Abs(currentScale.x) * direction;
-            transform.localScale = currentScale;
         }
         
         if (playerRoll.GetRolling())
@@ -59,11 +54,6 @@ public class playerRotation : MonoBehaviour
             {
                 direction = 1;
             }
-
-            Vector3 currentScale = transform.localScale;
-
-            currentScale.x = Math.Abs(currentScale.x) * direction;
-            transform.localScale = currentScale;
         }
     }
 }
