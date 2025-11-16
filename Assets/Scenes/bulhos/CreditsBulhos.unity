@@ -993,6 +993,27 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5997574492518928044, guid: c2e3d5c6177c21a4381b9f2dc9e94ded, type: 3}
+      propertyPath: m_text
+      value: 'Creative Director
+
+
+
+        UI/UX Director
+
+
+
+        Level Design
+        Director
+
+
+
+        Enemy Design Director
+
+
+
+        Music/SFX'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5997574492518928044, guid: c2e3d5c6177c21a4381b9f2dc9e94ded, type: 3}
       propertyPath: m_fontSize
       value: 22
       objectReference: {fileID: 0}
