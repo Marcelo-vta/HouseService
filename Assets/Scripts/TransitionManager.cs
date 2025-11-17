@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.XR.OpenVR;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -49,6 +50,13 @@ public class TransitionManager : MonoBehaviour
     private const string ANCHOR_ENTRADA = "Entrada";
     private const string ANCHOR_SAIDA = "Saida";
     private const int BOSS = -999;
+
+    //Geracao de items
+    private int f1_itemIdx;
+    private int f2_itemIdx;
+
+    private List<string>meleeItems = new List<string>(){"wet", "long", "mop", "witch"};
+    private List<string>rangedItems = new List<string>(){"spicy", "pepperoni", "cheese"};
 
     void Awake()
     {
@@ -107,6 +115,9 @@ public class TransitionManager : MonoBehaviour
             (nextMap, prevMap) = BuildMapsOnlyF1();
         }
 
+        f1_itemIdx = Random.Range(0,floor1Prefabs.Count);
+        f2_itemIdx = Random.Range(0,floor2Prefabs.Count);
+
         // sala inicial
         CreateSala(firstF1Idx, spawnNaEntrada: true);
         SetVolume(volumeFloor1, true);
@@ -148,6 +159,15 @@ public class TransitionManager : MonoBehaviour
 
     private void CreateSala(int index, bool spawnNaEntrada)
     {
+        int currentFloor;
+
+        currentFloor = index < cutIndex ? 1 : 2;
+
+        int floorBasedIndex = currentFloor == 1 ?
+            index 
+        : 
+            index - cutIndex;
+
         var inst = Instantiate(allPrefabs[index],
                                salasContainer ? salasContainer : null);
         salaAtualInst = inst;
@@ -157,10 +177,29 @@ public class TransitionManager : MonoBehaviour
         var ponto = FindAnchor(inst.transform, anchor);
         if (player && ponto) player.position = ponto.position;
 
-        // alterna volume com base no andar
-        if (index < cutIndex) SetVolume(volumeFloor1, true);
-        else if (index >= cutIndex) SetVolume(volumeFloor2, true);
+        PlayerStates playerStates = player.gameObject.GetComponent<PlayerStates>();
+        List<string> accurateItems = playerStates.cleaner ? meleeItems : rangedItems;
 
+        int itemRoomIdx = currentFloor == 1 ? f1_itemIdx : f2_itemIdx;
+        var floorVolume = currentFloor == 1 ? volumeFloor1 : volumeFloor2;
+
+        // alterna volume com base no andar
+
+        SetVolume(floorVolume, true);
+        var itemSpawner = inst.GetComponentInChildren<ItemSpawner>();
+
+        itemSpawner
+            .gameObject
+            .SetActive(floorBasedIndex == itemRoomIdx);
+
+        if (floorBasedIndex == itemRoomIdx)
+        {
+            int itemIndex = Random.Range(0, accurateItems.Count);
+
+            itemSpawner.selectedItem = accurateItems[itemIndex];
+            accurateItems.RemoveAt(itemIndex);
+        }
+        
         Debug.Log($"TM: Sala criada: {inst.name} (idx {index})");
     }
 

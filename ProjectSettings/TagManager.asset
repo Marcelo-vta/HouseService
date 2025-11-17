@@ -6,6 +6,8 @@ TagManager:
   tags:
   - bulletRange
   - enemy
+  - Collectible
+  - UI
   layers:
   - Default
   - TransparentFX

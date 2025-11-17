@@ -5,7 +5,6 @@ public class PlayerRoll : MonoBehaviour
     private float baseSpeed;
     public float rollMaxSpeed = 40f;       // Max speed reached during roll (C point)
     private float rollDuration;       // How long the roll lasts (frames)
-    private bool isRolling = false;
 
     private float rollTimer = 0f;
     private float currentSpeed;
@@ -19,6 +18,8 @@ public class PlayerRoll : MonoBehaviour
 
     public GameObject hands;
 
+    private PlayerStates playerStates;
+
 
     void Start()
     {
@@ -26,6 +27,8 @@ public class PlayerRoll : MonoBehaviour
 
         currentSpeed = baseSpeed;
         rollDuration = anim.length;
+
+        playerStates = GetComponent<PlayerStates>();
     }
 
     void Update()
@@ -35,7 +38,7 @@ public class PlayerRoll : MonoBehaviour
             Roll();
         }
 
-        if (isRolling)
+        if (playerStates.rollingState)
         {
             rollTimer += Time.deltaTime;
 
@@ -56,9 +59,8 @@ public class PlayerRoll : MonoBehaviour
             // Stop rolling when done
             if (rollTimer >= rollDuration)
             {
-                isRolling = false;
                 currentSpeed = baseSpeed;
-                hands.SetActive(true);
+                playerStates.rollingState = false;
             }
         }
 
@@ -67,20 +69,13 @@ public class PlayerRoll : MonoBehaviour
 
     public void Roll()
     {
-        if (!isRolling)
+        if (playerStates.ableToRoll)
         {
-            isRolling = true;
+            playerStates.rollingState = true;
             rollTimer = 0f;
 
             hurtbox.SetActive(false);
-            hands.SetActive(false);
-
             animator.SetTrigger("roll"); 
         }
-    }
-
-    public bool GetRolling()
-    {
-        return isRolling;
     }
 }

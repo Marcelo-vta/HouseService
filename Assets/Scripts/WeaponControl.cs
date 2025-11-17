@@ -13,7 +13,7 @@ public class WeaponControl : MonoBehaviour
     private Transform activeWeaponTransform;
     private GameObject activeWeapon;
 
-    public PlayerRoll playerRoll;
+    private PlayerStates playerStates;
 
     private Broom meeleeWeaponScript;
     private PizzaBox rangedWeaponScript;
@@ -27,13 +27,17 @@ public class WeaponControl : MonoBehaviour
         activeWeapon = activeWeaponTransform.gameObject;
 
         playerTransform = GetComponentInParent<Transform>();
+        playerStates = transform.parent.GetComponent<PlayerStates>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!playerRoll.GetRolling())
+        if (playerStates.handsUsable)
         {
+            activeWeapon.SetActive(true);
+            
             if (Input.GetMouseButtonDown(0))
             {
                 meeleeWeaponScript = activeWeapon.GetComponent<Broom>();
@@ -49,7 +53,10 @@ public class WeaponControl : MonoBehaviour
                     rangedWeaponScript.Fire();
                 }
             }
-
+        }
+        else
+        {
+            activeWeapon.SetActive(false);
         }
     }
     

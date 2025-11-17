@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -6,8 +7,6 @@ public class Slash : MonoBehaviour
 {
     private float timer = 0f;
     private Sprite[] activeSprites;
-    private string[] powerUps;
-
     public SpriteRenderer spriteRenderer;
     public Sprite[] defaultSprites;
     public Sprite[] wetSprites;
@@ -15,14 +14,16 @@ public class Slash : MonoBehaviour
     public float damage;
     public float knockback;
 
+    private PlayerStates playerStates;
 
     void Start()
     {
+        playerStates = GameObject.FindGameObjectWithTag("Player")
+            .GetComponent<PlayerStates>();
+
         activeSprites = defaultSprites;
 
-
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-
         difference.Normalize();
 
         float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
@@ -36,7 +37,7 @@ public class Slash : MonoBehaviour
 
         currentScale.y = flipVertical;
 
-        if (powerUps.Contains("long"))
+        if (playerStates.powerUps.Contains("long"))
         {
             Vector3 currentPos = transform.localPosition;
 
@@ -52,17 +53,17 @@ public class Slash : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (powerUps.Contains("wet"))
+        if (playerStates.powerUps.Contains("wet"))
         {
             activeSprites = wetSprites;
         }
 
-        if (powerUps.Contains("mop"))
+        if (playerStates.powerUps.Contains("mop"))
         {
             damage *= 1.5f;
         }
 
-        if (powerUps.Contains("witch"))
+        if (playerStates.powerUps.Contains("witch"))
         {
             knockback *= 1.5f;
         }
@@ -85,10 +86,5 @@ public class Slash : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-
-    public void SetPowerUps(string[] newPowerUps)
-    {
-        powerUps = newPowerUps;
     }
 }

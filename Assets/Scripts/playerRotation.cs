@@ -8,18 +8,20 @@ public class playerRotation : MonoBehaviour
     private float direction;
 
     public PlayerRoll playerRoll;
+    private PlayerStates playerStates;
+
     public PlayerMovement playerMovement;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        playerStates = transform.parent.GetComponent<PlayerStates>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!playerRoll.GetRolling())
+        if (playerStates.ableToRotate)
         {
             mousePos = Input.mousePosition;
 
@@ -42,7 +44,7 @@ public class playerRotation : MonoBehaviour
             }
         }
         
-        if (playerRoll.GetRolling())
+        if (playerStates.rollingState)
         {
             direction = playerMovement.GetMovement().x;
 
@@ -55,5 +57,6 @@ public class playerRotation : MonoBehaviour
                 direction = 1;
             }
         }
+        
     }
 }

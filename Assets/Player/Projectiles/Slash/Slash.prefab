@@ -53,6 +53,8 @@ MonoBehaviour:
   wetSprites:
   - {fileID: 2582109357095366969, guid: 1fe04269623a2412992a8423485deeff, type: 3}
   - {fileID: -1564753496, guid: 1fe04269623a2412992a8423485deeff, type: 3}
+  damage: 0
+  knockback: 0
 --- !u!1 &4252598178502635169
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4578270583037978477
 Transform:
   m_ObjectHideFlags: 0

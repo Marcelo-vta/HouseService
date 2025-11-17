@@ -16,32 +16,36 @@ public class Broom : MonoBehaviour
     public Transform hand;
     public bool witch = false;
 
-    public string[] powerUps;
+    private PlayerStates playerStates;
 
+    public void Start()
+    {
+        playerStates = GameObject.FindGameObjectWithTag("Player")
+            .GetComponent<PlayerStates>();
+
+    }
 
     public void Fire(Transform playerTransform = null)
     {
         GameObject hit = Instantiate(slashPrefab, playerTransform);
         Slash hitScript = hit.GetComponent<Slash>();
-
-        hitScript.SetPowerUps(powerUps);
     }
 
     public void Update()
     {
 
-        if (powerUps.Contains("witch"))
+        if (playerStates.powerUps.Contains("witch"))
         {
             witch = true;
             broomSpriteRenderer.sprite = witchSprite;
         }
 
-        if (powerUps.Contains("wet"))
+        if (playerStates.powerUps.Contains("wet"))
         {
             wet.SetActive(true);
         }
 
-        if (powerUps.Contains("mop"))
+        if (playerStates.powerUps.Contains("mop"))
         {
             mop.SetActive(true);
         }

@@ -18,8 +18,6 @@ public class FollowParentFlip : MonoBehaviour
     void Update()
     {
 
-        print(parentSpriteRenderer.flipY);
-
         if (x)
         {
             spriteRenderer.flipX = parentSpriteRenderer.flipX;

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class BroomHandle : MonoBehaviour
 {
-    public Broom broom;
+    private PlayerStates playerStates;
     private SpriteRenderer spriteRenderer;
 
     public Sprite[] defaultHandles;
@@ -13,13 +13,14 @@ public class BroomHandle : MonoBehaviour
 
     void Start()
     {
+        playerStates = GetComponentInParent<PlayerStates>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         currentHandles = defaultHandles;
     }
     void Update()
     {
-        int extended = broom.powerUps.Contains("long") ? 1 : 0;
-        currentHandles = broom.powerUps.Contains("witch") ? witchHandles : defaultHandles;
+        int extended = playerStates.powerUps.Contains("long") ? 1 : 0;
+        currentHandles = playerStates.powerUps.Contains("witch") ? witchHandles : defaultHandles;
 
         spriteRenderer.sprite = currentHandles[extended];
     }

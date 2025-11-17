@@ -3,22 +3,24 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    public Animator animator;
-    public PlayerRoll playerRoll;
 
     public float speed;
+
+    private PlayerStates playerStates;
+    private Rigidbody2D rb;
+    private Animator spriteAnimator;
+
     private Vector2 movement;
     private Vector2 movementBase;
-
-    public GameObject meleeHit;
-
-    public GameObject weapons;
+    private float moveHorizontal;
+    private float moveVertical;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        playerStates = GetComponent<PlayerStates>();
+        spriteAnimator = GetComponentInChildren<Animator>();
 
         rb.gravityScale = 0;
         rb.freezeRotation = true;
@@ -27,31 +29,45 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        moveHorizontal = Input.GetAxisRaw("Horizontal");
+        moveVertical = Input.GetAxisRaw("Vertical");
 
-        if (!playerRoll.GetRolling())
+        playerStates.walkingState = MathF.Abs(moveHorizontal) + MathF.Abs(moveVertical) > 0;
+
+    }
+
+    void FixedUpdate()
+    {
+        if (playerStates.ableToWalk)
         {
-            float moveHorizontal = Input.GetAxisRaw("Horizontal");
-            float moveVertical = Input.GetAxisRaw("Vertical");
-
             Vector2 moveInput = new Vector2(moveHorizontal, moveVertical);
 
             movementBase = moveInput.normalized * Time.fixedDeltaTime;
             movement = movementBase * speed;
 
-            animator.SetFloat("speed", (float)Math.Pow(movement.magnitude, 2));
+            spriteAnimator.SetFloat("speed", (float)Math.Pow(movement.magnitude, 2));
             rb.MovePosition(rb.position + movement);
+
+            spriteAnimator.SetFloat("speedX", movementBase.x);
+            spriteAnimator.SetFloat("speedY", movementBase.y);
+
+            if (movementBase.x != 0)
+            {
+                spriteAnimator.SetFloat("last_speed_X", movementBase.x);
+            }
+            if (movementBase.y != 0)
+            {
+                spriteAnimator.SetFloat("last_speed_Y", movementBase.y);
+            }
         }
 
-        if (playerRoll.GetRolling())
+        if (playerStates.rollingState)
         {
             movement = movementBase * speed;
 
-            animator.SetFloat("speed", (float)Math.Pow(movement.magnitude, 2));
+            spriteAnimator.SetFloat("speed", (float)Math.Pow(movement.magnitude, 2));
             rb.MovePosition(rb.position + movement);
         }
-
-        animator.SetFloat("speedX", movementBase.x);
-        animator.SetFloat("speedY", movementBase.y);
     }
 
     public Vector2 GetMovement()

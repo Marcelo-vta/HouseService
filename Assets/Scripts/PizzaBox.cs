@@ -19,19 +19,25 @@ public class PizzaBox : MonoBehaviour
     public GameObject spicy;
     public GameObject pepperoni;
 
-    public string[] powerUps;
 
     private int throwingPepperoni = 0;
-
     private Stopwatch pepperoniTimer = new Stopwatch();
+
+    private PlayerStates playerStates;
+
+    public void Start()
+    {
+        playerStates = GameObject.FindGameObjectWithTag("Player")
+            .GetComponent<PlayerStates>();
+
+    }
 
     public void Fire(Transform playerTransform = null)
     {
 
         GameObject bullet = ThrowProjectile(pizzaPrefab, accuracy);
-        bullet.GetComponent<Pizza>().SetPowerUps(powerUps);
 
-        if (powerUps.Contains("pepperoni"))
+        if (playerStates.powerUps.Contains("pepperoni"))
         {
             print("pepperoni shot");
 
@@ -44,17 +50,17 @@ public class PizzaBox : MonoBehaviour
 
     void Update()
     {
-        if (powerUps.Contains("cheese"))
+        if (playerStates.powerUps.Contains("cheese"))
         {
             cheese.SetActive(true);
         }
 
-        if (powerUps.Contains("spicy"))
+        if (playerStates.powerUps.Contains("spicy"))
         {
             spicy.SetActive(true);
         }
 
-        if (powerUps.Contains("pepperoni"))
+        if (playerStates.powerUps.Contains("pepperoni"))
         {
             pepperoni.SetActive(true);
         }
