@@ -11,19 +11,28 @@ public class PlayerActions : MonoBehaviour
     private bool scare;
     private string obtainedItemName;
 
+    private GameObject itemReceived;
+
     void Start()
     {
         playerStates = GetComponent<PlayerStates>();
+        itemReceived = GameObject.FindGameObjectWithTag("Item");
     }
 
     void Update()
     {
         if (playerStates.obtainingState)
         {
+            itemReceived.SetActive(true);
             if (obtainTime.ElapsedTimeSec() > 2)
             {
+                itemReceived.SetActive(false);
                 playerStates.obtainingState = false;
             }
+        }
+        else
+        {
+            itemReceived.SetActive(false);
         }
 
         if (scare)
@@ -48,6 +57,7 @@ public class PlayerActions : MonoBehaviour
 
         playerStates.powerUps.Add(itemName);
 
+        itemReceived.GetComponent<ItemReceived>().itemName = itemName;
         obtainTime.Restart();
     }
 

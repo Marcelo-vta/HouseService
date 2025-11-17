@@ -15,11 +15,13 @@ public class Porta : MonoBehaviour
 
     void Start()
     {
+        tm = GameObject.FindGameObjectWithTag("TransitionManager")
+            .GetComponent<TransitionManager>();
     }
 
     void Update()
     {
-        if (jogadorPerto && Input.GetKeyDown(KeyCode.E) && tm != null)
+        if (jogadorPerto && Input.GetKeyDown(KeyCode.E))
         {
             if (tipo == TipoAnchor.Saida)
                 tm.GoForwardRandom();   // vai pra nova sala aleatória

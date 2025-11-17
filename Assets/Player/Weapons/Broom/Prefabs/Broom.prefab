@@ -77,8 +77,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1548239523
+  m_SortingLayer: 2
   m_SortingOrder: 10
   m_Sprite: {fileID: -1350044096, guid: fdd8e46dca18b4c42a26051737fae32d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -182,8 +182,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1548239523
+  m_SortingLayer: 2
   m_SortingOrder: 20
   m_Sprite: {fileID: 1167556968, guid: 43964ea1eae71438683f5ed583238b16, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -288,8 +288,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1548239523
+  m_SortingLayer: 2
   m_SortingOrder: 5
   m_Sprite: {fileID: 4634116481554200678, guid: cffc8e7a5141142d7b8d5363c4995995, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -327,7 +327,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a104c3ed01a0d4396b2e6095ae525ba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  broom: {fileID: 361821532904658546}
   defaultHandles:
   - {fileID: 4634116481554200678, guid: cffc8e7a5141142d7b8d5363c4995995, type: 3}
   - {fileID: 7551870189422720580, guid: 7bf869751a2b54c29a424dfffa95cc2e, type: 3}
@@ -435,8 +434,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1548239523
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -389540371, guid: 298f19883149b4ed58b8552cd0e23c2b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -556,8 +555,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1548239523
+  m_SortingLayer: 2
   m_SortingOrder: 2
   m_Sprite: {fileID: 8301961774509548615, guid: 880f78f191d2947e9b830e51b59c2658, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -595,7 +594,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ef91cf3e19fc433db8163bfa18c79fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  broom: {fileID: 361821532904658546}
 --- !u!1 &6893710554069578435
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,7 +647,6 @@ MonoBehaviour:
   mop: {fileID: 1067027632668149957}
   hand: {fileID: 0}
   witch: 0
-  powerUps: []
 --- !u!114 &4621879162726668758
 MonoBehaviour:
   m_ObjectHideFlags: 0

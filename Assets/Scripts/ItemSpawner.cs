@@ -14,7 +14,7 @@ public class ItemSpawner : MonoBehaviour
     public Stopwatch holdingButton = new Stopwatch();
 
     private bool interacting = false;
-    private bool inRange = true;
+    private bool inRange = false;
 
     private PlayerStates playerStates;
     private PlayerActions playerActions;
@@ -24,6 +24,12 @@ public class ItemSpawner : MonoBehaviour
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
+
+        playerStates = GameObject.FindGameObjectWithTag("Player")
+            .GetComponent<PlayerStates>();
+
+        playerActions = GameObject.FindGameObjectWithTag("Player")
+            .GetComponent<PlayerActions>();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -31,10 +37,6 @@ public class ItemSpawner : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             inRange = true;
-
-            playerStates = other.GetComponent<PlayerStates>();
-            playerActions = other.GetComponent<PlayerActions>();
-
             playerStates.interactibleState = interactible;
         }
     }

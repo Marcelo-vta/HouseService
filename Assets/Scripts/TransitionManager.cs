@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Mono.Cecil;
 using Unity.XR.OpenVR;
 using UnityEngine;
 using UnityEngine.UI;
@@ -41,14 +42,14 @@ public class TransitionManager : MonoBehaviour
     private int cutIndex = 0;
     private List<int> ordemF1, ordemF2;
     private Dictionary<int, int> nextMap, prevMap;
+    private List<int> seenRooms = new List<int>();
+    private List<GameObject> instantiatedRooms = new List<GameObject>();
 
     private GameObject salaAtualInst;
     private int salaAtualIndex = -1;
 
     // atalhos
     private int firstF1Idx, lastF1Idx, firstF2Idx = -1, lastF2Idx = -1;
-    private const string ANCHOR_ENTRADA = "Entrada";
-    private const string ANCHOR_SAIDA = "Saida";
     private const int BOSS = -999;
 
     //Geracao de items
@@ -131,14 +132,22 @@ public class TransitionManager : MonoBehaviour
             f2_mimicIdx = Random.Range(0,floor1Prefabs.Count);
         }
 
+        for (int i = 0; i < allPrefabs.Count; i++)
+        {
+            instantiatedRooms.Add(null);
+        }
+
         // sala inicial
-        CreateSala(firstF1Idx, spawnNaEntrada: true);
+        CreateSala(firstF1Idx);
+        NavigateRooms(firstF1Idx, spawnNaEntrada: true);
+
         SetVolume(volumeFloor1, true);
     }
 
     public void GoForwardRandom()
     {
         if (salaAtualIndex == BOSS) return;
+        int destino;
 
         // Se tem F2 e estamos no último do F2 -> boss
         if (lastF2Idx >= 0 && salaAtualIndex == lastF2Idx)
@@ -147,33 +156,71 @@ public class TransitionManager : MonoBehaviour
             return;
         }
 
-        if (nextMap.TryGetValue(salaAtualIndex, out int destino))
+        if (seenRooms.IndexOf(salaAtualIndex) < seenRooms.Count - 1)
         {
-            bool atravessaF1F2 = (salaAtualIndex < cutIndex) && (destino >= cutIndex);
-            StartCoroutine(CO_TrocarSala(destino, true,
-                showTitle: atravessaF1F2,
-                title: atravessaF1F2 ? floor1To2Message : null,
-                hold: interFloorHoldSeconds));
+            destino = seenRooms[seenRooms.IndexOf(salaAtualIndex) + 1];
         }
+        else {
+            nextMap.TryGetValue(salaAtualIndex, out destino);
+        }
+
+        bool atravessaF1F2 = (salaAtualIndex < cutIndex) && (destino >= cutIndex);
+
+        StartCoroutine(CO_TrocarSala(destino, true,
+            showTitle: atravessaF1F2,
+            title: atravessaF1F2 ? floor1To2Message : null,
+            hold: interFloorHoldSeconds));
     }
 
     public void GoBack()
     {
-        if (salaAtualIndex == BOSS) return;
-        if (salaAtualIndex == firstF2Idx) return;
-        if (salaAtualIndex == firstF1Idx) return;
-        if (!allowBackWithinFloor) return;
+        print("GoBack");
 
-        if (prevMap != null && prevMap.TryGetValue(salaAtualIndex, out int destino))
+        if (salaAtualIndex == BOSS) return;
+        if (salaAtualIndex == seenRooms[0]) return;
+
+        print("Didnt Return!");
+
+        int lastRoomIndex = seenRooms[seenRooms.IndexOf(salaAtualIndex)-1];
+
+        print(lastRoomIndex);
+
+        if (lastRoomIndex >= 0)
         {
-            StartCoroutine(CO_TrocarSala(destino, false, false, null, 0f));
+            StartCoroutine(CO_TrocarSala(lastRoomIndex, false, false, null, 0f));
         }
     }
 
-    private void CreateSala(int index, bool spawnNaEntrada)
+    private void NavigateRooms(int index, bool spawnNaEntrada)
     {
-        int currentFloor;
+        salaAtualIndex = index;
 
+        int currentFloor;
+        currentFloor = index < cutIndex ? 1 : 2;
+
+        int floorBasedIndex = currentFloor == 1 ?
+            index 
+        : 
+            index - cutIndex;
+
+        var newRoom = instantiatedRooms[index];
+
+        print("Entrando na sala: " + index);
+
+        var entryPoint = spawnNaEntrada ? FindEntrance(newRoom.transform) : FindExit(newRoom.transform);
+
+        player.position = entryPoint.position;
+        
+        var floorVolume = currentFloor == 1 ? volumeFloor1 : volumeFloor2;
+        SetVolume(floorVolume, true);
+    }
+
+    private void CreateSala(int index)
+    {
+
+        seenRooms.Add(index);
+
+        int currentFloor;
         currentFloor = index < cutIndex ? 1 : 2;
 
         int floorBasedIndex = currentFloor == 1 ?
@@ -183,12 +230,10 @@ public class TransitionManager : MonoBehaviour
 
         var inst = Instantiate(allPrefabs[index],
                                salasContainer ? salasContainer : null);
-        salaAtualInst = inst;
-        salaAtualIndex = index;
 
-        string anchor = spawnNaEntrada ? ANCHOR_ENTRADA : ANCHOR_SAIDA;
-        var ponto = FindAnchor(inst.transform, anchor);
-        if (player && ponto) player.position = ponto.position;
+        instantiatedRooms[index] = inst;
+
+        salaAtualInst = inst;
 
         PlayerStates playerStates = player.gameObject.GetComponent<PlayerStates>();
         List<string> accurateItems = playerStates.cleaner ? meleeItems : rangedItems;
@@ -199,13 +244,7 @@ public class TransitionManager : MonoBehaviour
         bool itemRoom = floorBasedIndex == itemRoomIdx;
         bool mimicRoom = floorBasedIndex == mimicRoomIdx;
 
-        var floorVolume = currentFloor == 1 ? volumeFloor1 : volumeFloor2;
-
-        // alterna volume com base no andar
-
-        SetVolume(floorVolume, true);
         var itemSpawner = inst.GetComponentInChildren<ItemSpawner>();
-
 
         itemSpawner
             .gameObject
@@ -230,12 +269,23 @@ public class TransitionManager : MonoBehaviour
     private IEnumerator CO_TrocarSala(int destinoIndex, bool spawnNaEntrada, bool showTitle, string title, float hold)
     {
         yield return FadeBoth(0f, 1f, title);
+
         if (showTitle && !string.IsNullOrEmpty(title) && hold > 0f)
             yield return new WaitForSeconds(hold);
 
-        var antiga = salaAtualInst;
-        CreateSala(destinoIndex, spawnNaEntrada);
-        if (antiga) Destroy(antiga);
+
+        if (seenRooms.Contains(destinoIndex))
+        {
+            NavigateRooms(destinoIndex, spawnNaEntrada);
+        }
+        else
+        {
+            CreateSala(destinoIndex);
+            NavigateRooms(destinoIndex, spawnNaEntrada);
+
+        }
+
+        // if (antiga) Destroy(antiga);
 
         yield return FadeBoth(1f, 0f, title, deactivateAtEnd: true);
     }
@@ -253,8 +303,8 @@ public class TransitionManager : MonoBehaviour
         var boss = Instantiate(bossPrefab, salasContainer ? salasContainer : null);
         salaAtualInst = boss;
         salaAtualIndex = BOSS;
-
-        var entrada = FindAnchor(boss.transform, ANCHOR_ENTRADA);
+    
+        var entrada = FindEntrance(boss.transform);
         if (player && entrada) player.position = entrada.position;
 
         if (antiga) Destroy(antiga);
@@ -368,12 +418,31 @@ public class TransitionManager : MonoBehaviour
         return lst;
     }
 
-    private Transform FindAnchor(Transform root, string name)
+    private Transform FindEntrance(Transform root)
     {
-        var t = root.Find(name);
-        if (t) return t;
-        foreach (Transform c in root.GetComponentsInChildren<Transform>(true))
-            if (c.name == name) return c;
+        foreach (Transform child in root)
+        {
+            if (child.CompareTag("Entrance"))
+            {
+                return child;
+            }
+        }
+
+        print("Error finding entrance");
+        return null;
+    }
+
+    private Transform FindExit(Transform root)
+    {
+        foreach (Transform child in root)
+        {
+            if (child.CompareTag("Exit"))
+            {
+                return child;
+            }
+        }
+
+        print("Error finding exit");
         return null;
     }
 
