@@ -17,6 +17,8 @@ public class PlayerStates : MonoBehaviour
     public bool walkingState;
     public bool hurtState;
     public bool deathState;
+    public bool interactibleState;
+    public bool scaredState;
 
     public bool ableToWalk;
     public bool handsUsable;
@@ -34,13 +36,27 @@ public class PlayerStates : MonoBehaviour
 
     private void Update()
     {
-        handsUsable = !(rollingState || interactingState || obtainingState || hurtState || deathState);
-        ableToWalk = !(rollingState || interactingState || obtainingState || deathState);
-        ableToRoll = !(obtainingState || interactingState || deathState || hurtState || rollingState);
-        ableToRotate = !( obtainingState || interactingState || deathState || hurtState || rollingState );
+        handsUsable = !( rollingState || interactingState || obtainingState || hurtState || deathState || scaredState );
+        ableToWalk = !( rollingState || interactingState || obtainingState || deathState || scaredState );
+        ableToRoll = !( obtainingState || interactingState || deathState || hurtState || rollingState || scaredState ) && walkingState;
+        ableToRotate = !( obtainingState || interactingState || deathState || hurtState || rollingState  || scaredState );
 
         playerAnimator.SetBool("interacting", interactingState);
         playerAnimator.SetBool("obtaining", obtainingState);
         playerAnimator.SetBool("hurt", hurtState);
+        playerAnimator.SetBool("scared", scaredState);
+
+        SetInteractible();
+    }
+
+    private void SetInteractible()
+    {
+        foreach (Transform child in transform)
+        {
+            if (child.CompareTag("UI"))
+            {
+                child.gameObject.SetActive(interactibleState);
+            }
+        }
     }
 }

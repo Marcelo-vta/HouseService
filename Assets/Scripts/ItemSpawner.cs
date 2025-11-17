@@ -6,6 +6,8 @@ public class ItemSpawner : MonoBehaviour
     public string selectedItem;
     public bool isTrap = false;
 
+    private bool interactible = true;
+
     public GameObject item;
 
     public GameObject shortcutSuggestion;
@@ -16,23 +18,24 @@ public class ItemSpawner : MonoBehaviour
 
     private PlayerStates playerStates;
     private PlayerActions playerActions;
+    private Animator animator;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        animator = GetComponentInChildren<Animator>();
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             inRange = true;
+
             playerStates = other.GetComponent<PlayerStates>();
             playerActions = other.GetComponent<PlayerActions>();
 
-            foreach (Transform child in other.transform)
-            {
-                if (child.CompareTag("UI"))
-                {
-                    child.GameObject().SetActive(true);
-                }
-            }
+            playerStates.interactibleState = interactible;
         }
     }
 
@@ -42,19 +45,13 @@ public class ItemSpawner : MonoBehaviour
         {
             inRange = false;
 
-            foreach (Transform child in other.transform)
-            {
-                if (child.CompareTag("UI"))
-                {
-                    child.GameObject().SetActive(false);
-                }
-            }
+            playerStates.interactibleState = false;
         }
     }
 
     private void Update() {
 
-        if (inRange)
+        if (inRange && interactible)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
@@ -81,13 +78,25 @@ public class ItemSpawner : MonoBehaviour
             }
         }
 
+        animator.SetBool("Mimic", isTrap);
     }
     void Interact(PlayerStates states)
     {
-        states.interactingState = false;
         interacting = false;
-        
-        playerActions.ObtainItem(selectedItem);
+        interactible = false;
 
+        states.interactingState = false;
+        states.interactibleState = false;
+        
+        animator.SetBool("Open", true);
+
+        if (!isTrap)
+        {
+            playerActions.ObtainItem(selectedItem);
+        }
+        else
+        {
+            playerActions.Scare();
+        }
     }
 }

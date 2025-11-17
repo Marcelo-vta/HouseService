@@ -55,6 +55,9 @@ public class TransitionManager : MonoBehaviour
     private int f1_itemIdx;
     private int f2_itemIdx;
 
+    private int f1_mimicIdx;
+    private int f2_mimicIdx;
+
     private List<string>meleeItems = new List<string>(){"wet", "long", "mop", "witch"};
     private List<string>rangedItems = new List<string>(){"spicy", "pepperoni", "cheese"};
 
@@ -117,6 +120,16 @@ public class TransitionManager : MonoBehaviour
 
         f1_itemIdx = Random.Range(0,floor1Prefabs.Count);
         f2_itemIdx = Random.Range(0,floor2Prefabs.Count);
+
+        while (f1_mimicIdx == f1_itemIdx)
+        {
+            f1_mimicIdx = Random.Range(0,floor1Prefabs.Count);
+        }
+
+        while (f2_mimicIdx == f2_itemIdx)
+        {
+            f2_mimicIdx = Random.Range(0,floor1Prefabs.Count);
+        }
 
         // sala inicial
         CreateSala(firstF1Idx, spawnNaEntrada: true);
@@ -181,6 +194,11 @@ public class TransitionManager : MonoBehaviour
         List<string> accurateItems = playerStates.cleaner ? meleeItems : rangedItems;
 
         int itemRoomIdx = currentFloor == 1 ? f1_itemIdx : f2_itemIdx;
+        int mimicRoomIdx = currentFloor == 1 ? f1_mimicIdx : f2_mimicIdx;
+
+        bool itemRoom = floorBasedIndex == itemRoomIdx;
+        bool mimicRoom = floorBasedIndex == mimicRoomIdx;
+
         var floorVolume = currentFloor == 1 ? volumeFloor1 : volumeFloor2;
 
         // alterna volume com base no andar
@@ -188,16 +206,22 @@ public class TransitionManager : MonoBehaviour
         SetVolume(floorVolume, true);
         var itemSpawner = inst.GetComponentInChildren<ItemSpawner>();
 
+
         itemSpawner
             .gameObject
-            .SetActive(floorBasedIndex == itemRoomIdx);
+            .SetActive(itemRoom || mimicRoom);
 
-        if (floorBasedIndex == itemRoomIdx)
+        if (itemRoom)
         {
             int itemIndex = Random.Range(0, accurateItems.Count);
 
             itemSpawner.selectedItem = accurateItems[itemIndex];
             accurateItems.RemoveAt(itemIndex);
+        }
+
+        if (mimicRoom)
+        {
+            itemSpawner.isTrap = true;
         }
         
         Debug.Log($"TM: Sala criada: {inst.name} (idx {index})");
