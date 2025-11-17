@@ -1,74 +1,95 @@
 using UnityEngine;
+using System.Collections;
 
-public class SmallZombieLongAttack : MonoBehaviour
+/// <summary>
+/// This script manages the state and speed of the zombie's lunge attack,
+/// behaving similarly to the Player's Roll script.
+/// </summary>
+public class SmallZombieLongAttack : MonoBehaviour, IAttack
 {
-    private float baseSpeed;
-    public float longAttackMaxSpeed = 40f;       // Max speed reached during long attack (C point)
-    private float longAttackDuration;       // How long the long attack lasts (frames)
-    private bool isLongAttacking = false;
+    private bool isAttacking = false;
+    private float attackTimer = 0f;
+    private float attackDuration = 0f;
 
-    private float longAttackTimer = 0f;
+    // Speed variables
+    private float baseSpeed;
+    private float lungeSpeed;
     private float currentSpeed;
 
-    public SmallZombieMovement smallZombieMovement;
-    public Animator animator;
-    public AnimationClip anim;
-
-    private Vector2 direction;
+    // Component references
+    private Enemy enemy;
+    private Animator animator;
 
     void Start()
     {
-        baseSpeed = smallZombieMovement.getSpeed();
+        animator = GetComponent<Animator>();
+        enemy = GetComponent<Enemy>();
 
+        if (animator == null) Debug.LogError("Animator component not found!", this);
+        if (enemy == null || enemy.enemyStats == null)
+        {
+            Debug.LogError("Enemy or EnemyStats not found! Disabling attack script.", this);
+            this.enabled = false;
+            return;
+        }
+
+        // Initialize speeds from stats
+        baseSpeed = enemy.enemyStats.speed;
+        lungeSpeed = enemy.enemyStats.attackLungeSpeed;
         currentSpeed = baseSpeed;
-        longAttackDuration = anim.length;
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (isAttacking)
         {
-            LongAttack();
-        }
+            attackTimer += Time.deltaTime;
 
-        if (isLongAttacking)
-        {
-            longAttackTimer += Time.deltaTime;
+            // Use a decay curve similar to PlayerRoll
+            float t = attackTimer / attackDuration;
+            float decay = Mathf.Pow(1 - t, 2); // Using a simpler squared curve for the lunge
+            currentSpeed = Mathf.Lerp(baseSpeed, lungeSpeed, decay);
 
-            // Normalized time [0, 1]
-            float t = longAttackTimer / longAttackDuration;
-
-            // Normalized time [0, 1]
-
-            // Mathematical curve (matches your graph’s shape):
-            // Starts near max speed and decays faster near the end
-            float decay = Mathf.Pow(1 - t, 3) / (t + 0.01f);
-            currentSpeed = Mathf.Lerp(baseSpeed, longAttackMaxSpeed, decay);
-
-            // Stop rolling when done
-            if (longAttackTimer >= longAttackDuration)
+            // Stop attacking when done
+            if (attackTimer >= attackDuration)
             {
-                isLongAttacking = false;
+                isAttacking = false;
                 currentSpeed = baseSpeed;
             }
         }
-
-        smallZombieMovement.setSpeed(currentSpeed);
-
-        animator.SetBool("isLongAttacking", isLongAttacking);
-    }
-
-    public void LongAttack()
-    {
-        if (!isLongAttacking)
+        
+        if (animator != null)
         {
-            isLongAttacking = true;
-            longAttackTimer = 0f;
+            animator.SetBool("isLongAttacking", isAttacking);
         }
     }
 
-    public bool GetLongAttacking()
+    public void Attack(Transform target) // Target parameter is unused for melee, but required by IAttack
     {
-        return isLongAttacking;
+        if (isAttacking || animator == null) return;
+
+        isAttacking = true;
+        attackTimer = 0f;
+        StartCoroutine(SetAttackDuration());
+    }
+
+    private IEnumerator SetAttackDuration()
+    {
+        yield return null; // Wait a frame for the animator state to update
+        attackDuration = animator.GetCurrentAnimatorStateInfo(0).length;
+        if (attackDuration <= 0) attackDuration = 0.5f; // Fallback
+    }
+
+    public bool IsAttacking()
+    {
+        return isAttacking;
+    }
+
+    /// <summary>
+    /// Called by the AI script every frame to get the correct movement speed.
+    /// </summary>
+    public float GetCurrentSpeed()
+    {
+        return currentSpeed;
     }
 }
