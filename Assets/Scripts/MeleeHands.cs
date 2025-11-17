@@ -57,8 +57,7 @@ public class MeleeHands : MonoBehaviour
 
         if (handsUp)
         {
-            spriteRenderer.sortingOrder = -1;
-            weaponSpriteRenderer.sortingOrder = -2;
+            spriteRenderer.sortingOrder = -5;
 
             spriteRenderer.sprite = handBackSprite;
 
@@ -67,7 +66,6 @@ public class MeleeHands : MonoBehaviour
         if (handsDown)
         {
             spriteRenderer.sortingOrder = 10;
-            weaponSpriteRenderer.sortingOrder = 9;
 
             spriteRenderer.sprite = handFrontSprite;
             handSpriteObject.transform.localPosition = new Vector3(0.15625f + pixelPositions(-4), 0, 0);
@@ -75,8 +73,7 @@ public class MeleeHands : MonoBehaviour
 
         if (handsLeft)
         {
-            spriteRenderer.sortingOrder = -1;
-            weaponSpriteRenderer.sortingOrder = -2;
+            spriteRenderer.sortingOrder = -5;
 
             spriteRenderer.sprite = handBackSprite;
             handSpriteObject.transform.localPosition = new Vector3(0.15625f + pixelPositions(-5), pixelPositions(1), 0);
@@ -84,7 +81,6 @@ public class MeleeHands : MonoBehaviour
         if (handsRight)
         {
             spriteRenderer.sortingOrder = 10;
-            weaponSpriteRenderer.sortingOrder = 9;
 
             spriteRenderer.sprite = handFrontSprite;
             handSpriteObject.transform.localPosition = new Vector3(0.15625f + pixelPositions(0), 0, 0);
