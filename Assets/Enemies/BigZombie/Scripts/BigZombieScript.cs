@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.XR;
 public class BigZombieScript : MonoBehaviour
 {
     private Rigidbody2D rb;
@@ -25,23 +26,7 @@ public class BigZombieScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && !isAttacking)
         {
-            isAttacking = true;
-            animator.SetBool("isAttacking", true);
-            Vector3 pos = transform.position;
-
-            if (animator.GetFloat("lastXVel") < 0)
-            {
-                pos.x -= attackOffsetX; // Slight position adjustment to avoid clipping issues
-                StartCoroutine(WaitAndUpdatePosition(pos));
-            }
-            else if (animator.GetFloat("lastXVel") > 0)
-            {
-                pos.x += attackOffsetX; // Slight position adjustment to avoid clipping issues
-                StartCoroutine(WaitAndUpdatePosition(pos));
-            }
-
-            // wait for 1 frame before updating position
-            
+            HandleAttack();
         }
 
         if (isAttacking)
@@ -50,33 +35,10 @@ public class BigZombieScript : MonoBehaviour
         }
         else
         {
-            // TODO change movement to pathfinding towards player
-            float moveHorizontal = Input.GetAxisRaw("Horizontal");
-            animator.SetFloat("xVel", moveHorizontal);
-
-            float moveVertical = Input.GetAxisRaw("Vertical");
-            animator.SetFloat("yVel", moveVertical);
-
-            if (moveHorizontal != 0 || moveVertical != 0)
-            {
-                animator.SetFloat("lastXVel", moveHorizontal);
-                animator.SetFloat("lastYVel", moveVertical);
-            }
-
-
-            animator.SetFloat("Vel", Math.Abs(moveHorizontal) + Math.Abs(moveVertical));
-
-            Vector2 moveInput = new Vector2(moveHorizontal, moveVertical);
-
-            rb.MovePosition(rb.position + moveInput.normalized * speed * Time.fixedDeltaTime);
+            HandleMovement();
         }
     }
 
-    private IEnumerator WaitAndUpdatePosition(Vector3 pos)
-    {
-        yield return null; // wait for 1 frame
-        transform.position = pos;
-    }
 
     // This method should be called as an animation event at the end of the attack animation.
     public void AttackFinished()
@@ -85,14 +47,61 @@ public class BigZombieScript : MonoBehaviour
         animator.SetBool("isAttacking", false);
         Vector3 pos = transform.position;
         if (animator.GetFloat("lastXVel") < 0)
-            {
-                pos.x += attackOffsetX; // Slight position adjustment to avoid clipping issues
-                StartCoroutine(WaitAndUpdatePosition(pos));
-            }
-            else if (animator.GetFloat("lastXVel") > 0)
-            {
-                pos.x -= attackOffsetX; // Slight position adjustment to avoid clipping issues
-                StartCoroutine(WaitAndUpdatePosition(pos));
-            }
+        {
+            pos.x += attackOffsetX; // Slight position adjustment to avoid clipping issues
+            StartCoroutine(WaitAndUpdatePosition(pos));
+        }
+        else if (animator.GetFloat("lastXVel") > 0)
+        {
+            pos.x -= attackOffsetX; // Slight position adjustment to avoid clipping issues
+            StartCoroutine(WaitAndUpdatePosition(pos));
+        }
+    }
+
+    private IEnumerator WaitAndUpdatePosition(Vector3 pos)
+    {
+        yield return null; // wait for 1 frame
+        transform.position = pos;
+    }
+    
+    private void HandleAttack()
+    {
+        isAttacking = true;
+        animator.SetBool("isAttacking", true);
+        Vector3 pos = transform.position;
+
+        if (animator.GetFloat("lastXVel") < 0)
+        {
+            pos.x -= attackOffsetX; // Slight position adjustment to avoid clipping issues
+            StartCoroutine(WaitAndUpdatePosition(pos));
+        }
+        else if (animator.GetFloat("lastXVel") > 0)
+        {
+            pos.x += attackOffsetX; // Slight position adjustment to avoid clipping issues
+            StartCoroutine(WaitAndUpdatePosition(pos));
+        }
+    }
+
+    private void HandleMovement()
+    {
+        // TODO change movement to pathfinding towards player
+        float moveHorizontal = Input.GetAxisRaw("Horizontal");
+        animator.SetFloat("xVel", moveHorizontal);
+
+        float moveVertical = Input.GetAxisRaw("Vertical");
+        animator.SetFloat("yVel", moveVertical);
+
+        if (moveHorizontal != 0 || moveVertical != 0)
+        {
+            animator.SetFloat("lastXVel", moveHorizontal);
+            animator.SetFloat("lastYVel", moveVertical);
+        }
+
+
+        animator.SetFloat("Vel", Math.Abs(moveHorizontal) + Math.Abs(moveVertical));
+
+        Vector2 moveInput = new Vector2(moveHorizontal, moveVertical);
+
+        rb.MovePosition(rb.position + moveInput.normalized * speed * Time.fixedDeltaTime);
     }
 }
