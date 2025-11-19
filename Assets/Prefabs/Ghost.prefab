@@ -285,7 +285,7 @@ MonoBehaviour:
   nextWaypointDistance: 0.1
   pathUpdateInterval: 0.5
   attackRange: 1.5
-  attackCooldown: 0
+  attackCooldown: 1
 --- !u!1 &7571579008874462646
 GameObject:
   m_ObjectHideFlags: 0

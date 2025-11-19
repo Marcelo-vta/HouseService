@@ -11015,7 +11015,7 @@ GameObject:
   - component: {fileID: 4612794038582402596}
   - component: {fileID: 8158123345861579193}
   - component: {fileID: 4631947817528705709}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Furnitures
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27457,7 +27457,7 @@ GameObject:
   - component: {fileID: 7972262159198876033}
   - component: {fileID: 96666196247367137}
   - component: {fileID: 5087250436551291002}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}

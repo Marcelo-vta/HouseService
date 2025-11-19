@@ -29,7 +29,7 @@ public class RangeEnemyAI : MonoBehaviour
     // Internal state
     private Path path;
     private int currentWaypoint = 0;
-    // private bool reachedEndOfPath = false;
+    private bool reachedEndOfPath = false;
 
     // Component references
     private Seeker seeker;

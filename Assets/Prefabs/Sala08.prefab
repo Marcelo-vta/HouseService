@@ -564,7 +564,7 @@ GameObject:
   - component: {fileID: 1202682619407928235}
   - component: {fileID: 8205103250334740567}
   - component: {fileID: 1438621445819582099}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4448,7 +4448,7 @@ GameObject:
   - component: {fileID: 402287200359719644}
   - component: {fileID: 6142423190607347623}
   - component: {fileID: 4344907195514897669}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Furniture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5125,7 +5125,7 @@ GameObject:
   - component: {fileID: 6632915415151625578}
   - component: {fileID: 4305615116670524655}
   - component: {fileID: 5390725353100857347}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: BookBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
