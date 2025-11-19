@@ -11,22 +11,17 @@ public class Porta : MonoBehaviour
     private GameObject letraE;                   // referência à imagem "letras_20"
     private TransitionManager tm;
 
+    private PlayerStates playerStates;
+
     void Start()
     {
-        tm = FindObjectOfType<TransitionManager>();
-
-        // tenta achar o filho chamado "letras_20"
-        Transform letraT = transform.Find("letras_20");
-        if (letraT != null)
-        {
-            letraE = letraT.gameObject;
-            letraE.SetActive(false); // começa invisível
-        }
+        tm = GameObject.FindGameObjectWithTag("TransitionManager")
+            .GetComponent<TransitionManager>();
     }
 
     void Update()
     {
-        if (jogadorPerto && Input.GetKeyDown(KeyCode.E) && tm != null)
+        if (jogadorPerto && Input.GetKeyDown(KeyCode.E))
         {
             if (tipo == TipoAnchor.Saida)
                 tm.GoForwardRandom();   // vai pra nova sala aleatória
@@ -39,8 +34,10 @@ public class Porta : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            playerStates = other.gameObject.GetComponent<PlayerStates>();
+
             jogadorPerto = true;
-            if (letraE != null) letraE.SetActive(true); // mostra a letra E
+            playerStates.interactibleState = true;
         }
     }
 
@@ -49,7 +46,7 @@ public class Porta : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             jogadorPerto = false;
-            if (letraE != null) letraE.SetActive(false); // esconde a letra E
+            playerStates.interactibleState = false;
         }
     }
 }

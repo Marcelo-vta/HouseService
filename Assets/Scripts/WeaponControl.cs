@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class WeaponControl : MonoBehaviour
@@ -12,27 +13,50 @@ public class WeaponControl : MonoBehaviour
     private Transform activeWeaponTransform;
     private GameObject activeWeapon;
 
-    public PlayerRoll playerRoll;
+    private PlayerStates playerStates;
+
+    private Broom meeleeWeaponScript;
+    private PizzaBox rangedWeaponScript;
+
+    private Transform playerTransform;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         activeWeaponTransform = transform.GetChild(0);
         activeWeapon = activeWeaponTransform.gameObject;
+
+        playerTransform = GetComponentInParent<Transform>();
+        playerStates = transform.parent.GetComponent<PlayerStates>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!playerRoll.GetRolling())
+        if (playerStates.handsUsable)
         {
+            activeWeapon.SetActive(true);
+            
             if (Input.GetMouseButtonDown(0))
             {
-                Weapon activeWeaponScript = activeWeapon.GetComponent<Weapon>();
+                meeleeWeaponScript = activeWeapon.GetComponent<Broom>();
+                rangedWeaponScript = activeWeapon.GetComponent<PizzaBox>();
 
-                activeWeaponScript.Fire(transform);
+                if (meeleeWeaponScript != null)
+                {
+                    meeleeWeaponScript.Fire(playerTransform);
+                }
+
+                if (rangedWeaponScript != null)
+                {
+                    rangedWeaponScript.Fire();
+                }
             }
-
+        }
+        else
+        {
+            activeWeapon.SetActive(false);
         }
     }
     

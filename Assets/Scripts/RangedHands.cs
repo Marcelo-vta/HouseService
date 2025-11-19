@@ -47,8 +47,6 @@ public class RangedHands : MonoBehaviour
 
         handSpriteObject.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
 
-        print(rotationZ);
-
         handsBack = rotationZ > 35 || rotationZ < -145;
         invertWeapon = rotationZ > 35 || rotationZ < -90;
 

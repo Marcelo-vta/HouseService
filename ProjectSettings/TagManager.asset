@@ -6,6 +6,13 @@ TagManager:
   tags:
   - bulletRange
   - enemy
+  - Collectible
+  - UI
+  - TransitionManager
+  - Item
+  - Exit
+  - Entrance
+  - Entance
   layers:
   - Default
   - TransparentFX
@@ -17,7 +24,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Enemies
   - 
   - 
   - 
@@ -40,8 +47,26 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 2336469279
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: BehindPlayer
+    uniqueID: 2280707763
+    locked: 0
+  - name: Player
+    uniqueID: 1548239523
+    locked: 0
+  - name: PlayerFront
+    uniqueID: 3393994703
+    locked: 0
+  - name: Foreground
+    uniqueID: 573494111
+    locked: 0
+  - name: UI
+    uniqueID: 2584155273
     locked: 0
   m_RenderingLayers:
   - Default
