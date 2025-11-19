@@ -12,11 +12,10 @@ public class UIManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            bool pausePanelActive = pausePanel.activeSelf;
-            bool isPaused = !pausePanelActive;
+            bool isPaused = !pausePanel.activeSelf;
 
-            pausePanel.SetActive(!pausePanelActive);
-            jogoRoot.SetActive(pausePanelActive);
+            pausePanel.SetActive(isPaused);
+            //jogoRoot.SetActive(!isPaused);
 
             Time.timeScale = isPaused ? 0f : 1f;
 
@@ -36,7 +35,7 @@ public class UIManager : MonoBehaviour
     public void ResumeGame()
     {
         pausePanel.SetActive(false);
-        jogoRoot.SetActive(true);
+        //jogoRoot.SetActive(true);
         Time.timeScale = 1f;
     }
 }
