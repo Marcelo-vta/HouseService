@@ -2002,7 +2002,8 @@ GameObject:
   - component: {fileID: 5074632846650535149}
   - component: {fileID: 518311178847408909}
   - component: {fileID: 4729414197338310906}
-  m_Layer: 0
+  - component: {fileID: 4665514304659542155}
+  m_Layer: 12
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4021,6 +4022,22 @@ CompositeCollider2D:
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
   m_CompositeGameObject: {fileID: 1426627317540116311}
+--- !u!114 &4665514304659542155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426627317540116311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1640652401420957481
 GameObject:
   m_ObjectHideFlags: 0
@@ -8956,7 +8973,8 @@ GameObject:
   - component: {fileID: 3892495610295195855}
   - component: {fileID: 8005608082939798620}
   - component: {fileID: 6623639266672357507}
-  m_Layer: 0
+  - component: {fileID: 2887578476283179287}
+  m_Layer: 12
   m_Name: Furniture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9545,6 +9563,22 @@ CompositeCollider2D:
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
   m_CompositeGameObject: {fileID: 1668593885583909594}
+--- !u!114 &2887578476283179287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668593885583909594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1716951873856451518
 GameObject:
   m_ObjectHideFlags: 0
@@ -14622,6 +14656,7 @@ GameObject:
   - component: {fileID: 1417818126314933573}
   - component: {fileID: 2743546520592366194}
   - component: {fileID: 3723426854889165162}
+  - component: {fileID: 7528296955440039334}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -19622,6 +19657,22 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
+--- !u!114 &7528296955440039334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2341070808796217414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &2385528874536460075
 GameObject:
   m_ObjectHideFlags: 0
@@ -25194,7 +25245,8 @@ GameObject:
   - component: {fileID: 7170277594602800109}
   - component: {fileID: 7316072648529461001}
   - component: {fileID: 3056401026928921409}
-  m_Layer: 0
+  - component: {fileID: 3743391918222403442}
+  m_Layer: 12
   m_Name: ColumnsBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25581,6 +25633,22 @@ CompositeCollider2D:
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
   m_CompositeGameObject: {fileID: 4767880038016229608}
+--- !u!114 &3743391918222403442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4767880038016229608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &4988152399584092717
 GameObject:
   m_ObjectHideFlags: 0
@@ -26746,9 +26814,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3068745687739272260}
+  - component: {fileID: 6014248447975798639}
   m_Layer: 0
   m_Name: Sala02
-  m_TagString: Untagged
+  m_TagString: NavMesh
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26770,9 +26839,24 @@ Transform:
   - {fileID: 2868047176839974809}
   - {fileID: 1524039063663317537}
   - {fileID: 7981696473423939097}
-  - {fileID: 2953876158672762837}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6014248447975798639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7120097176577069697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70bd44a44cd62c64fbfc1eea95b24880, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Extensions.CollectSources2d
+  m_OverrideByGrid: 0
+  m_UseMeshPrefab: {fileID: 0}
+  m_CompressBounds: 0
+  m_OverrideVector: {x: 1, y: 1, z: 1}
 --- !u!1 &7168939465330929162
 GameObject:
   m_ObjectHideFlags: 0
@@ -31727,6 +31811,7 @@ GameObject:
   - component: {fileID: 6498659239091480655}
   - component: {fileID: 788692436843744074}
   - component: {fileID: 1301605458931540121}
+  - component: {fileID: 5649729080361559465}
   m_Layer: 0
   m_Name: Furniture2
   m_TagString: Untagged
@@ -32718,6 +32803,22 @@ CompositeCollider2D:
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
   m_CompositeGameObject: {fileID: 7529758378616371086}
+--- !u!114 &5649729080361559465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7529758378616371086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &7816129264004106004
 GameObject:
   m_ObjectHideFlags: 0
@@ -33129,68 +33230,6 @@ Transform:
   - {fileID: 8723644912748783806}
   m_Father: {fileID: 3634168814291441517}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1138962790696373626
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 3068745687739272260}
-    m_Modifications:
-    - target: {fileID: 2823807719653718703, guid: d0ed4ba45e7de554aa1680df8962b9ae, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.3952823
-      objectReference: {fileID: 0}
-    - target: {fileID: 2823807719653718703, guid: d0ed4ba45e7de554aa1680df8962b9ae, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.19778013
-      objectReference: {fileID: 0}
-    - target: {fileID: 2823807719653718703, guid: d0ed4ba45e7de554aa1680df8962b9ae, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2823807719653718703, guid: d0ed4ba45e7de554aa1680df8962b9ae, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2823807719653718703, guid: d0ed4ba45e7de554aa1680df8962b9ae, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2823807719653718703, guid: d0ed4ba45e7de554aa1680df8962b9ae, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2823807719653718703, guid: d0ed4ba45e7de554aa1680df8962b9ae, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2823807719653718703, guid: d0ed4ba45e7de554aa1680df8962b9ae, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2823807719653718703, guid: d0ed4ba45e7de554aa1680df8962b9ae, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2823807719653718703, guid: d0ed4ba45e7de554aa1680df8962b9ae, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7333118239270389698, guid: d0ed4ba45e7de554aa1680df8962b9ae, type: 3}
-      propertyPath: m_Name
-      value: Ghost
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d0ed4ba45e7de554aa1680df8962b9ae, type: 3}
---- !u!4 &2953876158672762837 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2823807719653718703, guid: d0ed4ba45e7de554aa1680df8962b9ae, type: 3}
-  m_PrefabInstance: {fileID: 1138962790696373626}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2038534005270787242
 PrefabInstance:
   m_ObjectHideFlags: 0

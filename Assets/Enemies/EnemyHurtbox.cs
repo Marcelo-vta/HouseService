@@ -1,24 +1,16 @@
 using UnityEngine;
 
-/// <summary>
-/// Sits on a child object and acts as a receiver for damage,
-/// passing it to any IDamageable component on its parent.
-/// </summary>
-public class EnemyHurtbox : MonoBehaviour
+public class EnemyHurtbox : MonoBehaviour, IDamageable
 {
-    private IDamageable damageable;
+    [SerializeField] Enemy mainEnemyScript;
 
-    private void Start()
+    // This function is called when the Player's Slash hits this specific collider
+    public void TakeDamage(float damageAmount, float knockbackForce = 0f)
     {
-        damageable = GetComponentInParent<IDamageable>();
-    }
-
-    // This method can be called by player weapons or other damage sources.
-    public void TakeDamage(float damage)
-    {
-        if (damageable != null)
+        if (mainEnemyScript != null)
         {
-            damageable.TakeDamage(damage);
+            // Pass the damage up to the main script on the parent
+            mainEnemyScript.TakeDamage(damageAmount, knockbackForce);
         }
     }
 }

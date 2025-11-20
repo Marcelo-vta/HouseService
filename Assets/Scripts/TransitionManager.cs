@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using Mono.Cecil;
+using NavMeshPlus.Components;
 using Unity.XR.OpenVR;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 
 public class TransitionManager : MonoBehaviour
@@ -262,8 +264,40 @@ public class TransitionManager : MonoBehaviour
         {
             itemSpawner.isTrap = true;
         }
-        
+
         Debug.Log($"TM: Sala criada: {inst.name} (idx {index})");
+
+        // bake navmesh
+        // bake navmesh
+        NavMeshSurface navMeshSurface = null;
+        
+        // 1. Try child "NavMesh"
+        Transform navMeshObj = inst.transform.Find("NavMesh");
+        if (navMeshObj != null) navMeshSurface = navMeshObj.GetComponent<NavMeshSurface>();
+
+        // 2. Try SalasContainer
+        if (navMeshSurface == null && salasContainer != null)
+            navMeshSurface = salasContainer.GetComponent<NavMeshSurface>();
+
+        // 3. Try TransitionManager's object
+        if (navMeshSurface == null)
+            navMeshSurface = GetComponent<NavMeshSurface>();
+
+        // 4. Global search (Scene Root / Any active surface)
+        if (navMeshSurface == null)
+            navMeshSurface = FindObjectOfType<NavMeshSurface>();
+
+        if (navMeshSurface != null)
+        {
+            Debug.Log($"[TM] Rebuilding NavMesh on {navMeshSurface.name}...");
+            navMeshSurface.RemoveData(); // Clear old/prefab data
+            navMeshSurface.BuildNavMesh(); // Build new data
+            Debug.Log($"[TM] NavMesh rebuild complete. Agent Type: {navMeshSurface.agentTypeID}, Bounds: {navMeshSurface.center} / {navMeshSurface.size}");
+        }
+        else
+        {
+            Debug.LogWarning($"[TM] Could not find NavMeshSurface anywhere! Checked: Room Child, SalasContainer, TransitionManager, Global Scene.");
+        }
     }
 
     private IEnumerator CO_TrocarSala(int destinoIndex, bool spawnNaEntrada, bool showTitle, string title, float hold)

@@ -4887,9 +4887,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8688430133617647367}
+  - component: {fileID: 5895408281348919586}
   m_Layer: 0
   m_Name: Sala01
-  m_TagString: Untagged
+  m_TagString: NavMesh
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4911,9 +4912,24 @@ Transform:
   - {fileID: 1137011878781055099}
   - {fileID: 504503160954046590}
   - {fileID: 6733768088268510132}
-  - {fileID: 5515039703433779765}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5895408281348919586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409127851728623074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70bd44a44cd62c64fbfc1eea95b24880, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Extensions.CollectSources2d
+  m_OverrideByGrid: 0
+  m_UseMeshPrefab: {fileID: 0}
+  m_CompressBounds: 0
+  m_OverrideVector: {x: 1, y: 1, z: 1}
 --- !u!1 &2177140738289455655
 GameObject:
   m_ObjectHideFlags: 0
@@ -30439,6 +30455,7 @@ GameObject:
   - component: {fileID: 45284190871104905}
   - component: {fileID: 7457068880404262561}
   - component: {fileID: 3870628791969964858}
+  - component: {fileID: 4735303629192223000}
   m_Layer: 0
   m_Name: Columns
   m_TagString: Untagged
@@ -30686,6 +30703,22 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
+--- !u!114 &4735303629192223000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5183041763960760895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &5220892293193963496
 GameObject:
   m_ObjectHideFlags: 0
@@ -30784,7 +30817,8 @@ GameObject:
   - component: {fileID: 7639472326751777607}
   - component: {fileID: 2727651344889190994}
   - component: {fileID: 551770865440517716}
-  m_Layer: 0
+  - component: {fileID: 5633228409812317696}
+  m_Layer: 12
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32603,6 +32637,22 @@ CompositeCollider2D:
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
   m_CompositeGameObject: {fileID: 5608897702323997956}
+--- !u!114 &5633228409812317696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5608897702323997956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &5651687191318581852
 GameObject:
   m_ObjectHideFlags: 0
@@ -33069,6 +33119,7 @@ GameObject:
   - component: {fileID: 2611134388995578233}
   - component: {fileID: 1680946935033107808}
   - component: {fileID: 1510228309990167507}
+  - component: {fileID: 3804795252444522171}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -36631,6 +36682,22 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
+--- !u!114 &3804795252444522171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5680623360503209307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &5804388820276533122
 GameObject:
   m_ObjectHideFlags: 0
@@ -49100,7 +49167,8 @@ GameObject:
   - component: {fileID: 8935605925650445245}
   - component: {fileID: 7705735579405705655}
   - component: {fileID: 3950104531273745048}
-  m_Layer: 0
+  - component: {fileID: 7157076627580726288}
+  m_Layer: 12
   m_Name: Furnitures
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50572,6 +50640,22 @@ CompositeCollider2D:
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
   m_CompositeGameObject: {fileID: 8871221608672082025}
+--- !u!114 &7157076627580726288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8871221608672082025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &9023141304937046033
 GameObject:
   m_ObjectHideFlags: 0
@@ -50736,68 +50820,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1657316694033632400, guid: 8796d74b117c7094f8687df8b9555d48, type: 3}
   m_PrefabInstance: {fileID: 1296933558380217582}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &5730643437006668121
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 8688430133617647367}
-    m_Modifications:
-    - target: {fileID: 220129598320171884, guid: 65cd808003f25e549a65e46682db2e5c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -8.34
-      objectReference: {fileID: 0}
-    - target: {fileID: 220129598320171884, guid: 65cd808003f25e549a65e46682db2e5c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 24.63
-      objectReference: {fileID: 0}
-    - target: {fileID: 220129598320171884, guid: 65cd808003f25e549a65e46682db2e5c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 220129598320171884, guid: 65cd808003f25e549a65e46682db2e5c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 220129598320171884, guid: 65cd808003f25e549a65e46682db2e5c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 220129598320171884, guid: 65cd808003f25e549a65e46682db2e5c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 220129598320171884, guid: 65cd808003f25e549a65e46682db2e5c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 220129598320171884, guid: 65cd808003f25e549a65e46682db2e5c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 220129598320171884, guid: 65cd808003f25e549a65e46682db2e5c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 220129598320171884, guid: 65cd808003f25e549a65e46682db2e5c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5787165749693009800, guid: 65cd808003f25e549a65e46682db2e5c, type: 3}
-      propertyPath: m_Name
-      value: SmallZombie
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 65cd808003f25e549a65e46682db2e5c, type: 3}
---- !u!4 &5515039703433779765 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 220129598320171884, guid: 65cd808003f25e549a65e46682db2e5c, type: 3}
-  m_PrefabInstance: {fileID: 5730643437006668121}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5915444103319017335
 PrefabInstance:

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2051110122702401581}
   - component: {fileID: 3142018539107232713}
   - component: {fileID: 8174202613841198316}
+  - component: {fileID: 6122110293188534675}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -4331,6 +4332,22 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
+--- !u!114 &6122110293188534675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294892063743248090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1080847253447663916
 GameObject:
   m_ObjectHideFlags: 0
@@ -6849,7 +6866,8 @@ GameObject:
   - component: {fileID: 734792142135852121}
   - component: {fileID: 2780542789513685583}
   - component: {fileID: 9051216339042302224}
-  m_Layer: 0
+  - component: {fileID: 6125842296183122967}
+  m_Layer: 12
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8801,6 +8819,22 @@ CompositeCollider2D:
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
   m_CompositeGameObject: {fileID: 1458672972566797524}
+--- !u!114 &6125842296183122967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458672972566797524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &2552368109829932915
 GameObject:
   m_ObjectHideFlags: 0
@@ -18489,7 +18523,8 @@ GameObject:
   - component: {fileID: 6356973280280547009}
   - component: {fileID: 1626215554526778427}
   - component: {fileID: 6584273545079433164}
-  m_Layer: 0
+  - component: {fileID: 8010775611767881534}
+  m_Layer: 12
   m_Name: Furnitures
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19314,6 +19349,22 @@ CompositeCollider2D:
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
   m_CompositeGameObject: {fileID: 3791097120753038046}
+--- !u!114 &8010775611767881534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3791097120753038046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &5093098458379067528
 GameObject:
   m_ObjectHideFlags: 0
@@ -19325,7 +19376,7 @@ GameObject:
   - component: {fileID: 8678159457801197211}
   m_Layer: 0
   m_Name: Sala04
-  m_TagString: Untagged
+  m_TagString: NavMesh
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19363,7 +19414,8 @@ GameObject:
   - component: {fileID: 5290245522840320561}
   - component: {fileID: 1420422753661254936}
   - component: {fileID: 7131538038291038355}
-  m_Layer: 0
+  - component: {fileID: 7683321760332297293}
+  m_Layer: 12
   m_Name: BookBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19752,6 +19804,22 @@ CompositeCollider2D:
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
   m_CompositeGameObject: {fileID: 5178932549235950088}
+--- !u!114 &7683321760332297293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5178932549235950088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &6293880712901484759
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8863778350310242584}
   - component: {fileID: 1991827738452972379}
   - component: {fileID: 870040554765953829}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Hurtbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,7 +157,7 @@ GameObject:
   - component: {fileID: 4703552028003855088}
   - component: {fileID: 6586934268895654265}
   - component: {fileID: 8869756709589498435}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Particle System (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4991,7 +4991,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2412091621558254300}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5023,7 +5023,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6967372469941823980}
   - component: {fileID: 6947172020194971662}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Weapons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5078,7 +5078,7 @@ GameObject:
   - component: {fileID: 1169933043898245312}
   - component: {fileID: 3094344905431287995}
   - component: {fileID: 8607958418164281181}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CleaningGuy
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -5255,7 +5255,7 @@ GameObject:
   - component: {fileID: 7303741255646007672}
   - component: {fileID: 7688126536060377809}
   - component: {fileID: 7436644467246004146}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5383,7 +5383,7 @@ GameObject:
   - component: {fileID: 1908649808376637901}
   - component: {fileID: 3561830050204911000}
   - component: {fileID: 5859201918388399295}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10221,7 +10221,7 @@ GameObject:
   - component: {fileID: 3310334244696212463}
   - component: {fileID: 221235939617757946}
   - component: {fileID: 1221880174926018241}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -10384,7 +10384,7 @@ GameObject:
   m_Component:
   - component: {fileID: 404060789931953072}
   - component: {fileID: 7720320781667659621}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: bulletRange
   m_TagString: bulletRange
   m_Icon: {fileID: 0}
@@ -10452,7 +10452,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3822851718108678405}
   - component: {fileID: 6641997367978945995}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10545,6 +10545,10 @@ PrefabInstance:
       value: ShortcutSuggestion
       objectReference: {fileID: 0}
     - target: {fileID: 1163064256071116436, guid: f9e40d65945304342a9551b77240a9fd, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1163064256071116436, guid: f9e40d65945304342a9551b77240a9fd, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -10606,6 +10610,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2404619834082641610}
     m_Modifications:
+    - target: {fileID: 225125318134143379, guid: 4bffd443f418d42a69af3c3cc7a88bf0, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1802330528524480803, guid: 4bffd443f418d42a69af3c3cc7a88bf0, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940745696593132464, guid: 4bffd443f418d42a69af3c3cc7a88bf0, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 4967906344746934175, guid: 4bffd443f418d42a69af3c3cc7a88bf0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.185
@@ -10651,6 +10667,10 @@ PrefabInstance:
       value: ItemReceived
       objectReference: {fileID: 0}
     - target: {fileID: 6569122553724284799, guid: 4bffd443f418d42a69af3c3cc7a88bf0, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6569122553724284799, guid: 4bffd443f418d42a69af3c3cc7a88bf0, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -10665,6 +10685,14 @@ PrefabInstance:
     - target: {fileID: 7557156669614267120, guid: 4bffd443f418d42a69af3c3cc7a88bf0, type: 3}
       propertyPath: itemName
       value: mop
+      objectReference: {fileID: 0}
+    - target: {fileID: 8008932148562422339, guid: 4bffd443f418d42a69af3c3cc7a88bf0, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 9075979298412724034, guid: 4bffd443f418d42a69af3c3cc7a88bf0, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10689,10 +10717,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6967372469941823980}
     m_Modifications:
+    - target: {fileID: 19835717698020985, guid: ef27b7f3cf78a4509849963026eec538, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1067027632668149957, guid: ef27b7f3cf78a4509849963026eec538, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 5306162704510871105, guid: ef27b7f3cf78a4509849963026eec538, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 535543905, guid: 5ae79875587a62548ae1393b1da33a4c, type: 3}
+    - target: {fileID: 5425772725312540286, guid: ef27b7f3cf78a4509849963026eec538, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 5472743688138562693, guid: ef27b7f3cf78a4509849963026eec538, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.0029
@@ -10733,9 +10773,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5556371840092933018, guid: ef27b7f3cf78a4509849963026eec538, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6249362979810207044, guid: ef27b7f3cf78a4509849963026eec538, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 6893710554069578435, guid: ef27b7f3cf78a4509849963026eec538, type: 3}
       propertyPath: m_Name
       value: Broom
+      objectReference: {fileID: 0}
+    - target: {fileID: 6893710554069578435, guid: ef27b7f3cf78a4509849963026eec538, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

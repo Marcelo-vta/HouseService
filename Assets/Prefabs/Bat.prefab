@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6483324215315850033}
-  - component: {fileID: 1335718044432135427}
   - component: {fileID: 1492786727912118098}
+  - component: {fileID: 3384746303749218470}
   m_Layer: 10
   m_Name: Hurtbox
   m_TagString: Untagged
@@ -33,18 +33,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6366563059975355216}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1335718044432135427
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2023209073301492316}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd2ec9e90967b6c4f82ce2300fde00e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyHurtbox
 --- !u!70 &1492786727912118098
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -82,6 +70,19 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.2, y: 0.8}
   m_Direction: 1
+--- !u!114 &3384746303749218470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2023209073301492316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd2ec9e90967b6c4f82ce2300fde00e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyHurtbox
+  mainEnemyScript: {fileID: 4269292936110017437}
 --- !u!1 &2587815118087972523
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,11 +185,8 @@ GameObject:
   - component: {fileID: 5545242525739793146}
   - component: {fileID: 8129171384413734396}
   - component: {fileID: 2817236582066483277}
-  - component: {fileID: 5663333429035135029}
-  - component: {fileID: 7165069681125894225}
-  - component: {fileID: 2442345077780190649}
-  - component: {fileID: 7274380924052064903}
-  - component: {fileID: 4430862246741537143}
+  - component: {fileID: 4269292936110017437}
+  - component: {fileID: 2684641549194403899}
   m_Layer: 10
   m_Name: Bat
   m_TagString: enemy
@@ -205,7 +203,7 @@ Transform:
   m_GameObject: {fileID: 3035261072174279573}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.5, y: 0.58, z: 0}
+  m_LocalPosition: {x: -43.218, y: -6.196, z: 0}
   m_LocalScale: {x: 0.99293, y: 0.99293, z: 0.99293}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -274,8 +272,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.2, y: 0.8}
+  m_Offset: {x: 0, y: 0.04}
+  m_Size: {x: 0.2, y: 0.1}
   m_Direction: 1
 --- !u!95 &2817236582066483277
 Animator:
@@ -299,7 +297,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5663333429035135029
+--- !u!114 &4269292936110017437
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -308,96 +306,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 3035261072174279573}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6032e34bc69cdd04ea4d49991baa8b4d, type: 3}
+  m_Script: {fileID: 11500000, guid: 385fd6d578c9b3b4a814ebda8da2e207, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BatAttack
-  projectilePrefab: {fileID: 2008797473085056215, guid: f4eb660324d12ed49952b2c1348de6ff, type: 3}
-  firePoint: {fileID: 0}
-  attackStateName: Attack
---- !u!114 &7165069681125894225
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3035261072174279573}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c709683830e5324b957d52ecff3ae11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  enemyStats: {fileID: 11400000, guid: 608d0e0faf8f127428388cbd7e1e61ca, type: 2}
---- !u!114 &2442345077780190649
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3035261072174279573}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: AstarPathfindingProject::Pathfinding.Seeker
-  version: 1
-  drawGizmos: 1
-  detailedGizmos: 0
-  startEndModifier:
-    addPoints: 0
-    exactStartPoint: 3
-    exactEndPoint: 3
-    useRaycasting: 0
-    mask:
-      serializedVersion: 2
-      m_Bits: 4294967295
-    useGraphRaycasting: 0
-  traversableTags: -1
-  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  graphMask:
-    value: -1
---- !u!114 &7274380924052064903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3035261072174279573}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e44ce75333ab714fbaedb2174abfd65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RangeEnemyAI
+  m_EditorClassIdentifier: Assembly-CSharp::RangedEnemy
+  stats: {fileID: 11400000, guid: 608d0e0faf8f127428388cbd7e1e61ca, type: 2}
+  flashMaterial: {fileID: 2100000, guid: 1d2e4cc1f7274bb4bb125370ce6be22e, type: 2}
+  flashDuration: 0.1
   target: {fileID: 0}
-  nextWaypointDistance: 0.1
-  pathUpdateInterval: 0.5
-  idealRange: 7
-  tooCloseRange: 4
-  attackCooldown: 0
---- !u!114 &4430862246741537143
-MonoBehaviour:
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 4096
+--- !u!195 &2684641549194403899
+NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3035261072174279573}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: AstarPathfindingProject::Pathfinding.Seeker
-  version: 1
-  drawGizmos: 1
-  detailedGizmos: 0
-  startEndModifier:
-    addPoints: 0
-    exactStartPoint: 3
-    exactEndPoint: 3
-    useRaycasting: 0
-    mask:
-      serializedVersion: 2
-      m_Bits: 4294967295
-    useGraphRaycasting: 0
-  traversableTags: -1
-  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  graphMask:
-    value: -1
+  m_AgentTypeID: 0
+  m_Radius: 0.1
+  m_Speed: 1
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.1
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
