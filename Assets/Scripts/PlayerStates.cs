@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerStates : MonoBehaviour
 {
     public float health;
+    public int max_health;
     public float insanity;
     private float accuracy;
 

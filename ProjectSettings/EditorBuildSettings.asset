@@ -8,6 +8,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/AulaVisual/Scenes/New.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/bulhos/Bufaradaiadasqueradera.unity
+    guid: 3ddb51c30a9f1164595e578d6531227c
+  - enabled: 1
+    path: Assets/Scenes/bulhos/FillerMain.unity
+    guid: 7c901ab0434da3a4d9cafb8e968f743a
+  - enabled: 1
+    path: Assets/Scenes/bulhos/OptionsBulhos.unity
+    guid: 41787a127907b1148978f08b34c16146
+  - enabled: 1
+    path: Assets/Scenes/bulhos/CreditsBulhos.unity
+    guid: 8c01dcbb8437ee947b9041ed2a81f191
+  - enabled: 0
+    path: Assets/Scenes/bulhos/Pause.unity
+    guid: 16508a713cbfd774d878c5ea296550c0
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
