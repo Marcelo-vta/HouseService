@@ -1,19 +1,28 @@
 fileFormatVersion: 2
-guid: cfaa2c2d17360294db30dea285a01877
+guid: b237b99d4ddbf42bf8deed702fcba3b2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1745069172293811696
-    second: vamp-idle_0
+      213: -3582916166963785052
+    second: hurt_0
   - first:
-      213: -8856684109336137514
-    second: vamp-idle_1
+      213: 1642290761556927327
+    second: hurt_1
   - first:
-      213: -8698997338052720371
-    second: vamp-idle_2
+      213: 6819390902422994280
+    second: hurt_2
   - first:
-      213: 6954687659055815315
-    second: vamp-idle_3
+      213: 6079887152930431857
+    second: hurt_3
+  - first:
+      213: 6351682349791027127
+    second: hurt_4
+  - first:
+      213: 2988431609061880149
+    second: hurt_5
+  - first:
+      213: -856480874173875929
+    second: hurt_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +55,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -60,7 +69,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -84,7 +93,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -135,89 +144,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: vamp-idle_0
+      name: hurt_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 6
-        width: 26
-        height: 26
+        x: 0
+        y: 0
+        width: 57
+        height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0fdbe0b9a2bb73810800000000000000
-      internalID: 1745069172293811696
+      spriteID: 4a29e10babce64ec0800000000000000
+      internalID: -3582916166963785052
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vamp-idle_1
+      name: hurt_1
       rect:
         serializedVersion: 2
-        x: 66
-        y: 7
-        width: 37
-        height: 23
+        x: 57
+        y: 0
+        width: 57
+        height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6d03c2f2abcb61580800000000000000
-      internalID: -8856684109336137514
+      spriteID: f53a1841fb69ac610800000000000000
+      internalID: 1642290761556927327
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vamp-idle_2
+      name: hurt_2
       rect:
         serializedVersion: 2
-        x: 119
-        y: 4
-        width: 42
-        height: 27
+        x: 114
+        y: 0
+        width: 57
+        height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d098c43a204f64780800000000000000
-      internalID: -8698997338052720371
+      spriteID: 86df37325e753ae50800000000000000
+      internalID: 6819390902422994280
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vamp-idle_3
+      name: hurt_3
       rect:
         serializedVersion: 2
-        x: 177
-        y: 7
-        width: 41
-        height: 24
+        x: 171
+        y: 0
+        width: 57
+        height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 39a90d11493048060800000000000000
-      internalID: 6954687659055815315
+      spriteID: 17321e82729106450800000000000000
+      internalID: 6079887152930431857
       vertices: []
       indices: 
       edges: []
@@ -226,7 +235,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: c02de3f851e204c83b609927a924ec34
     internalID: 0
     vertices: []
     indices: 
@@ -234,12 +243,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":57.0,"y":34.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      vamp-idle_0: 1745069172293811696
-      vamp-idle_1: -8856684109336137514
-      vamp-idle_2: -8698997338052720371
-      vamp-idle_3: 6954687659055815315
+      hurt_0: -3582916166963785052
+      hurt_1: 1642290761556927327
+      hurt_2: 6819390902422994280
+      hurt_3: 6079887152930431857
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

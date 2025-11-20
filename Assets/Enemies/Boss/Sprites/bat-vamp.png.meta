@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 53be47a98bcbffe40bae7e2d1f6bf8d1
+guid: 7485ee713914f4f7ba408b289c31db67
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -14,18 +14,6 @@ TextureImporter:
   - first:
       213: -645228029410735545
     second: bat-vamp_3
-  - first:
-      213: 8118761687953345062
-    second: bat-vamp_4
-  - first:
-      213: 5936407124469924414
-    second: bat-vamp_5
-  - first:
-      213: 7465244580197398217
-    second: bat-vamp_6
-  - first:
-      213: 7451568382744339220
-    second: bat-vamp_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -58,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -72,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -96,7 +84,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -150,12 +138,12 @@ TextureImporter:
       name: bat-vamp_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 6
-        width: 39
-        height: 27
+        x: 0
+        y: 0
+        width: 57
+        height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -172,12 +160,12 @@ TextureImporter:
       name: bat-vamp_1
       rect:
         serializedVersion: 2
-        x: 39
-        y: 13
-        width: 18
-        height: 9
+        x: 57
+        y: 0
+        width: 57
+        height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -194,12 +182,12 @@ TextureImporter:
       name: bat-vamp_2
       rect:
         serializedVersion: 2
-        x: 56
-        y: 6
-        width: 49
-        height: 27
+        x: 114
+        y: 0
+        width: 57
+        height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -216,12 +204,12 @@ TextureImporter:
       name: bat-vamp_3
       rect:
         serializedVersion: 2
-        x: 113
-        y: 6
-        width: 44
-        height: 27
+        x: 171
+        y: 0
+        width: 57
+        height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -238,20 +226,20 @@ TextureImporter:
       name: bat-vamp_4
       rect:
         serializedVersion: 2
-        x: 182
-        y: 6
-        width: 25
-        height: 12
+        x: 285
+        y: 0
+        width: 57
+        height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 62a828a7db2aba070800000000000000
-      internalID: 8118761687953345062
+      spriteID: aaf9ac619bf584a049d9f5396fde7cea
+      internalID: 798315193
       vertices: []
       indices: 
       edges: []
@@ -260,64 +248,20 @@ TextureImporter:
       name: bat-vamp_5
       rect:
         serializedVersion: 2
-        x: 186
-        y: 10
-        width: 128
-        height: 15
+        x: 342
+        y: 0
+        width: 57
+        height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e32c028c3da526250800000000000000
-      internalID: 5936407124469924414
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bat-vamp_6
-      rect:
-        serializedVersion: 2
-        x: 420
-        y: 6
-        width: 78
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9c67314a460e99760800000000000000
-      internalID: 7465244580197398217
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bat-vamp_7
-      rect:
-        serializedVersion: 2
-        x: 527
-        y: 8
-        width: 25
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4132209c6f9496760800000000000000
-      internalID: 7451568382744339220
+      spriteID: a1e8d857d533a4e65be3db59f29e1ddd
+      internalID: 1834805841
       vertices: []
       indices: 
       edges: []
@@ -326,7 +270,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b7e5cf295037e41179543e53a1abd10f
     internalID: 0
     vertices: []
     indices: 
@@ -334,16 +278,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":57.0,"y":34.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       bat-vamp_0: -1951441015772227195
       bat-vamp_1: 5829523994433228854
       bat-vamp_2: -6698205149286893722
       bat-vamp_3: -645228029410735545
-      bat-vamp_4: 8118761687953345062
-      bat-vamp_5: 5936407124469924414
-      bat-vamp_6: 7465244580197398217
-      bat-vamp_7: 7451568382744339220
+      bat-vamp_4: 798315193
+      bat-vamp_5: 1834805841
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

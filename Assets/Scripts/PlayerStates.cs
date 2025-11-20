@@ -25,6 +25,9 @@ public class PlayerStates : MonoBehaviour
     public bool ableToRoll;
     public bool ableToRotate;
 
+    public bool ivulnerability;
+    public bool damageable;
+
     public List<string> powerUps;
 
     private Animator playerAnimator;
@@ -40,10 +43,11 @@ public class PlayerStates : MonoBehaviour
         ableToWalk = !( rollingState || interactingState || obtainingState || deathState || scaredState );
         ableToRoll = !( obtainingState || interactingState || deathState || hurtState || rollingState || scaredState ) && walkingState;
         ableToRotate = !( obtainingState || interactingState || deathState || hurtState || rollingState  || scaredState );
+        damageable = !( obtainingState || deathState || hurtState || scaredState || ivulnerability);
+
 
         playerAnimator.SetBool("interacting", interactingState);
         playerAnimator.SetBool("obtaining", obtainingState);
-        playerAnimator.SetBool("hurt", hurtState);
         playerAnimator.SetBool("scared", scaredState);
 
         SetInteractible();

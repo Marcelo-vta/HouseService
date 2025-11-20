@@ -1,31 +1,19 @@
 fileFormatVersion: 2
-guid: c90cbaffd5374a243a32f7a2eabe659e
+guid: 448db6f6b69b84578b9ec4d92493df0b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2424553518018739129
-    second: boss_0
+      213: 7969247837023311587
+    second: bat-idle_0
   - first:
-      213: -3588229512158965765
-    second: boss_1
+      213: -4638060084448245837
+    second: bat-idle_1
   - first:
-      213: -6963195877183015321
-    second: boss_2
+      213: -8275247464885573976
+    second: bat-idle_2
   - first:
-      213: 7801903984715115176
-    second: boss_3
-  - first:
-      213: -5888845342232556802
-    second: boss_4
-  - first:
-      213: -7366506907712603825
-    second: boss_5
-  - first:
-      213: 5981802871748074552
-    second: boss_6
-  - first:
-      213: -8797041637764437337
-    second: boss_7
+      213: -8635876207417482363
+    second: bat-idle_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -147,7 +135,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Idle_0
+      name: bat-idle_0
       rect:
         serializedVersion: 2
         x: 0
@@ -160,16 +148,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 9d74e6dbcdcf745feae0bc599ce5c60e
-      internalID: 2072663782
+      spriteID: 3e613d45fa4789e60800000000000000
+      internalID: 7969247837023311587
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_1
+      name: bat-idle_1
       rect:
         serializedVersion: 2
         x: 57
@@ -182,16 +170,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: c1892290f7a75429da0984e3f439823a
-      internalID: -1475276963
+      spriteID: 3b74b8b3dec42afb0800000000000000
+      internalID: -4638060084448245837
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_2
+      name: bat-idle_2
       rect:
         serializedVersion: 2
         x: 114
@@ -204,16 +192,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 1b131a3fbfcc44d89ae40df4f4ec4395
-      internalID: -1303414284
+      spriteID: 8a62b0b564a682d80800000000000000
+      internalID: -8275247464885573976
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_3
+      name: bat-idle_3
       rect:
         serializedVersion: 2
         x: 171
@@ -226,98 +214,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: e563834ee17d040d891fd2e09c5c5e67
-      internalID: -1995023831
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Idle_4
-      rect:
-        serializedVersion: 2
-        x: 228
-        y: 0
-        width: 57
-        height: 34
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0f321a30e658b4a6aa64806be9b50a49
-      internalID: -471515166
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Idle_5
-      rect:
-        serializedVersion: 2
-        x: 285
-        y: 0
-        width: 57
-        height: 34
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: faa22216107614b239b7431fc9c8d988
-      internalID: 1860392009
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Idle_6
-      rect:
-        serializedVersion: 2
-        x: 342
-        y: 0
-        width: 57
-        height: 34
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b0d66744b663540f5bc86d920fdb080f
-      internalID: -1789483683
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Idle_7
-      rect:
-        serializedVersion: 2
-        x: 399
-        y: 0
-        width: 57
-        height: 34
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: faf000150a2aa4937aae59662b0421b1
-      internalID: 25693554
+      spriteID: 58322ac1854372880800000000000000
+      internalID: -8635876207417482363
       vertices: []
       indices: 
       edges: []
@@ -326,7 +226,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 18797ee0c96de413ba75c648454bab35
+    spriteID: e07a43321031c4061be1d50d0c133cfe
     internalID: 0
     vertices: []
     indices: 
@@ -338,14 +238,10 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":57.0,"y":34.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Idle_0: 2072663782
-      Idle_1: -1475276963
-      Idle_2: -1303414284
-      Idle_3: -1995023831
-      Idle_4: -471515166
-      Idle_5: 1860392009
-      Idle_6: -1789483683
-      Idle_7: 25693554
+      bat-idle_0: 7969247837023311587
+      bat-idle_1: -4638060084448245837
+      bat-idle_2: -8275247464885573976
+      bat-idle_3: -8635876207417482363
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

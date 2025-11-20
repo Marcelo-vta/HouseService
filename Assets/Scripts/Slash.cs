@@ -96,8 +96,10 @@ public class Slash : MonoBehaviour
         // Debug.Log($"[Projectile] Hit: {collision.gameObject.name} | Layer: {LayerMask.LayerToName(collision.gameObject.layer)}");
         IDamageable damageable = collision.GetComponent<IDamageable>();
 
+
         if (damageable != null && !collision.CompareTag("Player") && !hitTargets.Contains(damageable))
         {
+            print("hit!");
             // PASS THE KNOCKBACK HERE
             damageable.TakeDamage(damage, knockback); 
             

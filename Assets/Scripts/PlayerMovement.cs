@@ -55,6 +55,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 spriteAnimator.SetFloat("last_speed_X", movementBase.x);
             }
+            
             if (movementBase.y != 0)
             {
                 spriteAnimator.SetFloat("last_speed_Y", movementBase.y);

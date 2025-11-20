@@ -1,7 +1,8 @@
+using System.Collections;
 using System.Linq;
 using UnityEngine;
 
-public class PlayerActions : MonoBehaviour
+public class PlayerActions : MonoBehaviour, IDamageable
 {
     private PlayerStates playerStates;
 
@@ -10,13 +11,17 @@ public class PlayerActions : MonoBehaviour
 
     private bool scare;
     private string obtainedItemName;
+    private bool dead = false;
 
     private GameObject itemReceived;
+    private Animator animator;
 
     void Start()
     {
         playerStates = GetComponent<PlayerStates>();
         itemReceived = GameObject.FindGameObjectWithTag("Item");
+        
+        animator = playerStates.gameObject.GetComponentInChildren<Animator>();
     }
 
     void Update()
@@ -68,4 +73,32 @@ public class PlayerActions : MonoBehaviour
 
         scaredTime.Restart();
     }
+
+    public void TakeDamage(float damageAmount, float knockbackForce = 0f)
+    {
+        if (playerStates.damageable)
+        {
+            playerStates.health -= damageAmount;
+            playerStates.hurtState = true;
+            animator.SetTrigger("hurt");
+
+            StartCoroutine(HurtCoroutine());
+        }
+
+
+    }
+
+    IEnumerator HurtCoroutine()
+    {  
+        playerStates.ivulnerability = true;
+        yield return new WaitForSeconds(.8f);
+
+        playerStates.hurtState = false;
+        
+        yield return new WaitForSeconds(1);
+        playerStates.ivulnerability = false;
+    }
+
+
+
 }

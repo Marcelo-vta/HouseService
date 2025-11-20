@@ -1,31 +1,31 @@
 fileFormatVersion: 2
-guid: c90cbaffd5374a243a32f7a2eabe659e
+guid: 53be47a98bcbffe40bae7e2d1f6bf8d1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2424553518018739129
-    second: boss_0
+      213: -1951441015772227195
+    second: bat-vamp_0
   - first:
-      213: -3588229512158965765
-    second: boss_1
+      213: 5829523994433228854
+    second: bat-vamp_1
   - first:
-      213: -6963195877183015321
-    second: boss_2
+      213: -6698205149286893722
+    second: bat-vamp_2
   - first:
-      213: 7801903984715115176
-    second: boss_3
+      213: -645228029410735545
+    second: bat-vamp_3
   - first:
-      213: -5888845342232556802
-    second: boss_4
+      213: 8118761687953345062
+    second: bat-vamp_4
   - first:
-      213: -7366506907712603825
-    second: boss_5
+      213: 5936407124469924414
+    second: bat-vamp_5
   - first:
-      213: 5981802871748074552
-    second: boss_6
+      213: 7465244580197398217
+    second: bat-vamp_6
   - first:
-      213: -8797041637764437337
-    second: boss_7
+      213: 7451568382744339220
+    second: bat-vamp_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -147,7 +147,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Idle_0
+      name: bat-vamp_0
       rect:
         serializedVersion: 2
         x: 0
@@ -160,16 +160,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 9d74e6dbcdcf745feae0bc599ce5c60e
-      internalID: 2072663782
+      spriteID: 589d4ce3cb61be4e0800000000000000
+      internalID: -1951441015772227195
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_1
+      name: bat-vamp_1
       rect:
         serializedVersion: 2
         x: 57
@@ -182,16 +182,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: c1892290f7a75429da0984e3f439823a
-      internalID: -1475276963
+      spriteID: 6301fc1df21a6e050800000000000000
+      internalID: 5829523994433228854
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_2
+      name: bat-vamp_2
       rect:
         serializedVersion: 2
         x: 114
@@ -204,16 +204,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 1b131a3fbfcc44d89ae40df4f4ec4395
-      internalID: -1303414284
+      spriteID: 667ff04c7e13b03a0800000000000000
+      internalID: -6698205149286893722
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_3
+      name: bat-vamp_3
       rect:
         serializedVersion: 2
         x: 171
@@ -226,16 +226,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: e563834ee17d040d891fd2e09c5c5e67
-      internalID: -1995023831
+      spriteID: 74a09db9680bb07f0800000000000000
+      internalID: -645228029410735545
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_4
+      name: bat-vamp_4
       rect:
         serializedVersion: 2
         x: 228
@@ -248,16 +248,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 0f321a30e658b4a6aa64806be9b50a49
-      internalID: -471515166
+      spriteID: 62a828a7db2aba070800000000000000
+      internalID: 8118761687953345062
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_5
+      name: bat-vamp_5
       rect:
         serializedVersion: 2
         x: 285
@@ -270,38 +270,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: faa22216107614b239b7431fc9c8d988
-      internalID: 1860392009
+      spriteID: e32c028c3da526250800000000000000
+      internalID: 5936407124469924414
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_6
-      rect:
-        serializedVersion: 2
-        x: 342
-        y: 0
-        width: 57
-        height: 34
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b0d66744b663540f5bc86d920fdb080f
-      internalID: -1789483683
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Idle_7
+      name: bat-vamp_6
       rect:
         serializedVersion: 2
         x: 399
@@ -314,10 +292,54 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c67314a460e99760800000000000000
+      internalID: 7465244580197398217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bat-vamp_7
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 0
+        width: 57
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4132209c6f9496760800000000000000
+      internalID: 7451568382744339220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bat-vamp_8
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 0
+        width: 57
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: faf000150a2aa4937aae59662b0421b1
-      internalID: 25693554
+      spriteID: f7a433b77a46b474489e5b5ba769989b
+      internalID: 1261317306
       vertices: []
       indices: 
       edges: []
@@ -326,7 +348,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 18797ee0c96de413ba75c648454bab35
+    spriteID: a151a6d31990648ecbe1c4cca3ca658f
     internalID: 0
     vertices: []
     indices: 
@@ -338,14 +360,15 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":57.0,"y":34.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Idle_0: 2072663782
-      Idle_1: -1475276963
-      Idle_2: -1303414284
-      Idle_3: -1995023831
-      Idle_4: -471515166
-      Idle_5: 1860392009
-      Idle_6: -1789483683
-      Idle_7: 25693554
+      bat-vamp_0: -1951441015772227195
+      bat-vamp_1: 5829523994433228854
+      bat-vamp_2: -6698205149286893722
+      bat-vamp_3: -645228029410735545
+      bat-vamp_4: 8118761687953345062
+      bat-vamp_5: 5936407124469924414
+      bat-vamp_6: 7465244580197398217
+      bat-vamp_7: 7451568382744339220
+      bat-vamp_8: 1261317306
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -4,13 +4,19 @@ using System.Collections;
 using System.Collections.Generic;
 using NUnit.Framework.Internal;
 using Unity.VisualScripting;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 
 
-public class Boss : MonoBehaviour
+public class Boss : MonoBehaviour, IDamageable
 {
     public GameObject meleePivot;
     public GameObject meleeTrigger;
+    public GameObject dashHitbox;
+    public EnemyStats stats;
 
+    public float currentHealth;
+
+    
     [HideInInspector]
     public bool inMeleeRange;
     
@@ -40,6 +46,10 @@ public class Boss : MonoBehaviour
     private bool canMelee = true;
     private bool isMeleeing = true;
 
+    private bool canTakeDamage = true;
+    private bool isTakingDamage = true;
+
+    private bool canDamageAnimation = true;
 
     private float distanceMagnitude;
 
@@ -51,6 +61,7 @@ public class Boss : MonoBehaviour
     private Stopwatch spawnerTimer = new Stopwatch();
 
     private Stopwatch attackTimer = new Stopwatch();
+    private Animator animator;
 
     List<string> attacks;
 
@@ -59,6 +70,9 @@ public class Boss : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         bossRb = GetComponent<Rigidbody2D>();
+        animator = GetComponentInChildren<Animator>();
+
+        currentHealth = stats.maxHealth;
 
         dashAccConversion = -(player.transform.position - transform.position).magnitude / (dashStopDist * 2);
     }
@@ -77,19 +91,18 @@ public class Boss : MonoBehaviour
         {
             StartCoroutine(AttackCoroutine());
         }
-        ;
 
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            StartCoroutine(DashCoroutine());
-        }
+        Vector2 playerDirection = (player.transform.position - transform.position).normalized;
+
+        Vector3 currentScale = animator.gameObject.transform.localScale;
+        currentScale.x = playerDirection.x / Math.Abs(playerDirection.x);
+
+        animator.gameObject.transform.localScale = currentScale;
+        animator.SetFloat("health", currentHealth);
     }
 
     void FixedUpdate()
     {
-        // bossRb.angularVelocity = 20;
-        // bossRb.rotation = 30;
-        // batDash(3);
             
     }
 
@@ -163,12 +176,15 @@ public class Boss : MonoBehaviour
         float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         meleePivot.transform.rotation = Quaternion.Euler(0f, 0f, rotationZ);
 
-        yield return new WaitForSeconds(.6f);
+        animator.SetBool("isAttacking", true);
 
+
+        yield return new WaitForSeconds(.4f);
         meleePivot.SetActive(true);
 
-        yield return new WaitForSeconds(.1f);
+        yield return new WaitForSeconds(.4f);
 
+        animator.SetBool("isAttacking", false);
         meleePivot.SetActive(false);
 
         canMelee = true;
@@ -188,45 +204,16 @@ public class Boss : MonoBehaviour
         canSpawn = true;
     }
 
-    IEnumerator DashCoroutine2()
-    {
-        canDash = false;
-        isDashing = true;
-
-        // a_n1 = 0.1 * d_n1
-        // v_n1 = v_n0 + a_n
-        // d_n1 = d_n0 - v_n1
-        Vector2 dash = player.transform.position - transform.position;
-        float dist = dash.magnitude;
-        dashAcc = 0.1f * dist;
-
-        if (dist <= dashStopDist)
-        {   
-            dashAcc = 0.1f * dist;
-        } else
-        {   
-            dashAcc = 0.1f * dashAccConversion * dist;
-        }
-
-        dashSpeed += dashAcc;
-
-
-        Vector2 dashDirection = dash.normalized;
-        bossRb.linearVelocity = dashDirection * dashSpeed * (float)Math.Sqrt(distanceMagnitude);
-
-        yield return new WaitForSeconds(dashDuration);
-
-        bossRb.linearVelocity = Vector2.zero; // Stop the dash movement
-        isDashing = false;
-
-        yield return new WaitForSeconds(dashCooldown);
-        canDash = true;
-    }
-
     IEnumerator DashCoroutine()
     {
         canDash = false;
         isDashing = true;
+
+        animator.SetBool("isDashing", true);
+
+        yield return new WaitForSeconds(1);
+
+        dashHitbox.SetActive(true);
 
         Vector2 dashDirection = (player.transform.position - transform.position).normalized;
         bossRb.linearVelocity = dashDirection * dashSpeed * (float)Math.Sqrt(distanceMagnitude);
@@ -241,10 +228,29 @@ public class Boss : MonoBehaviour
 
         yield return new WaitForSeconds(dashDuration/5);
 
+        
+        dashHitbox.SetActive(false);
         bossRb.linearVelocity = Vector2.zero; // Stop the dash movement
+        animator.SetBool("isDashing", false);
+
+        yield return new WaitForSeconds(1);
+
         isDashing = false;
 
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
+    }
+
+    public void TakeDamage(float damageAmount, float knockbackForce = 0f)
+    {  
+        if (canTakeDamage)
+        {
+            currentHealth -= damageAmount;
+        }
+
+        if (canDamageAnimation)
+        {
+            animator.SetTrigger("hurt");
+        }
     }
 }
