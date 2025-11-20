@@ -5028,6 +5028,7 @@ GameObject:
   - component: {fileID: 4442211879298310332}
   - component: {fileID: 6625993758130103762}
   - component: {fileID: 3966551889827346984}
+  - component: {fileID: 8348042454992716644}
   m_Layer: 0
   m_Name: CleaningGuyUI
   m_TagString: PlayerUI
@@ -5136,6 +5137,20 @@ MonoBehaviour:
   pulseBaseDuration: 0.6
   pulseRepeat: 1
   interactionMessage: 
+--- !u!114 &8348042454992716644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3043616993849565294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d625b61a5e7d3464088827ee2055a199, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerIdentity
+  playerId: 1
+  playerName: cleaner
 --- !u!1 &3224788042219289296
 GameObject:
   m_ObjectHideFlags: 0
@@ -10110,6 +10125,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6967372469941823980}
     m_Modifications:
+    - target: {fileID: 361821532904658546, guid: ef27b7f3cf78a4509849963026eec538, type: 3}
+      propertyPath: hand
+      value: 
+      objectReference: {fileID: 3630956658207991977}
     - target: {fileID: 5306162704510871105, guid: ef27b7f3cf78a4509849963026eec538, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -10166,5 +10185,10 @@ PrefabInstance:
 --- !u!4 &342694644718876036 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5472743688138562693, guid: ef27b7f3cf78a4509849963026eec538, type: 3}
+  m_PrefabInstance: {fileID: 5706739769768618241}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3630956658207991977 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9030234307044868520, guid: ef27b7f3cf78a4509849963026eec538, type: 3}
   m_PrefabInstance: {fileID: 5706739769768618241}
   m_PrefabAsset: {fileID: 0}

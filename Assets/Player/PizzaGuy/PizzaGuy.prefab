@@ -10250,11 +10250,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0888afd4892f4ce2b1ea663300d69c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStates
-  health: 0
-  max_health: 0
+  health: 3
+  max_health: 3
   insanity: 0
   cleaner: 0
-  pizzaGuy: 0
+  pizzaGuy: 1
   rollingState: 0
   interactingState: 0
   obtainingState: 0
@@ -10263,10 +10263,10 @@ MonoBehaviour:
   deathState: 0
   interactibleState: 0
   scaredState: 0
-  ableToWalk: 0
-  handsUsable: 0
-  ableToRoll: 0
-  ableToRotate: 0
+  ableToWalk: 1
+  handsUsable: 1
+  ableToRoll: 1
+  ableToRotate: 1
   powerUps: []
 --- !u!1 &4391319265623550391
 GameObject:

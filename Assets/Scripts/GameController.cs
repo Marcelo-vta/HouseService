@@ -2,20 +2,20 @@ using UnityEngine;
 
 public static class GameController
 {
-    private static int collectableCount;
-
-    public static bool gameOver
-    {
-        get { return collectableCount <= 0; }
-    }
+    // mantém a seleção do jogador entre cenas
+    public static int SelectedPlayerId = -1;
+    public static string SelectedPlayerName = "";
 
     public static void Init()
     {
-        collectableCount = 4;
+        // sua inicialização existente aqui
+        Debug.Log("GameController.Init() chamado. SelectedPlayerId = " + SelectedPlayerId);
     }
 
-    public static void Collect()
+    // Opcional: helper para setar
+    public static void SetSelectedPlayer(int id, string name = "")
     {
-        collectableCount--;
+        SelectedPlayerId = id;
+        SelectedPlayerName = name;
     }
 }

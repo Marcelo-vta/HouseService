@@ -9865,6 +9865,7 @@ GameObject:
   - component: {fileID: 1961316463546840940}
   - component: {fileID: 8556181105269460930}
   - component: {fileID: 4618341995307852706}
+  - component: {fileID: 21813467965267841}
   m_Layer: 0
   m_Name: PizzaGuyUI
   m_TagString: PlayerUI
@@ -9973,6 +9974,20 @@ MonoBehaviour:
   pulseBaseDuration: 0.6
   pulseRepeat: 1
   interactionMessage: 
+--- !u!114 &21813467965267841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3966051244694448174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d625b61a5e7d3464088827ee2055a199, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerIdentity
+  playerId: 0
+  playerName: pizzaGuy
 --- !u!1 &4622574075639230218
 GameObject:
   m_ObjectHideFlags: 0
