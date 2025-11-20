@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class InteractableDistanceFeedback : MonoBehaviour
 {   
-    public Transform player;              // referência ao transform do player
     public GameObject mensagem;          // Text (TMP) GameObject que mostra "Aperte E"
     public GameObject shiningBorder;      // GameObject da borda brilhante (sprite, image, etc.)
 
@@ -18,16 +17,13 @@ public class InteractableDistanceFeedback : MonoBehaviour
     private float glowSqr;
     private Vector3 borderBaseScale;
 
+    // Player
+    private PlayerStates player;
+
     void Start()
     {
         glowDistance = textShowDistance * 2;
-
-        // tenta encontrar o player se não setado
-        if (player == null)
-        {
-            var pgo = GameObject.FindGameObjectWithTag("Player");
-            if (pgo != null) player = pgo.transform;
-        }
+        player = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<PlayerStates>();
 
         textShowSqr = textShowDistance * textShowDistance;
         glowSqr = glowDistance * glowDistance;
@@ -42,7 +38,7 @@ public class InteractableDistanceFeedback : MonoBehaviour
 
     private void Update()
     {
-        float sqrDist = (player.position - transform.position).sqrMagnitude;
+        float sqrDist = (player.gameObject.transform.position - transform.position).sqrMagnitude;
 
         // Interação com E quando estiver dentro da distância de texto
         if (sqrDist <= textShowSqr && Input.GetKeyDown(KeyCode.E))
@@ -55,14 +51,14 @@ public class InteractableDistanceFeedback : MonoBehaviour
     {
         if (player == null) return;
 
-        float sqrDist = (player.position - transform.position).sqrMagnitude;
+        float sqrDist = (player.gameObject.transform.position - transform.position).sqrMagnitude;
 
         // Mostrar/esconder texto "Aperte E"
         if (mensagem != null)
         {
-            bool showText = sqrDist <= textShowSqr;
-            if (mensagem.activeSelf != showText)
-                mensagem.SetActive(showText);
+            bool showButton = sqrDist <= textShowSqr;
+            if (mensagem.activeSelf != showButton)
+                player.interactibleState = showButton;
         }
 
         // Glow / Border behavior

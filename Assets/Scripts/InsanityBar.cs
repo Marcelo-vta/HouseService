@@ -18,6 +18,9 @@ public class InsanityBar : MonoBehaviour
     [Tooltip("Speed of smoothing. 0 = instant.")]
     public float smoothSpeed = 8f;
 
+    [Header("Player")]
+    private PlayerStates player;
+
     // internal target (0..1)
     public float target = 0f;
     public float displayed = 0f;
@@ -34,17 +37,19 @@ public class InsanityBar : MonoBehaviour
 
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<PlayerStates>();
         // safety checks
         if (bgRect == null) Debug.LogError("InsanityBar: bgRect not assigned.", this);
         if (fillRect == null) Debug.LogError("InsanityBar: fillRect not assigned.", this);
 
         // initial values
-        displayed = target = Mathf.Clamp01(target);
+        displayed = target = Mathf.Clamp01(player.insanity);
         ApplyWidth(displayed);
     }
 
     void Update()
     {
+        target = player.insanity;
         if (smoothSpeed > 0f)
         {
             displayed = Mathf.MoveTowards(displayed, target, Time.deltaTime * smoothSpeed);

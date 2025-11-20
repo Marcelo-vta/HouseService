@@ -13,11 +13,13 @@ public class HeartsUIManager : MonoBehaviour
     public Sprite heartHalfSprite;       // heart_half
     public Sprite heartFullSprite;       // heart_full
 
-    [Header("Health (units)")]
-    public int maxHearts = 5;            // e.g. 5 hearts
+    [Header("Player")]
+    private PlayerStates player;
+
+    [Header("Health")]
+    private int maxHearts;
     // currentUnits is in half-heart units (0..maxHearts*2). Example: 7 = 3 full + 1 half
-    [Tooltip("Current health in half-heart units (each heart = 2 units).")]
-    public int currentUnits = 10;        // default full: 5 hearts -> 10 units
+    private int currentUnits;
 
     private List<Image> hearts = new List<Image>();
     private int lastMax = -1;
@@ -25,22 +27,28 @@ public class HeartsUIManager : MonoBehaviour
 
     void Start()
     {
-        BuildHearts();
-        UpdateHeartsVisual();
+        player = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<PlayerStates>();
+        maxHearts = player.max_health;
+        currentUnits = (int) player.health * 2;
+        BuildHearts(maxHearts, currentUnits);
+        UpdateHeartsVisual(maxHearts, currentUnits);
     }
 
     void Update()
     {
+        maxHearts = player.max_health;
+        currentUnits = Mathf.RoundToInt(player.health * 2);
         // Polling fallback: if your health system drives currentUnits externally, this keeps the UI in sync
         if (currentUnits != lastUnits || maxHearts != lastMax)
         {
-            if (maxHearts != lastMax) BuildHearts();
-            UpdateHeartsVisual();
+            if (maxHearts != lastMax) BuildHearts(maxHearts, currentUnits);
+            UpdateHeartsVisual(maxHearts, currentUnits);
         }
     }
 
-    public void BuildHearts()
+    public void BuildHearts(int maxHearts, int currentUnits)
     {
+
         // clear existing
         foreach (var img in hearts)
             if (img != null) Destroy(img.gameObject);
@@ -70,8 +78,9 @@ public class HeartsUIManager : MonoBehaviour
         lastMax = maxHearts;
     }
 
-    public void UpdateHeartsVisual()
+    public void UpdateHeartsVisual(int maxHearts, int currentUnits)
     {
+
         lastUnits = currentUnits;
         int units = Mathf.Clamp(currentUnits, 0, maxHearts * 2);
 
@@ -116,13 +125,14 @@ public class HeartsUIManager : MonoBehaviour
     // currentInUnits = currentHp * 2 (if your HP is in whole hearts).
     public void SetHealthUnits(int currentInUnits, int maxHeartsOverride = -1)
     {
+        maxHearts = player.max_health;
         currentUnits = Mathf.Clamp(currentInUnits, 0, (maxHeartsOverride > 0 ? maxHeartsOverride * 2 : maxHearts * 2));
         if (maxHeartsOverride > 0 && maxHeartsOverride != maxHearts)
         {
             maxHearts = maxHeartsOverride;
-            BuildHearts();
+            BuildHearts(maxHearts, currentUnits);
         }
-        UpdateHeartsVisual();
+        UpdateHeartsVisual(maxHearts, currentUnits);
     }
 
     // For convenience if your game uses whole-heart numbers:
