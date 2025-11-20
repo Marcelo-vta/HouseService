@@ -13,6 +13,7 @@ TagManager:
   - Exit
   - Entrance
   - Entance
+  - NavMesh
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - Enemies
   - Player
   - Obstacles
-  - 
+  - Projectile
   - 
   - 
   - 

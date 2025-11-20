@@ -1,12 +1,14 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Enemy Stats", menuName = "Enemies/Enemy Stats")]
+[CreateAssetMenu(fileName = "NewEnemyStats", menuName = "Enemy/Base Stats")]
 public class EnemyStats : ScriptableObject
 {
+    [Header("General Stats")]
+    public string enemyName;
     public float maxHealth = 100f;
-    public float speed = 3f;
-    
-    [Header("Combat")]
-    public float damage = 10f;
-    public float attackLungeSpeed = 6f;
+    public float moveSpeed = 3.5f;
+    public int damage = 10;
+
+    [Range(0,1)]
+    public float weight = 1;
 }

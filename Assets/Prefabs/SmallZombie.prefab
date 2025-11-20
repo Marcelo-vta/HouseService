@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4178135900543598681}
   - component: {fileID: 7418691515088077376}
-  - component: {fileID: 7195523904939037044}
+  - component: {fileID: 6606602467344557898}
   m_Layer: 10
   m_Name: Hurtbox
   m_TagString: Untagged
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 2812458268399501390}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.39, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -70,7 +70,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.2, y: 1.2}
   m_Direction: 0
---- !u!114 &7195523904939037044
+--- !u!114 &6606602467344557898
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -82,6 +82,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd2ec9e90967b6c4f82ce2300fde00e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHurtbox
+  mainEnemyScript: {fileID: 3303161227284613433}
 --- !u!1 &5787165749693009800
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,10 +95,8 @@ GameObject:
   - component: {fileID: 4704495121650614477}
   - component: {fileID: 5657596893447215073}
   - component: {fileID: 3515186688867471383}
-  - component: {fileID: 8397061108295473231}
-  - component: {fileID: 5055087048002397168}
-  - component: {fileID: 2940564932676529860}
-  - component: {fileID: 7187869964448213621}
+  - component: {fileID: 1538330636872387683}
+  - component: {fileID: 3303161227284613433}
   m_Layer: 10
   m_Name: SmallZombie
   m_TagString: Untagged
@@ -114,12 +113,13 @@ Transform:
   m_GameObject: {fileID: 5787165749693009800}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.53, y: 10.41, z: 0}
+  m_LocalPosition: {x: -45.69, y: -7.68, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3415912360680146718}
   - {fileID: 4178135900543598681}
+  - {fileID: 3613560777444062104}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &4704495121650614477
@@ -184,8 +184,8 @@ CapsuleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.2, y: 1.2}
-  m_Direction: 0
+  m_Size: {x: 0.2, y: 0.1}
+  m_Direction: 1
 --- !u!95 &3515186688867471383
 Animator:
   serializedVersion: 7
@@ -208,7 +208,29 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8397061108295473231
+--- !u!195 &1538330636872387683
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5787165749693009800}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.1
+  m_Speed: 1
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.1
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &3303161227284613433
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -217,67 +239,96 @@ MonoBehaviour:
   m_GameObject: {fileID: 5787165749693009800}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45a79198b71bbac4c9f73104f731b760, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e3108d2a5b4efb4e9adfd9d999907b0, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SmallZombieLongAttack
---- !u!114 &5055087048002397168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5787165749693009800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c709683830e5324b957d52ecff3ae11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  enemyStats: {fileID: 11400000, guid: 526479890d9d0da4eb65c3da51c94e19, type: 2}
---- !u!114 &2940564932676529860
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5787165749693009800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: AstarPathfindingProject::Pathfinding.Seeker
-  version: 1
-  drawGizmos: 1
-  detailedGizmos: 0
-  startEndModifier:
-    addPoints: 0
-    exactStartPoint: 3
-    exactEndPoint: 3
-    useRaycasting: 0
-    mask:
-      serializedVersion: 2
-      m_Bits: 4294967295
-    useGraphRaycasting: 0
-  traversableTags: -1
-  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  graphMask:
-    value: -1
---- !u!114 &7187869964448213621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5787165749693009800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99fd9c586626ae54ea56bb2ec85035e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MeleeEnemyAI
+  m_EditorClassIdentifier: Assembly-CSharp::SmallZombie
+  stats: {fileID: 11400000, guid: 17a42dbfb580ea041bf7ffcd4d7640e0, type: 2}
+  flashMaterial: {fileID: 2100000, guid: 1d2e4cc1f7274bb4bb125370ce6be22e, type: 2}
+  flashDuration: 0.1
   target: {fileID: 0}
-  nextWaypointDistance: 0.1
-  pathUpdateInterval: 0.5
-  attackRange: 4.5
-  attackCooldown: 1
+  hitbox: {fileID: 0}
+--- !u!1 &6064630872542575924
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3613560777444062104}
+  - component: {fileID: 3047156609073830250}
+  - component: {fileID: 540157814051958639}
+  m_Layer: 10
+  m_Name: Hitbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &3613560777444062104
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6064630872542575924}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 220129598320171884}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &3047156609073830250
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6064630872542575924}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0.4}
+  m_Size: {x: 0.3, y: 0.3}
+  m_Direction: 0
+--- !u!114 &540157814051958639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6064630872542575924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1642ca0741ef8c148b69bd3bc466ea85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDamageDealer
 --- !u!1 &8696927893097297662
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,7 +355,7 @@ Transform:
   m_GameObject: {fileID: 8696927893097297662}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
