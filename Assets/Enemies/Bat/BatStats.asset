@@ -9,10 +9,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fa2f597aae25254c8e113ec0aae453e, type: 3}
+  m_Script: {fileID: 11500000, guid: bf87fde7086bebc42b4bc342b08fd97b, type: 3}
   m_Name: BatStats
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyStats
-  maxHealth: 1
-  speed: 4
+  m_EditorClassIdentifier: Assembly-CSharp::RangedEnemyStats
+  enemyName: Bat
+  maxHealth: 6
+  moveSpeed: 2
   damage: 1
-  attackLungeSpeed: 0
+  weight: 0.25
+  stoppingDistance: 3.5
+  retreatDistance: 3
+  fleeDistance: 4
+  projectilePrefab: {fileID: 2153406890808163327, guid: 55fdd25791124524bbcd609891504ac7, type: 3}
+  fireRate: 0.2
+  projectileForce: 5
+  shotAccuracy: 1

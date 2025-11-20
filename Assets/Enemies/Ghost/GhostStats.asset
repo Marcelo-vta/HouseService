@@ -9,11 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fa2f597aae25254c8e113ec0aae453e, type: 3}
+  m_Script: {fileID: 11500000, guid: 7498a3cca67076f47b2e6b77beb4e37e, type: 3}
   m_Name: GhostStats
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyStats
+  m_EditorClassIdentifier: Assembly-CSharp::MeleeEnemyStats
+  enemyName: Ghost
   maxHealth: 10
-  speed: 2
-  longAttackMaxSpeed: 10
-  attackPower: 1
-  attackLungeSpeed: 6
+  moveSpeed: 3
+  damage: 2
+  weight: 0.7
+  attackRange: 1.5
+  leapDuration: 0
+  leapSpeed: 1.5
+  attackCooldown: 2

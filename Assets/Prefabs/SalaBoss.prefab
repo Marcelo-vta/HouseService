@@ -5658,6 +5658,7 @@ GameObject:
   - component: {fileID: 3868626650840610364}
   - component: {fileID: 7650529532988162463}
   - component: {fileID: 4619518758317378236}
+  - component: {fileID: 1884662606581689824}
   m_Layer: 0
   m_Name: Furniture
   m_TagString: Untagged
@@ -6397,6 +6398,22 @@ CompositeCollider2D:
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
   m_CompositeGameObject: {fileID: 3486466545922285582}
+--- !u!114 &1884662606581689824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3486466545922285582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &3792883838346610477
 GameObject:
   m_ObjectHideFlags: 0
@@ -8477,6 +8494,7 @@ GameObject:
   - component: {fileID: 2157534420337096300}
   - component: {fileID: 220937588458608166}
   - component: {fileID: 8696319389055544455}
+  - component: {fileID: 4277271653285354780}
   m_Layer: 0
   m_Name: Walls
   m_TagString: Untagged
@@ -10713,6 +10731,22 @@ CompositeCollider2D:
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
   m_CompositeGameObject: {fileID: 3991475850511524853}
+--- !u!114 &4277271653285354780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3991475850511524853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &4178781913527684223
 GameObject:
   m_ObjectHideFlags: 0
@@ -10827,6 +10861,7 @@ GameObject:
   - component: {fileID: 6367640900907415440}
   - component: {fileID: 3366982356841841571}
   - component: {fileID: 8888000339460998395}
+  - component: {fileID: 4765481334731894788}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -17127,6 +17162,22 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
+--- !u!114 &4765481334731894788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4202670428801453316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &4324132187773579679
 GameObject:
   m_ObjectHideFlags: 0
@@ -21978,6 +22029,7 @@ GameObject:
   - component: {fileID: 1595649615986277929}
   - component: {fileID: 59349191359314423}
   - component: {fileID: 6750505135541668301}
+  - component: {fileID: 5565497000735047699}
   m_Layer: 0
   m_Name: ColumnBase
   m_TagString: Untagged
@@ -22489,6 +22541,22 @@ CompositeCollider2D:
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
   m_CompositeGameObject: {fileID: 4721854635241517493}
+--- !u!114 &5565497000735047699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4721854635241517493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &4863310472974155177
 GameObject:
   m_ObjectHideFlags: 0

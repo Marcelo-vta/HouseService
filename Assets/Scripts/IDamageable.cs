@@ -1,11 +1,8 @@
-/// <summary>
-/// Defines a contract for any object that can take damage.
-/// </summary>
+using UnityEngine;
+
 public interface IDamageable
 {
-    /// <summary>
-    /// Causes the object to take a specified amount of damage.
-    /// </summary>
-    /// <param name="damageAmount">The amount of damage to inflict.</param>
-    void TakeDamage(float damageAmount);
+    // We add 'knockback' with a default value of 0 
+    // so we don't break scripts that haven't been updated yet.
+    void TakeDamage(float damageAmount, float knockbackForce = 0f);
 }
