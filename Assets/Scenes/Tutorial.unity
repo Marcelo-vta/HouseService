@@ -531,6 +531,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4728045113960823861, guid: f1b5ca71765286d4b8b64ed4e470b7b8, type: 3}
+      propertyPath: hitClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 012e5667adcfb764a9d9d39dd51d0e0b, type: 3}
+    - target: {fileID: 4728045113960823861, guid: f1b5ca71765286d4b8b64ed4e470b7b8, type: 3}
+      propertyPath: sfxSource
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6032385095055924073, guid: f1b5ca71765286d4b8b64ed4e470b7b8, type: 3}
       propertyPath: shortcutSuggestion
       value: 
@@ -548,7 +556,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1054716959}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2024705282119635469, guid: f1b5ca71765286d4b8b64ed4e470b7b8, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1b5ca71765286d4b8b64ed4e470b7b8, type: 3}

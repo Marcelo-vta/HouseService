@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour, IDamageable
     [SerializeField] private float flashDuration = 0.1f;
 
     // We need to verify if the target (Player) is assigned to calculate knockback direction
-    [SerializeField] protected Transform target; 
+    [SerializeField] protected Transform target;
 
     protected NavMeshAgent agent;
     protected float currentHealth;
@@ -23,11 +23,15 @@ public class Enemy : MonoBehaviour, IDamageable
     private Coroutine flashRoutine;
     private Coroutine knockbackRoutine; // Track knockback to avoid overlap
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource sfxSource;
+    [SerializeField] private AudioClip hitClip;
+
     protected virtual void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        
-        spriteRenderer = GetComponentInChildren<SpriteRenderer>(); 
+
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         if (spriteRenderer != null)
         {
             originalMaterial = spriteRenderer.material;
@@ -49,6 +53,17 @@ public class Enemy : MonoBehaviour, IDamageable
             GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
             if (playerObj != null) target = playerObj.transform;
         }
+
+        if (sfxSource == null)
+        {
+            sfxSource = GetComponent<AudioSource>();
+            if (sfxSource == null)
+            {
+                sfxSource = gameObject.AddComponent<AudioSource>();
+            }
+        }
+
+        sfxSource.playOnAwake = false;
     }
 
     // UPDATED: Now accepts Knockback Force
@@ -57,11 +72,16 @@ public class Enemy : MonoBehaviour, IDamageable
         // weight vai de 0 -> 1
         knockbackForce *= (float)(1.001 - stats.weight);
         currentHealth -= damageAmount;
-        
+
         // 1. Trigger Flash
         if (flashMaterial != null && spriteRenderer != null)
         {
             Flash();
+        }
+
+        if (hitClip != null && sfxSource != null)
+        {
+            sfxSource.PlayOneShot(hitClip);
         }
 
         // 2. Apply Knockback (If force > 0 and we know where the player is)
@@ -69,7 +89,7 @@ public class Enemy : MonoBehaviour, IDamageable
         {
             // Calculate direction: FROM Player TO Enemy
             Vector2 direction = (transform.position - target.position).normalized;
-            
+
             if (knockbackRoutine != null) StopCoroutine(knockbackRoutine);
             knockbackRoutine = StartCoroutine(ApplyKnockback(direction, knockbackForce));
         }
@@ -79,32 +99,22 @@ public class Enemy : MonoBehaviour, IDamageable
 
     private IEnumerator ApplyKnockback(Vector2 direction, float force)
     {
-        // Save the current state of the agent (Important for SmallZombie!)
-        // If SmallZombie is leaping, 'isStopped' is true. We don't want to set it to false later.
         bool wasStopped = agent.isStopped;
 
-        // Disable Agent control so we can shove the enemy manually
         agent.isStopped = true;
         agent.velocity = Vector3.zero;
 
         float timer = 0f;
-        float duration = 0.2f; // Short, snappy knockback
+        float duration = 0.2f;
 
         while (timer < duration)
         {
             timer += Time.deltaTime;
-            
-            // Decay the force over time (starts strong, ends weak)
             float currentForce = Mathf.Lerp(force, 0f, timer / duration);
-            
-            // Move the enemy manually
             transform.position += (Vector3)direction * currentForce * Time.deltaTime;
-            
             yield return null;
         }
 
-        // Restore Agent state
-        // Only turn the agent back on if it was on before the hit
         if (!wasStopped)
         {
             agent.isStopped = false;
