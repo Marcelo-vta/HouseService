@@ -228,7 +228,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ef3494adf00df14488401367863f461, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bullet
-  damage: 0
+  damage: 1.5
+  knockback: 2
   pepperoni: {fileID: 7963781036564526563}
   cheese: {fileID: 6340517544827119477}
   spicy: {fileID: 4426994555261347091}

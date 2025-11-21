@@ -149,7 +149,11 @@ public class TransitionManager : MonoBehaviour
 
     public void GoForwardRandom()
     {
-        if (seenRooms.Count >= 8) SceneManager.LoadScene(3);
+        if (seenRooms.Count >= 8)
+        {
+            player.transform.position = new Vector3(0.200000003f,-5.61999989f,0);
+            SceneManager.LoadScene(3);
+        }
         int destino;
 
         // Se tem F2 e estamos no último do F2 -> boss
@@ -238,7 +242,7 @@ public class TransitionManager : MonoBehaviour
         salaAtualInst = inst;
 
         PlayerStates playerStates = player.gameObject.GetComponent<PlayerStates>();
-        List<string> accurateItems = playerStates.cleaner ? meleeItems : rangedItems;
+        List<string> accurateItems = playerStates.characterType == "cleaner" ? meleeItems : rangedItems;
 
         int itemRoomIdx = currentFloor == 1 ? f1_itemIdx : f2_itemIdx;
         int mimicRoomIdx = currentFloor == 1 ? f1_mimicIdx : f2_mimicIdx;
@@ -285,7 +289,7 @@ public class TransitionManager : MonoBehaviour
 
         // 4. Global search (Scene Root / Any active surface)
         if (navMeshSurface == null)
-            navMeshSurface = FindObjectOfType<NavMeshSurface>();
+            navMeshSurface = FindFirstObjectByType<NavMeshSurface>();
 
         if (navMeshSurface != null)
         {

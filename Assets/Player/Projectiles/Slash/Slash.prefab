@@ -54,7 +54,7 @@ MonoBehaviour:
   wetSprites:
   - {fileID: 2582109357095366969, guid: 1fe04269623a2412992a8423485deeff, type: 3}
   - {fileID: -1564753496, guid: 1fe04269623a2412992a8423485deeff, type: 3}
-  damage: 1
+  damage: 2.5
   knockback: 10
 --- !u!50 &1818821683407293296
 Rigidbody2D:

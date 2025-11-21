@@ -1,16 +1,19 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStates : MonoBehaviour
 {
     public int max_health = 4;
     public float health;
     public float insanity;
+    public float attackSpeed;
+
     private float accuracy;
 
-    public bool cleaner;
-    public bool pizzaGuy;
+    public string characterType;
 
     public bool rollingState;
     public bool interactingState;
@@ -25,6 +28,7 @@ public class PlayerStates : MonoBehaviour
     public bool handsUsable;
     public bool ableToRoll;
     public bool ableToRotate;
+    public bool ableToAttack = true;
 
     public bool ivulnerability;
     public bool damageable;
@@ -36,6 +40,23 @@ public class PlayerStates : MonoBehaviour
 
     private Animator playerAnimator;
 
+
+    public static PlayerStates Instance;
+    private int lastScene = -1;
+
+    private void Awake()
+    {
+
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
     private void Start()
     {
         playerAnimator = GetComponentInChildren<Animator>();
@@ -44,6 +65,19 @@ public class PlayerStates : MonoBehaviour
 
     private void Update()
     {
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            Instance = null;
+            Destroy(gameObject);
+        }
+
+        if (SceneManager.GetActiveScene().buildIndex == 2 && lastScene == 1)
+        {
+            health = max_health;
+            insanity = 0;
+            powerUps = new List<string>();
+        }
+
         deathState = health <= 0;
 
         handsUsable = !( rollingState || interactingState || obtainingState || hurtState || deathState || scaredState );
@@ -57,8 +91,17 @@ public class PlayerStates : MonoBehaviour
         playerAnimator.SetBool("scared", scaredState);
         playerAnimator.SetBool("dead", deathState);
 
+        if (deathState){StartCoroutine(deadCoroutine());}
 
         SetInteractible();
+        lastScene = SceneManager.GetActiveScene().buildIndex;
+    }
+
+    System.Collections.IEnumerator deadCoroutine()
+    {
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(0);
+
     }
 
     private void SetInteractible()
@@ -71,4 +114,18 @@ public class PlayerStates : MonoBehaviour
             }
         }
     }
+
+    public void AttackCooldown(float attackCooldown)
+    {
+        StartCoroutine(attackCooldownCoroutine(attackCooldown));
+    }
+
+    IEnumerator attackCooldownCoroutine(float attackCooldown)
+    {
+        float atkSpdModified = (100 + attackSpeed)/100f;
+
+        yield return new WaitForSeconds(attackCooldown / atkSpdModified);
+        ableToAttack = true;
+    }
+
 }

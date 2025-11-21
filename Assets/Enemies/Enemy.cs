@@ -15,13 +15,15 @@ public class Enemy : MonoBehaviour, IDamageable
     [SerializeField] protected Transform target;
 
     protected NavMeshAgent agent;
-    protected float currentHealth;
+    public float currentHealth;
 
     // Visuals
     private SpriteRenderer spriteRenderer;
     private Material originalMaterial;
     private Coroutine flashRoutine;
     private Coroutine knockbackRoutine; // Track knockback to avoid overlap
+
+    private float moveSpeed;
 
     [Header("Audio")]
     [SerializeField] private AudioSource sfxSource;
@@ -64,14 +66,18 @@ public class Enemy : MonoBehaviour, IDamageable
         }
 
         sfxSource.playOnAwake = false;
+
+        moveSpeed = stats.moveSpeed;
     }
 
     // UPDATED: Now accepts Knockback Force
-    public void TakeDamage(float damageAmount, float knockbackForce = 0f)
+    public void TakeDamage(float damageAmount, float knockbackForce = 0f, bool appliesSlow = false)
     {
         // weight vai de 0 -> 1
         knockbackForce *= (float)(1.001 - stats.weight);
         currentHealth -= damageAmount;
+
+        if (appliesSlow) moveSpeed = stats.moveSpeed * .5f;
 
         // 1. Trigger Flash
         if (flashMaterial != null && spriteRenderer != null)
@@ -138,5 +144,10 @@ public class Enemy : MonoBehaviour, IDamageable
     protected virtual void Die()
     {
         Destroy(gameObject);
+    }
+
+    void Update()
+    {
+        agent.speed = moveSpeed;
     }
 }

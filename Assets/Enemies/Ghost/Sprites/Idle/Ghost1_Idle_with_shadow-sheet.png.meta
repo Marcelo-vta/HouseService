@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: 3b114dc54ce8a487d97066e2e819e09f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7405075113978240241
+    second: Ghost1_Idle_with_shadow-sheet_0
+  - first:
+      213: 1877353863561952284
+    second: Ghost1_Idle_with_shadow-sheet_1
+  - first:
+      213: -6558411023519667591
+    second: Ghost1_Idle_with_shadow-sheet_2
+  - first:
+      213: 6218035760053200954
+    second: Ghost1_Idle_with_shadow-sheet_3
+  - first:
+      213: 7357267443828250841
+    second: Ghost1_Idle_with_shadow-sheet_4
+  - first:
+      213: -3788707592990378732
+    second: Ghost1_Idle_with_shadow-sheet_5
+  - first:
+      213: -4581924768516163221
+    second: Ghost1_Idle_with_shadow-sheet_6
+  - first:
+      213: 5927914827862513947
+    second: Ghost1_Idle_with_shadow-sheet_7
+  - first:
+      213: 2413261947398697166
+    second: Ghost1_Idle_with_shadow-sheet_8
+  - first:
+      213: -7305518773575691668
+    second: Ghost1_Idle_with_shadow-sheet_9
+  - first:
+      213: -303558545282765613
+    second: Ghost1_Idle_with_shadow-sheet_10
+  - first:
+      213: -3502944051753021456
+    second: Ghost1_Idle_with_shadow-sheet_11
+  - first:
+      213: -7261842788721337330
+    second: Ghost1_Idle_with_shadow-sheet_12
+  - first:
+      213: -8843076211057527116
+    second: Ghost1_Idle_with_shadow-sheet_13
+  - first:
+      213: 1565487563006753392
+    second: Ghost1_Idle_with_shadow-sheet_14
+  - first:
+      213: -4544260933735868081
+    second: Ghost1_Idle_with_shadow-sheet_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ghost1_Idle_with_shadow-sheet_0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 183
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f03ed38ea63eb3990800000000000000
+      internalID: -7405075113978240241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost1_Idle_with_shadow-sheet_1
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 183
+        width: 18
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1c315b6463bd0a10800000000000000
+      internalID: 1877353863561952284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost1_Idle_with_shadow-sheet_2
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 183
+        width: 16
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97aaa1c0ce7dbf4a0800000000000000
+      internalID: -6558411023519667591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost1_Idle_with_shadow-sheet_3
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 183
+        width: 18
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a38a5a64496ea4650800000000000000
+      internalID: 6218035760053200954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost1_Idle_with_shadow-sheet_4
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 127
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d8ddea72c34a1660800000000000000
+      internalID: 7357267443828250841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost1_Idle_with_shadow-sheet_5
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 127
+        width: 18
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 415bbf1848ecb6bc0800000000000000
+      internalID: -3788707592990378732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost1_Idle_with_shadow-sheet_6
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 127
+        width: 16
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b69b709f2bbb960c0800000000000000
+      internalID: -4581924768516163221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost1_Idle_with_shadow-sheet_7
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 127
+        width: 18
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b191485e02f244250800000000000000
+      internalID: 5927914827862513947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost1_Idle_with_shadow-sheet_8
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 71
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec0baa484f0ad7120800000000000000
+      internalID: 2413261947398697166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost1_Idle_with_shadow-sheet_9
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 71
+        width: 16
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c62d219b1659d9a90800000000000000
+      internalID: -7305518773575691668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost1_Idle_with_shadow-sheet_10
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 71
+        width: 16
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dce2e38c1b89cbf0800000000000000
+      internalID: -303558545282765613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost1_Idle_with_shadow-sheet_11
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 71
+        width: 16
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ff813fb1fa036fc0800000000000000
+      internalID: -3502944051753021456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost1_Idle_with_shadow-sheet_12
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 15
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0c58836570c83b90800000000000000
+      internalID: -7261842788721337330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost1_Idle_with_shadow-sheet_13
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 15
+        width: 16
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b67536e905174580800000000000000
+      internalID: -8843076211057527116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost1_Idle_with_shadow-sheet_14
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 15
+        width: 16
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07a3f4de4aab9b510800000000000000
+      internalID: 1565487563006753392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghost1_Idle_with_shadow-sheet_15
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 15
+        width: 16
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f491dfdd1ca8fe0c0800000000000000
+      internalID: -4544260933735868081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Ghost1_Idle_with_shadow-sheet_0: -7405075113978240241
+      Ghost1_Idle_with_shadow-sheet_1: 1877353863561952284
+      Ghost1_Idle_with_shadow-sheet_10: -303558545282765613
+      Ghost1_Idle_with_shadow-sheet_11: -3502944051753021456
+      Ghost1_Idle_with_shadow-sheet_12: -7261842788721337330
+      Ghost1_Idle_with_shadow-sheet_13: -8843076211057527116
+      Ghost1_Idle_with_shadow-sheet_14: 1565487563006753392
+      Ghost1_Idle_with_shadow-sheet_15: -4544260933735868081
+      Ghost1_Idle_with_shadow-sheet_2: -6558411023519667591
+      Ghost1_Idle_with_shadow-sheet_3: 6218035760053200954
+      Ghost1_Idle_with_shadow-sheet_4: 7357267443828250841
+      Ghost1_Idle_with_shadow-sheet_5: -3788707592990378732
+      Ghost1_Idle_with_shadow-sheet_6: -4581924768516163221
+      Ghost1_Idle_with_shadow-sheet_7: 5927914827862513947
+      Ghost1_Idle_with_shadow-sheet_8: 2413261947398697166
+      Ghost1_Idle_with_shadow-sheet_9: -7305518773575691668
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

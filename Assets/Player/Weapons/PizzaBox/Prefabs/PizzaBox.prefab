@@ -143,13 +143,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PizzaBox
   pizzaPrefab: {fileID: 4062383134465746442, guid: 326272e4e319d5445afca66edc6d499b, type: 3}
+  pepperoniPrefab: {fileID: 0}
   hand: {fileID: 8099402620112701193}
   firePoint: {fileID: 3980645928083043816}
   fireForce: 10
+  innacuracyConstant: 30
+  accuracy: 0.487
+  attackCooldown: 0.5
   cheese: {fileID: 9145966044146317855}
   spicy: {fileID: 6190036333133823707}
   pepperoni: {fileID: 1243248718594807789}
-  powerUps: []
 --- !u!114 &307965229162488827
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ClickPlayerStarter : MonoBehaviour
 {
-    [Tooltip("Câmera usada para converter mouse->mundo. Deixe vazio para usar Camera.main.")]
+    [Tooltip("Cï¿½mera usada para converter mouse->mundo. Deixe vazio para usar Camera.main.")]
     public Camera mainCamera;
 
     [Tooltip("Tag usada para identificar objetos de jogador")]
@@ -34,7 +34,7 @@ public class ClickPlayerStarter : MonoBehaviour
 
         if (clicked.CompareTag(playerTag))
         {
-            // encontrou um player — pega o PlayerIdentity se existir
+            // encontrou um player ï¿½ pega o PlayerIdentity se existir
             PlayerIdentity id = clicked.GetComponent<PlayerIdentity>() ?? clicked.GetComponentInParent<PlayerIdentity>();
 
             int pid = -1;
@@ -48,36 +48,36 @@ public class ClickPlayerStarter : MonoBehaviour
             }
             else
             {
-                // fallback: usa a ordem/hierarchy ou name se não houver PlayerIdentity
+                // fallback: usa a ordem/hierarchy ou name se nï¿½o houver PlayerIdentity
                 Debug.LogWarning("Player clicado sem PlayerIdentity. Usando fallback pelo nome.");
                 pname = clicked.name;
             }
 
-            // salva a seleção no GameController (para ser lida na próxima cena)
+            // salva a seleï¿½ï¿½o no GameController (para ser lida na prï¿½xima cena)
             GameController.SetSelectedPlayer(pid, pname);
 
-            // chama a função IniciaJogo no seu MenuActions (procura componente)
-            var menu = FindObjectOfType<MenuActions>();
+            // chama a funï¿½ï¿½o IniciaJogo no seu MenuActions (procura componente)
+            var menu = FindFirstObjectByType<MenuActions>();
             if (menu != null)
             {
-                // se o seu IniciaJogo original não aceita parâmetros, apenas chama
+                // se o seu IniciaJogo original nï¿½o aceita parï¿½metros, apenas chama
                 menu.IniciaJogo();
 
-                // Se quiser, você pode criar uma sobrecarga em MenuActions que aceite (int id) e chamar aqui:
+                // Se quiser, vocï¿½ pode criar uma sobrecarga em MenuActions que aceite (int id) e chamar aqui:
                 // menu.IniciaJogo(pid);
             }
             else
             {
-                // fallback: se você não tiver MenuActions, chama diretamente o GameController e o SceneController
-                Debug.LogWarning("MenuActions não encontrado. Chamando GameController.Init() e carregando cena diretamente.");
+                // fallback: se vocï¿½ nï¿½o tiver MenuActions, chama diretamente o GameController e o SceneController
+                Debug.LogWarning("MenuActions nï¿½o encontrado. Chamando GameController.Init() e carregando cena diretamente.");
                 GameController.Init();
                 SceneController.Instance.LoadScene(1);
             }
         }
         else
         {
-            // clique em outro objeto (não player) -> opcional: feedback
-            // Debug.Log("Clicou em " + clicked.name + " que não tem tag Player.");
+            // clique em outro objeto (nï¿½o player) -> opcional: feedback
+            // Debug.Log("Clicou em " + clicked.name + " que nï¿½o tem tag Player.");
         }
     }
 }

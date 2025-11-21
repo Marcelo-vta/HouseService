@@ -25,7 +25,7 @@ public class EnemyProjectile : MonoBehaviour
         // 1. Did we hit the Player?
         IDamageable damageable = collision.GetComponent<IDamageable>();
         
-        if (damageable != null)
+        if (collision.CompareTag("PlayerHurtbox"))
         {
             damageable.TakeDamage(damage);
             Destroy(gameObject); // Bullet disappears on impact

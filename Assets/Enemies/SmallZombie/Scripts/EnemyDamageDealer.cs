@@ -11,8 +11,9 @@ public class EnemyDamageDealer : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // Check if we hit the Player
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("PlayerHurtbox"))
         {
+            print("hit!");
             IDamageable damageable = collision.GetComponent<IDamageable>();
             if (damageable != null)
             {

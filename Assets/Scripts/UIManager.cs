@@ -35,13 +35,6 @@ public class UIManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        // GameController.gameOver
-        if (playerStates.deathState)
-        {
-            endGamePanel.SetActive(true);
-            jogoRoot.SetActive(false);
-            playerStatsUI.SetActive(false);
-        }
     }
 
     public void ResumeGame()

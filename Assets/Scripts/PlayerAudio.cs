@@ -240,11 +240,11 @@ public class PlayerAudio : MonoBehaviour
             Input.GetKeyDown(KeyCode.Mouse0) ||
             Input.GetKeyDown(KeyCode.J);
 
-        if (attackPressed && !lastAttackState && playerStates.handsUsable)
+        if (attackPressed && !lastAttackState && playerStates.handsUsable && playerStates.ableToAttack)
         {
-            if (playerStates.cleaner)
+            if (playerStates.characterType == "cleaner")
                 PlaySFX(cleanerAttackClip);
-            else if (playerStates.pizzaGuy)
+            else if (playerStates.characterType == "pizzaGuy")
                 PlaySFX(pizzaGuyAttackClip);
         }
 
@@ -256,8 +256,7 @@ public class PlayerAudio : MonoBehaviour
     // ──────────────────────────────────────────────
     int GetInsanityLevel()
     {
-        return playerStates.insanity < 1 ? 0 :
-               playerStates.insanity < 2 ? 1 : 2;
+        return (int)(playerStates.insanity*2);
     }
 
     void UpdateMusicImmediate()

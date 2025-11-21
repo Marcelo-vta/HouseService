@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -11,18 +13,26 @@ public class SmallZombie : Enemy
     private bool isLeaping = false;
     private float leapTimer = 0f;
     private float nextAttackTime = 0f;
-    private Vector3 fixedLeapDirection; 
+    private Vector3 fixedLeapDirection;
+    private bool canLeap = true;
+
+    public float leapSpeed;
+    public float leapCooldown;
     
     private Animator animator;
+    private Rigidbody2D rb;
     
     // New variable to store the duration found in the animation
     private float actualLeapDuration;
+    private bool leapFlip = false;
 
     protected override void Start()
     {
         base.Start();
 
+        rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
         if (animator == null) animator = GetComponentInChildren<Animator>();
 
         meleeStats = stats as MeleeEnemyStats;
@@ -48,9 +58,7 @@ public class SmallZombie : Enemy
         // STATE MACHINE
         if (isLeaping)
         {
-            HandleLeap();
-            // When leaping, our move direction is the locked trajectory
-            moveDirection = fixedLeapDirection;
+            moveDirection = rb.linearVelocity;
         }
         else
         {
@@ -68,6 +76,13 @@ public class SmallZombie : Enemy
             animator.SetFloat("lastXVel", moveDirection.x);
             animator.SetFloat("lastYVel", moveDirection.y);
         }
+
+        animator.SetFloat("yVel", moveDirection.y);
+        animator.SetFloat("xVel", moveDirection.x);
+
+        animator.SetFloat("Vel", moveDirection.magnitude);
+
+        animator.gameObject.GetComponent<SpriteRenderer>().flipX = moveDirection.x < 0 || leapFlip;
     }
 
     private void HandleChase()
@@ -80,79 +95,52 @@ public class SmallZombie : Enemy
             agent.isStopped = false;
         }
 
-        if (distance <= meleeStats.attackRange && Time.time >= nextAttackTime)
+        if (distance <= meleeStats.attackRange && canLeap)
         {
-            StartLeap();
+            StartCoroutine(LeapCoroutine());
         }
     }
 
-    private void StartLeap()
+
+    IEnumerator LeapCoroutine()
     {
+        canLeap = false;
         isLeaping = true;
-        leapTimer = 0f;
 
-        // 1. Trigger Animation
-        if (animator != null)
-        {
-            animator.SetBool("isLongAttacking", true);
-            
-            // 2. Force the Animator to update its state machine immediately
-            animator.Update(0f);
-
-            // 3. Get the duration of the state we are transitioning TO
-            AnimatorStateInfo info = animator.GetNextAnimatorStateInfo(0);
-            
-            // If the transition is instant (no duration), GetNext might be empty, so check GetCurrent
-            if (info.fullPathHash == 0) 
-            {
-                info = animator.GetCurrentAnimatorStateInfo(0);
-            }
-
-            // 4. Set the leap duration based on the animation length
-            if (info.length > 0)
-            {
-                actualLeapDuration = info.length;
-            }
-        }
-
-        fixedLeapDirection = (target.position - transform.position).normalized;
+        animator.SetBool("isLongAttacking", true);
+        animator.Update(0f);
 
         agent.isStopped = true; 
         agent.ResetPath();
+        leapFlip = (target.transform.position - transform.position).normalized.x < 0;
+
+        yield return new WaitForSeconds(.45f);
+        float leapDuration = .75f;
 
         if (hitbox != null) hitbox.SetActive(true);
-    }
 
-    private void HandleLeap()
-    {
-        leapTimer += Time.deltaTime;
+        Vector2 dashDirection = (target.transform.position - transform.position).normalized;
+        float distanceMagnitude = (target.transform.position - transform.position).magnitude;
 
-        // USE actualLeapDuration HERE
-        float t = leapTimer / actualLeapDuration;
 
-        float decay = Mathf.Pow(1 - t, 3) / (t + 0.01f);
-        
-        float currentSpeed = Mathf.Lerp(meleeStats.moveSpeed, meleeStats.leapSpeed, decay);
+        rb.linearVelocity = dashDirection * leapSpeed;
+        yield return new WaitForSeconds(leapDuration - (leapDuration / 3));
 
-        transform.position += fixedLeapDirection * currentSpeed * Time.deltaTime;
+        rb.linearVelocity = dashDirection * leapSpeed / 2;
+        yield return new WaitForSeconds(leapDuration / 3 - (leapDuration / 5));
 
-        // Check against actualLeapDuration
-        if (leapTimer >= actualLeapDuration)
-        {
-            EndLeap();
-        }
-    }
-
-    private void EndLeap()
-    {
-        isLeaping = false;
-
-        if (animator != null) animator.SetBool("isLongAttacking", false);
-        
-        agent.isStopped = false;
+        rb.linearVelocity = dashDirection * leapSpeed / 4;
+        yield return new WaitForSeconds(leapDuration / 5);
 
         if (hitbox != null) hitbox.SetActive(false);
 
-        nextAttackTime = Time.time + meleeStats.attackCooldown;
+        rb.linearVelocity = Vector2.zero; // Stop the dash movement
+        animator.SetBool("isLongAttacking", false);
+        agent.isStopped = false;
+        isLeaping = false;
+        leapFlip = false;
+
+        yield return new WaitForSeconds(leapCooldown);
+        canLeap = true;
     }
 }

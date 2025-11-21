@@ -32,14 +32,16 @@ public class WeaponControl : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         if (playerStates.handsUsable)
         {
             activeWeapon.SetActive(true);
             
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && playerStates.ableToAttack)
             {
+                playerStates.ableToAttack = false;
+
                 meeleeWeaponScript = activeWeapon.GetComponent<Broom>();
                 rangedWeaponScript = activeWeapon.GetComponent<PizzaBox>();
 

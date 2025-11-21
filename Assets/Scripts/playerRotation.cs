@@ -17,7 +17,7 @@ public class playerRotation : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        playerStates = transform.parent.GetComponent<PlayerStates>();
+        if (!isUI) playerStates = transform.parent.GetComponent<PlayerStates>();
     }
 
     // Update is called once per frame
@@ -51,24 +51,19 @@ public class playerRotation : MonoBehaviour
     }
     void rotatePlayer()
     {
-        mousePos = Input.mousePosition;
+        Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        difference.Normalize();
 
-        mousePos.x -= Screen.width / 2;
-        mousePos.y -= Screen.height / 2;
+        animator.SetFloat("mouseX", difference.x);
+        animator.SetFloat("mouseY", difference.y);
 
-        mousePos.x /= Screen.width / 2;
-        mousePos.y /= Screen.height / 2;
-
-        animator.SetFloat("mouseX", mousePos.x);
-        animator.SetFloat("mouseY", mousePos.y);
-
-        if (mousePos.x == 0)
+        if (difference.x == 0)
         {
             direction = 1;
         }
         else
         {
-            direction = mousePos.x / Math.Abs(mousePos.x);
+            direction = difference.x / Math.Abs(difference.x);
         }
     }
 }

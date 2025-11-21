@@ -195,7 +195,7 @@ MonoBehaviour:
   meleePivot: {fileID: 5600788547170904413}
   meleeTrigger: {fileID: 4061176027211556376}
   dashHitbox: {fileID: 5317883624558177794}
-  stats: {fileID: 11400000, guid: 17a42dbfb580ea041bf7ffcd4d7640e0, type: 2}
+  stats: {fileID: 11400000, guid: 2ee6c150091bc4444adf12b258eebfb2, type: 2}
   currentHealth: 0
   inMeleeRange: 0
   dashSpeed: 5
@@ -831,7 +831,7 @@ GameObject:
   - component: {fileID: 1782508188861068375}
   m_Layer: 0
   m_Name: hurtbox
-  m_TagString: Untagged
+  m_TagString: EnemyHurtbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

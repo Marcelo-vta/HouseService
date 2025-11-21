@@ -82,7 +82,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1642ca0741ef8c148b69bd3bc466ea85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDamageDealer
-  customDamage: 0
+  customDamage: 1
 --- !u!1 &5969562591813998583
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,6 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6260519601612833886}
   - component: {fileID: 6946657185287991091}
+  - component: {fileID: 1957420472185600126}
   m_Layer: 10
   m_Name: Sprite
   m_TagString: Untagged
@@ -173,6 +174,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1957420472185600126
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5969562591813998583}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 68a4721a2d367b34499b653ea072ecea, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7333118239270389698
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,7 +207,6 @@ GameObject:
   - component: {fileID: 2823807719653718703}
   - component: {fileID: 3257266907970922701}
   - component: {fileID: 1935087741086380986}
-  - component: {fileID: 4901406798011803726}
   - component: {fileID: 4835973363587632196}
   - component: {fileID: 4053285220069714426}
   - component: {fileID: 2404982289109039133}
@@ -277,28 +299,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.04}
   m_Size: {x: 0.2, y: 0.1}
   m_Direction: 1
---- !u!95 &4901406798011803726
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7333118239270389698}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 68a4721a2d367b34499b653ea072ecea, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!195 &4835973363587632196
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -339,7 +339,9 @@ MonoBehaviour:
   target: {fileID: 0}
   sfxSource: {fileID: 2404982289109039133}
   hitClip: {fileID: 8300000, guid: 012e5667adcfb764a9d9d39dd51d0e0b, type: 3}
-  hitbox: {fileID: 0}
+  hitbox: {fileID: 3087916872016578512}
+  leapSpeed: 3
+  leapCooldown: 2
 --- !u!82 &2404982289109039133
 AudioSource:
   m_ObjectHideFlags: 0
@@ -450,7 +452,7 @@ GameObject:
   - component: {fileID: 3660760713022418002}
   m_Layer: 10
   m_Name: Hurtbox
-  m_TagString: Untagged
+  m_TagString: EnemyHurtbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

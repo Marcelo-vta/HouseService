@@ -15,7 +15,7 @@ public class Pizza : MonoBehaviour
     private PlayerStates playerStates;
     private List<IDamageable> hitTargets = new List<IDamageable>();
 
-    
+    private bool applySlow = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -32,6 +32,7 @@ public class Pizza : MonoBehaviour
         if (playerStates.powerUps.Contains("cheese"))
         {
             cheese.SetActive(true);
+            applySlow = true;
         }
 
         if (playerStates.powerUps.Contains("spicy"))
@@ -45,19 +46,13 @@ public class Pizza : MonoBehaviour
     {
         IDamageable damageable = collision.GetComponent<IDamageable>();
 
-        if (damageable != null && !collision.CompareTag("Player") && !hitTargets.Contains(damageable))
+        if (damageable != null && !collision.CompareTag("PlayerHurtbox") && !hitTargets.Contains(damageable))
         {
             // PASS THE KNOCKBACK HERE
-            damageable.TakeDamage(damage, knockback); 
-            
+            damageable.TakeDamage(damage, knockback, applySlow); 
             hitTargets.Add(damageable);
-        }
-
-        if (collision.tag == "enemy")
-        {
             Destroy(gameObject);
-        }
-        
+        }        
     }
 
     void OnTriggerExit2D(Collider2D collision)

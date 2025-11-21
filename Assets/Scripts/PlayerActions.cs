@@ -2,7 +2,7 @@ using System.Collections;
 using System.Linq;
 using UnityEngine;
 
-public class PlayerActions : MonoBehaviour, IDamageable
+public class PlayerActions : MonoBehaviour
 {
     private PlayerStates playerStates;
 
@@ -73,32 +73,4 @@ public class PlayerActions : MonoBehaviour, IDamageable
 
         scaredTime.Restart();
     }
-
-    public void TakeDamage(float damageAmount, float knockbackForce = 0f)
-    {
-        if (playerStates.damageable)
-        {
-            playerStates.health -= damageAmount;
-            playerStates.hurtState = true;
-            animator.SetTrigger("hurt");
-
-            StartCoroutine(HurtCoroutine());
-        }
-
-
-    }
-
-    IEnumerator HurtCoroutine()
-    {  
-        playerStates.ivulnerability = true;
-        yield return new WaitForSeconds(.8f);
-
-        playerStates.hurtState = false;
-        
-        yield return new WaitForSeconds(1);
-        playerStates.ivulnerability = false;
-    }
-
-
-
 }

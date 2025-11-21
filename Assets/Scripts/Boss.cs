@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using NUnit.Framework.Internal;
 using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
+using UnityEngine.SceneManagement;
 
 
 public class Boss : MonoBehaviour, IDamageable
@@ -116,6 +117,11 @@ public class Boss : MonoBehaviour, IDamageable
         animator.gameObject.transform.localScale = currentScale;
         animator.SetFloat("health", currentHealth);
 
+        if (currentHealth <= 0)
+        {
+            StartCoroutine(deadCoroutine());
+        }
+
         // NÃO usamos mais HandleAttackAudio aqui
     }
 
@@ -136,17 +142,17 @@ public class Boss : MonoBehaviour, IDamageable
             print(attacks[i]);
         }
 
-        if (inMeleeRange && canMelee)
+        if (inMeleeRange && canMelee && currentHealth > 0)
         {
             attacks.Add("melee");
             attacks.Add("melee");
         }
-        if (!inMeleeRange && canDash)
+        if (!inMeleeRange && canDash && currentHealth > 0)
         {
             attacks.Add("dash");
         }
 
-        if (canSpawn)
+        if (canSpawn && currentHealth > 0)
         {
             attacks.Add("spawn");
             attacks.Add("spawn");
@@ -269,7 +275,7 @@ public class Boss : MonoBehaviour, IDamageable
         canDash = true;
     }
 
-    public void TakeDamage(float damageAmount, float knockbackForce = 0f)
+    public void TakeDamage(float damageAmount, float knockbackForce = 0f, bool appliesSlow = false)
     {
         if (canTakeDamage)
         {
@@ -285,6 +291,14 @@ public class Boss : MonoBehaviour, IDamageable
         {
             audioSource.PlayOneShot(hitClip);
         }
+    }
+
+    IEnumerator deadCoroutine()
+    {
+        yield return new WaitForSeconds(1.4f);
+        animator.gameObject.SetActive(false);
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene(0);
     }
 
 

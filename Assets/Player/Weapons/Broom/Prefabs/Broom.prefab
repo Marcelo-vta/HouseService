@@ -640,6 +640,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e963d99217de26340bcdd2c1ba3e0300, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Weapon
+  attackCooldown: 0.5
   slashPrefab: {fileID: 1767328606531196417, guid: 2012192cc227b4add956d9c88a43b126, type: 3}
   broomSpriteRenderer: {fileID: 2770019621262461083}
   witchSprite: {fileID: 6053698748124750133, guid: 0cc893805844d47c997f9df6e5cb7081, type: 3}

@@ -1,5 +1,3 @@
-using System.Data;
-using UnityEditor.SpeedTree.Importer;
 using UnityEngine;
 
 public class ParentBasedOrder : MonoBehaviour

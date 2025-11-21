@@ -1,7 +1,8 @@
+using System.Collections;
 using System.Linq;
 using UnityEngine;
 
-public class PizzaBox : MonoBehaviour
+public class PizzaBox : MonoBehaviour, IWeapon
 {
     public GameObject pizzaPrefab;
     public GameObject pepperoniPrefab;
@@ -14,6 +15,7 @@ public class PizzaBox : MonoBehaviour
 
     [Range(1,0)]
     public float accuracy;
+    public float attackCooldown = .5f;
 
     public GameObject cheese;
     public GameObject spicy;
@@ -34,7 +36,6 @@ public class PizzaBox : MonoBehaviour
 
     public void Fire(Transform playerTransform = null)
     {
-
         GameObject bullet = ThrowProjectile(pizzaPrefab, accuracy);
 
         if (playerStates.powerUps.Contains("pepperoni"))
@@ -45,6 +46,8 @@ public class PizzaBox : MonoBehaviour
 
             pepperoniTimer.Restart();
         }
+
+        playerStates.AttackCooldown(attackCooldown);
 
     }
 

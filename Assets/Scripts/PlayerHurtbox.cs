@@ -1,64 +1,47 @@
+using System.Collections;
 using UnityEngine;
 
-public class PlayerHurtbox : MonoBehaviour
+public class PlayerHurtbox : MonoBehaviour, IDamageable
 {
-    public Animator animator;
-    private bool hurt;
-
-    private float currentTime = 0f;
 
     public float ivulnerableTime = .7f;
     public float recoverTime = .5f;
 
-    private SpriteRenderer spriteRenderer;
-    private CapsuleCollider2D capsuleCollider2D;
     public PlayerRoll playerRoll;
 
     public GameObject hands;
+    private PlayerStates playerStates;
+    private Animator animator;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        capsuleCollider2D = GetComponent<CapsuleCollider2D>();
+        playerStates = transform.parent.gameObject.GetComponent<PlayerStates>();
+        animator = transform.parent.gameObject.GetComponentInChildren<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TakeDamage(float damageAmount, float knockbackForce = 0f, bool appliesSlow = false)
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (playerStates.damageable)
         {
-            hit();
-        }
+            playerStates.health -= damageAmount;
+            playerStates.hurtState = true;
+            animator.SetTrigger("hurt");
 
-        if (hurt)
-        {
-            currentTime += Time.deltaTime;
-
-            if (currentTime > ivulnerableTime)
-            {
-                hurt = false;
-                setActiveHurtbox(true);
-            }
+            StartCoroutine(HurtCoroutine());
         }
     }
 
-    void hit()
-    {
-        animator.SetTrigger("hurt");
-        hurt = true;
+    IEnumerator HurtCoroutine()
+    {  
+        print("hurtCoroutine");
+        playerStates.ivulnerability = true;
+        yield return new WaitForSeconds(.8f);
 
-        currentTime = 0;
-
-        setActiveHurtbox(false);
-    }
-    
-    void setActiveHurtbox(bool value)
-    {
-        spriteRenderer.enabled = value;
-        capsuleCollider2D.enabled = value;
-        playerRoll.enabled = value;
-        hands.SetActive(value);
+        playerStates.hurtState = false;
         
+        yield return new WaitForSeconds(1);
+        playerStates.ivulnerability = false;
     }
+
 }

@@ -567,6 +567,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CleaningGuy
       objectReference: {fileID: 0}
+    - target: {fileID: 4020688413950925601, guid: a4a5720e1ac8e504ab784a6341bf6c83, type: 3}
+      propertyPath: m_TagString
+      value: PlayerHurtbox
+      objectReference: {fileID: 0}
     - target: {fileID: 4123374744843308646, guid: a4a5720e1ac8e504ab784a6341bf6c83, type: 3}
       propertyPath: m_LocalPosition.x
       value: -73.509
@@ -605,6 +609,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4123374744843308646, guid: a4a5720e1ac8e504ab784a6341bf6c83, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605401485466073235, guid: a4a5720e1ac8e504ab784a6341bf6c83, type: 3}
+      propertyPath: attackCooldown
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

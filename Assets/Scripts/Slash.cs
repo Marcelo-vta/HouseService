@@ -11,7 +11,7 @@ public class Slash : MonoBehaviour
     private Sprite[] activeSprites;
 
     [Header("Stats")]
-    public float damage = 10f; 
+    public float damage = 2f; 
     public float knockback = 5f; // This value will now be sent to the enemy
 
     private float baseDamage;
@@ -22,13 +22,12 @@ public class Slash : MonoBehaviour
     private PlayerStates playerStates;
     private List<IDamageable> hitTargets = new List<IDamageable>();
 
+    private bool appliesSlow;
+
     void Start()
     {
         playerStates = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStates>();
         activeSprites = defaultSprites;
-
-        baseDamage = damage;
-        baseKnockback = knockback;
 
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         difference.Normalize();
@@ -42,14 +41,6 @@ public class Slash : MonoBehaviour
         transform.localScale = currentScale;
 
         baseScale = transform.localScale;
-    }
-
-    void Update()
-    {
-        damage = baseDamage;
-        knockback = baseKnockback;
-        Vector3 targetScale = baseScale;
-        activeSprites = defaultSprites;
 
         if (playerStates.powerUps.Contains("mop"))
         {
@@ -58,22 +49,27 @@ public class Slash : MonoBehaviour
 
         if (playerStates.powerUps.Contains("witch"))
         {
-            knockback *= 1.5f;
+            playerStates.attackSpeed = 50;
         }
 
         if (playerStates.powerUps.Contains("long"))
         {
-            targetScale *= 1.2f;
+            knockback *= 1.5f;
+            currentScale *= 1.7f;
         }
 
         if (playerStates.powerUps.Contains("wet"))
         {
             activeSprites = wetSprites;
+            appliesSlow = true;
         }
 
-        transform.localScale = targetScale;
+        transform.localScale = currentScale;
 
+    }
 
+    void Update()
+    {
         timer += Time.deltaTime;
 
         if (timer < .15f)
@@ -97,13 +93,15 @@ public class Slash : MonoBehaviour
         IDamageable damageable = collision.GetComponent<IDamageable>();
 
 
-        if (damageable != null && !collision.CompareTag("Player") && !hitTargets.Contains(damageable))
+        if (collision.CompareTag("EnemyHurtbox"))
         {
-            print("hit!");
+            print("hit! - health: " + collision.transform.parent.GetComponent<Enemy>().currentHealth);
+            print("damage: " + damage);
             // PASS THE KNOCKBACK HERE
-            damageable.TakeDamage(damage, knockback); 
-            
+            damageable.TakeDamage(damage, knockback, appliesSlow);            
             hitTargets.Add(damageable);
+
+            print("hit! - health: " + collision.transform.parent.GetComponent<Enemy>().currentHealth);
         }
     }
 }

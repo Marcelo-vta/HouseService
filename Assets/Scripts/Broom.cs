@@ -1,10 +1,13 @@
+using System.Collections;
 using System.Linq;
 using NUnit.Framework.Constraints;
 using Unity.Mathematics;
 using UnityEngine;
 
-public class Broom : MonoBehaviour
+public class Broom : MonoBehaviour, IWeapon
 {
+    public float attackCooldown;
+
     public GameObject slashPrefab;
 
     public SpriteRenderer broomSpriteRenderer;
@@ -29,6 +32,8 @@ public class Broom : MonoBehaviour
     {
         GameObject hit = Instantiate(slashPrefab, playerTransform);
         Slash hitScript = hit.GetComponent<Slash>();
+
+        playerStates.AttackCooldown(attackCooldown);
     }
 
     public void Update()

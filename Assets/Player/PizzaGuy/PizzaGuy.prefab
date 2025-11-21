@@ -4850,7 +4850,7 @@ GameObject:
   - component: {fileID: 4186919252190480091}
   m_Layer: 0
   m_Name: Hurtbox
-  m_TagString: Untagged
+  m_TagString: PlayerHurtbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4977,7 +4977,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71dac7aeb2ff1474b876424c2748334e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  animator: {fileID: 0}
   ivulnerableTime: 0.7
   recoverTime: 0.5
   playerRoll: {fileID: 279526113275972219}
@@ -9975,6 +9974,7 @@ MonoBehaviour:
   animator: {fileID: 572476977149961712}
   playerRoll: {fileID: 279526113275972219}
   playerMovement: {fileID: 3951429651935875577}
+  isUI: 0
 --- !u!95 &572476977149961712
 Animator:
   serializedVersion: 7
@@ -10250,9 +10250,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0888afd4892f4ce2b1ea663300d69c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStates
-  health: 3
   max_health: 3
+  health: 3
   insanity: 0
+  attackSpeed: 0
   cleaner: 0
   pizzaGuy: 1
   rollingState: 0
@@ -10267,6 +10268,10 @@ MonoBehaviour:
   handsUsable: 1
   ableToRoll: 1
   ableToRotate: 1
+  ableToAttack: 1
+  ivulnerability: 0
+  damageable: 0
+  deadState: 0
   powerUps: []
 --- !u!1 &4391319265623550391
 GameObject:
