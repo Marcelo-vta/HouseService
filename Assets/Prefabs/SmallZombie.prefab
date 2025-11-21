@@ -84,6 +84,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHurtbox
   mainEnemyScript: {fileID: 3303161227284613433}
   boss: {fileID: 0}
+  boss: {fileID: 0}
 --- !u!1 &5787165749693009800
 GameObject:
   m_ObjectHideFlags: 0
@@ -98,6 +99,7 @@ GameObject:
   - component: {fileID: 3515186688867471383}
   - component: {fileID: 1538330636872387683}
   - component: {fileID: 3303161227284613433}
+  - component: {fileID: 4056634872716487070}
   m_Layer: 10
   m_Name: SmallZombie
   m_TagString: Untagged
@@ -247,7 +249,106 @@ MonoBehaviour:
   flashMaterial: {fileID: 2100000, guid: 1d2e4cc1f7274bb4bb125370ce6be22e, type: 2}
   flashDuration: 0.1
   target: {fileID: 0}
-  hitbox: {fileID: 6064630872542575924}
+  sfxSource: {fileID: 4056634872716487070}
+  hitClip: {fileID: 8300000, guid: 012e5667adcfb764a9d9d39dd51d0e0b, type: 3}
+  hitbox: {fileID: 0}
+--- !u!82 &4056634872716487070
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5787165749693009800}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &6064630872542575924
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,7 +431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1642ca0741ef8c148b69bd3bc466ea85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDamageDealer
-  customDamage: 1
+  customDamage: 0
 --- !u!1 &8696927893097297662
 GameObject:
   m_ObjectHideFlags: 0
