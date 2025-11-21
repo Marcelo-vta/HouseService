@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using Mono.Cecil;
 using NavMeshPlus.Components;
+using Unity.Cinemachine;
 using Unity.XR.OpenVR;
 using UnityEngine;
 using UnityEngine.AI;
@@ -64,6 +64,8 @@ public class TransitionManager : MonoBehaviour
 
     private List<string>meleeItems = new List<string>(){"wet", "long", "mop", "witch"};
     private List<string>rangedItems = new List<string>(){"spicy", "pepperoni", "cheese"};
+
+    private CinemachineCamera cinemachineCamera;
 
     void Awake()
     {
@@ -145,6 +147,8 @@ public class TransitionManager : MonoBehaviour
         NavigateRooms(firstF1Idx, spawnNaEntrada: true);
 
         SetVolume(volumeFloor1, true);
+
+        cinemachineCamera = GameObject.FindGameObjectWithTag("CinemachineCamera").GetComponent<CinemachineCamera>();
     }
 
     public void GoForwardRandom()
@@ -306,6 +310,7 @@ public class TransitionManager : MonoBehaviour
 
     private IEnumerator CO_TrocarSala(int destinoIndex, bool spawnNaEntrada, bool showTitle, string title, float hold)
     {
+        cinemachineCamera.GetComponent<CinemachinePositionComposer>().Damping = new Vector3(1,1,0);
         yield return FadeBoth(0f, 1f, title);
 
         if (showTitle && !string.IsNullOrEmpty(title) && hold > 0f)
@@ -326,6 +331,9 @@ public class TransitionManager : MonoBehaviour
         // if (antiga) Destroy(antiga);
 
         yield return FadeBoth(1f, 0f, title, deactivateAtEnd: true);
+
+        yield return new WaitForSeconds(1);
+        cinemachineCamera.GetComponent<CinemachinePositionComposer>().Damping = new Vector3(0,0,0);
     }
 
     private IEnumerator CO_GoToBoss()

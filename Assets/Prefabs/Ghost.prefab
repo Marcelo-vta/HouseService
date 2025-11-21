@@ -226,7 +226,7 @@ Transform:
   m_GameObject: {fileID: 7333118239270389698}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -43.95443, y: -6.66754, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -337,6 +337,7 @@ MonoBehaviour:
   flashMaterial: {fileID: 2100000, guid: 1d2e4cc1f7274bb4bb125370ce6be22e, type: 2}
   flashDuration: 0.1
   target: {fileID: 0}
+  currentHealth: 0
   sfxSource: {fileID: 2404982289109039133}
   hitClip: {fileID: 8300000, guid: 012e5667adcfb764a9d9d39dd51d0e0b, type: 3}
   hitbox: {fileID: 3087916872016578512}

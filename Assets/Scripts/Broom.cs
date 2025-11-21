@@ -49,6 +49,10 @@ public class Broom : MonoBehaviour, IWeapon
         {
             wet.SetActive(true);
         }
+        else
+        {
+            wet.SetActive(false);
+        }
 
         if (playerStates.powerUps.Contains("mop"))
         {

@@ -1,5 +1,3 @@
-using System.Data.Common;
-using UnityEditor.Animations;
 using UnityEngine;
 
 public class CharacterManager : MonoBehaviour

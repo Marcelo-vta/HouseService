@@ -95,13 +95,9 @@ public class Slash : MonoBehaviour
 
         if (collision.CompareTag("EnemyHurtbox"))
         {
-            print("hit! - health: " + collision.transform.parent.GetComponent<Enemy>().currentHealth);
-            print("damage: " + damage);
             // PASS THE KNOCKBACK HERE
             damageable.TakeDamage(damage, knockback, appliesSlow);            
             hitTargets.Add(damageable);
-
-            print("hit! - health: " + collision.transform.parent.GetComponent<Enemy>().currentHealth);
         }
     }
 }

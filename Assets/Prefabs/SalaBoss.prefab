@@ -4846,6 +4846,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2295307575095696376}
+  - component: {fileID: 4506917562292097855}
   m_Layer: 0
   m_Name: SalaBoss
   m_TagString: Untagged
@@ -4870,6 +4871,22 @@ Transform:
   - {fileID: 3559344597410143500}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4506917562292097855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223768816387039516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70bd44a44cd62c64fbfc1eea95b24880, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Extensions.CollectSources2d
+  m_OverrideByGrid: 0
+  m_UseMeshPrefab: {fileID: 0}
+  m_CompressBounds: 0
+  m_OverrideVector: {x: 1, y: 1, z: 1}
 --- !u!1 &2240308931183575387
 GameObject:
   m_ObjectHideFlags: 0
@@ -8495,7 +8512,7 @@ GameObject:
   - component: {fileID: 220937588458608166}
   - component: {fileID: 8696319389055544455}
   - component: {fileID: 4277271653285354780}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22030,7 +22047,7 @@ GameObject:
   - component: {fileID: 59349191359314423}
   - component: {fileID: 6750505135541668301}
   - component: {fileID: 5565497000735047699}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: ColumnBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}

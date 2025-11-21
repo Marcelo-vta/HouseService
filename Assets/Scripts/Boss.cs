@@ -6,6 +6,7 @@ using NUnit.Framework.Internal;
 using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine.SceneManagement;
+using UnityEngine.AI;
 
 
 public class Boss : MonoBehaviour, IDamageable
@@ -27,6 +28,8 @@ public class Boss : MonoBehaviour, IDamageable
     public float dashCooldown = 2f;
     public float dashStopDist = 3f;
     public float dashAccConversion;
+
+    [SerializeField] protected Transform target;
 
     private GameObject player;
     private Vector3 playerPosition;
@@ -63,6 +66,7 @@ public class Boss : MonoBehaviour, IDamageable
 
     private Stopwatch attackTimer = new Stopwatch();
     private Animator animator;
+    private NavMeshAgent agent;
 
     List<string> attacks;
 
@@ -75,6 +79,11 @@ public class Boss : MonoBehaviour, IDamageable
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        agent = GetComponent<NavMeshAgent>();
+
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
+
         player = GameObject.FindGameObjectWithTag("Player");
         bossRb = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
@@ -92,6 +101,12 @@ public class Boss : MonoBehaviour, IDamageable
             }
         }
         audioSource.playOnAwake = false;
+
+        if (target == null)
+        {
+            GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+            if (playerObj != null) target = playerObj.transform;
+        }
     }
 
     // Update is called once per frame
@@ -109,6 +124,12 @@ public class Boss : MonoBehaviour, IDamageable
             StartCoroutine(AttackCoroutine());
         }
 
+        if (!isAttacking)
+        {
+            HandleChase();
+        }
+
+
         Vector2 playerDirection = (player.transform.position - transform.position).normalized;
 
         Vector3 currentScale = animator.gameObject.transform.localScale;
@@ -125,6 +146,20 @@ public class Boss : MonoBehaviour, IDamageable
         // NÃO usamos mais HandleAttackAudio aqui
     }
 
+    private void HandleChase()
+    {
+        if (agent.enabled) 
+        {
+            animator.SetBool("isMoving", true);
+            agent.SetDestination(target.position);
+            agent.isStopped = false;
+        }
+        else
+        {
+            animator.SetBool("isMoving", false);
+        }
+    }
+
     void FixedUpdate()
     {
 
@@ -134,6 +169,9 @@ public class Boss : MonoBehaviour, IDamageable
     {
         canAttack = false;
         isAttacking = true;
+
+        agent.isStopped = true; 
+        agent.ResetPath();
 
 
         attacks = new List<string>();

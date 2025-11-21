@@ -20,16 +20,14 @@ public class ItemSpawner : MonoBehaviour
     private PlayerActions playerActions;
     private Animator animator;
 
+    private GameObject player;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
 
-        playerStates = GameObject.FindGameObjectWithTag("Player")
-            .GetComponent<PlayerStates>();
-
-        playerActions = GameObject.FindGameObjectWithTag("Player")
-            .GetComponent<PlayerActions>();
+        loadPlayer();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -51,7 +49,19 @@ public class ItemSpawner : MonoBehaviour
         }
     }
 
+    void loadPlayer()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        
+        playerStates = player
+            .GetComponent<PlayerStates>();
+        playerActions = player
+            .GetComponent<PlayerActions>();
+    }
+
     private void Update() {
+
+        loadPlayer();
 
         if (inRange && interactible)
         {
@@ -83,6 +93,7 @@ public class ItemSpawner : MonoBehaviour
         animator.SetBool("Mimic", isTrap);
     }
     void Interact(PlayerStates states)
+
     {
         interacting = false;
         interactible = false;
