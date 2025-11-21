@@ -43,6 +43,10 @@ public class PlayerAudio : MonoBehaviour
     [Header("Ajustes")]
     [Range(0f, 0.3f)] public float pitchVariation = 0.1f;
 
+    [Header("Eventos")]
+    public AudioClip roundClearClip;
+
+
     // estados anteriores
     private bool wasObtaining;
     private bool wasHurt;
@@ -256,7 +260,7 @@ public class PlayerAudio : MonoBehaviour
     // ──────────────────────────────────────────────
     int GetInsanityLevel()
     {
-        return (int)(playerStates.insanity*2);
+        return (int)(playerStates.insanity * 2);
     }
 
     void UpdateMusicImmediate()

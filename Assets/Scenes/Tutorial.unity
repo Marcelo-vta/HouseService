@@ -250,6 +250,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8975726947682090554, guid: a4a5720e1ac8e504ab784a6341bf6c83, type: 3}
+      propertyPath: roundClearClip
+      value: 
+      objectReference: {fileID: 8300000, guid: dc8a9686d1e869b47b96f59e15b4ab67, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
