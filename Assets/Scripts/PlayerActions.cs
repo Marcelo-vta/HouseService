@@ -68,7 +68,7 @@ public class PlayerActions : MonoBehaviour, IDamageable
 
     public void Scare()
     {
-        playerStates.insanity += 1;
+        playerStates.insanity += .5f;
         scare = true;
 
         scaredTime.Restart();

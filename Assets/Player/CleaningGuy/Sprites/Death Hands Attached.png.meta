@@ -1,25 +1,34 @@
 fileFormatVersion: 2
-guid: 81cab87b0499d413793259808d152fcb
+guid: d0ad782de9261468eba54770b183847e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6761164967045977113
-    second: items_0
+      213: -8469758075728377153
+    second: Death Hands Attached_0
   - first:
-      213: 5508725064705088119
-    second: items_1
+      213: -5978356630951489288
+    second: Death Hands Attached_1
   - first:
-      213: -68751727340038015
-    second: items_2
+      213: -3959737470622557873
+    second: Death Hands Attached_2
   - first:
-      213: 6099581493293703690
-    second: items_3
+      213: 125352017141053349
+    second: Death Hands Attached_3
   - first:
-      213: -5428206428529569624
-    second: items_4
+      213: 4922110706642095658
+    second: Death Hands Attached_4
   - first:
-      213: -7833671090200325546
-    second: items_5
+      213: -4906792235395151765
+    second: Death Hands Attached_5
+  - first:
+      213: -1977512362989562336
+    second: Death Hands Attached_6
+  - first:
+      213: 4318820838421363774
+    second: Death Hands Attached_7
+  - first:
+      213: -8154318546305903805
+    second: Death Hands Attached_8
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -66,7 +75,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 15
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -141,155 +150,199 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Items_0
+      name: Death Hands Attached_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 66aac45f56a2e424497d49b642c3829a
-      internalID: -159064901
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Items_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f2a98b89143c940ba9ca38a8e418f2d9
-      internalID: 1389802862
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Items_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a42cc724035074a1696b66a08bbf9bee
-      internalID: 733371540
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Items_3
-      rect:
-        serializedVersion: 2
-        x: 0
+        x: 3
         y: 0
-        width: 16
-        height: 16
+        width: 30
+        height: 35
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 010ba09fef48e4dad8b4c2ef8d3d5a98
-      internalID: 1782614087
+      spriteID: fbac6b2a7ef557a80800000000000000
+      internalID: -8469758075728377153
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Items_4
+      name: Death Hands Attached_1
       rect:
         serializedVersion: 2
-        x: 16
+        x: 33
         y: 0
-        width: 16
-        height: 16
+        width: 30
+        height: 35
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: e95267e95821e49e7928232b43d5a5d6
-      internalID: -1394445116
+      spriteID: 8f0198f915c980da0800000000000000
+      internalID: -5978356630951489288
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Items_5
+      name: Death Hands Attached_2
       rect:
         serializedVersion: 2
-        x: 32
+        x: 63
         y: 0
-        width: 16
-        height: 16
+        width: 30
+        height: 35
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 92734e7987b514a87939d62bd0bc2a68
-      internalID: 1676839563
+      spriteID: f491db300cf2c09c0800000000000000
+      internalID: -3959737470622557873
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Items_6
+      name: Death Hands Attached_3
       rect:
         serializedVersion: 2
-        x: 48
+        x: 93
         y: 0
-        width: 16
-        height: 16
+        width: 30
+        height: 35
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: bdecc7319ca8c4730a50e5852861f51b
-      internalID: 1509771364
+      spriteID: 5a73295def65db100800000000000000
+      internalID: 125352017141053349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Hands Attached_4
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 0
+        width: 30
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2e8c86fb99de4440800000000000000
+      internalID: 4922110706642095658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Hands Attached_5
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 0
+        width: 30
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6880ae857297ebb0800000000000000
+      internalID: -4906792235395151765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Hands Attached_6
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 0
+        width: 30
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0265011bbf67e84e0800000000000000
+      internalID: -1977512362989562336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Hands Attached_7
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 0
+        width: 30
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3cf8a2aba88feb30800000000000000
+      internalID: 4318820838421363774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death Hands Attached_8
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 0
+        width: 30
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3439e0e4c7a06de80800000000000000
+      internalID: -8154318546305903805
       vertices: []
       indices: 
       edges: []
@@ -298,7 +351,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 26ece41b3cb554c4681e652fb7f5b93b
+    spriteID: ef5b53f39a5d3426cb4dac7f39561342
     internalID: 0
     vertices: []
     indices: 
@@ -308,15 +361,17 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":2.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":9.0,"y":1.0},"gridSpriteSize":{"x":30.0,"y":35.0},"gridSpriteOffset":{"x":3.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Items_0: -159064901
-      Items_1: 1389802862
-      Items_2: 733371540
-      Items_3: 1782614087
-      Items_4: -1394445116
-      Items_5: 1676839563
-      Items_6: 1509771364
+      Death Hands Attached_0: -8469758075728377153
+      Death Hands Attached_1: -5978356630951489288
+      Death Hands Attached_2: -3959737470622557873
+      Death Hands Attached_3: 125352017141053349
+      Death Hands Attached_4: 4922110706642095658
+      Death Hands Attached_5: -4906792235395151765
+      Death Hands Attached_6: -1977512362989562336
+      Death Hands Attached_7: 4318820838421363774
+      Death Hands Attached_8: -8154318546305903805
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

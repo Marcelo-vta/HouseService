@@ -82,6 +82,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1642ca0741ef8c148b69bd3bc466ea85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDamageDealer
+  customDamage: 0
 --- !u!1 &5969562591813998583
 GameObject:
   m_ObjectHideFlags: 0
@@ -335,7 +336,7 @@ MonoBehaviour:
   flashMaterial: {fileID: 2100000, guid: 1d2e4cc1f7274bb4bb125370ce6be22e, type: 2}
   flashDuration: 0.1
   target: {fileID: 0}
-  hitbox: {fileID: 0}
+  hitbox: {fileID: 3087916872016578512}
 --- !u!1 &7571579008874462646
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,3 +420,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHurtbox
   mainEnemyScript: {fileID: 4053285220069714426}
+  boss: {fileID: 0}

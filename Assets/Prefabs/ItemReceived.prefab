@@ -292,7 +292,7 @@ SpriteRenderer:
   m_Size: {x: 0.07, y: 0.07}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &7557156669614267120
@@ -309,14 +309,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   itemName: wet
   rotatingSpeed: 50
-  spicy: {fileID: 8033092973025764044, guid: 81cab87b0499d413793259808d152fcb, type: 3}
-  pepperoni: {fileID: 4337684191699249041, guid: 81cab87b0499d413793259808d152fcb, type: 3}
-  cheese: {fileID: -488721925442295091, guid: 81cab87b0499d413793259808d152fcb, type: 3}
-  wet: {fileID: -7573354855677281409, guid: 81cab87b0499d413793259808d152fcb, type: 3}
-  longHandle: {fileID: -5971942374765049077, guid: 81cab87b0499d413793259808d152fcb, type: 3}
-  witch: {fileID: 1801263428120863714, guid: 81cab87b0499d413793259808d152fcb, type: 3}
-  mop: {fileID: -1026849496, guid: 81cab87b0499d413793259808d152fcb, type: 3}
-  lights: {fileID: 0}
+  spicy: {fileID: -159064901, guid: 81cab87b0499d413793259808d152fcb, type: 3}
+  pepperoni: {fileID: 1389802862, guid: 81cab87b0499d413793259808d152fcb, type: 3}
+  cheese: {fileID: 733371540, guid: 81cab87b0499d413793259808d152fcb, type: 3}
+  wet: {fileID: 1782614087, guid: 81cab87b0499d413793259808d152fcb, type: 3}
+  longHandle: {fileID: 1676839563, guid: 81cab87b0499d413793259808d152fcb, type: 3}
+  witch: {fileID: -1394445116, guid: 81cab87b0499d413793259808d152fcb, type: 3}
+  mop: {fileID: 1509771364, guid: 81cab87b0499d413793259808d152fcb, type: 3}
+  lights: {fileID: 485668377316283717}
 --- !u!1 &8008932148562422339
 GameObject:
   m_ObjectHideFlags: 0

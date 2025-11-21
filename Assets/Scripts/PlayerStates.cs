@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerStates : MonoBehaviour
 {
+    public int max_health = 4;
     public float health;
-    public int max_health;
     public float insanity;
     private float accuracy;
 
@@ -29,6 +29,9 @@ public class PlayerStates : MonoBehaviour
     public bool ivulnerability;
     public bool damageable;
 
+    public bool deadState;
+
+
     public List<string> powerUps;
 
     private Animator playerAnimator;
@@ -36,20 +39,24 @@ public class PlayerStates : MonoBehaviour
     private void Start()
     {
         playerAnimator = GetComponentInChildren<Animator>();
+        health = max_health;
     }
 
     private void Update()
     {
+        deathState = health <= 0;
+
         handsUsable = !( rollingState || interactingState || obtainingState || hurtState || deathState || scaredState );
         ableToWalk = !( rollingState || interactingState || obtainingState || deathState || scaredState );
         ableToRoll = !( obtainingState || interactingState || deathState || hurtState || rollingState || scaredState ) && walkingState;
         ableToRotate = !( obtainingState || interactingState || deathState || hurtState || rollingState  || scaredState );
         damageable = !( obtainingState || deathState || hurtState || scaredState || ivulnerability);
 
-
         playerAnimator.SetBool("interacting", interactingState);
         playerAnimator.SetBool("obtaining", obtainingState);
         playerAnimator.SetBool("scared", scaredState);
+        playerAnimator.SetBool("dead", deathState);
+
 
         SetInteractible();
     }
