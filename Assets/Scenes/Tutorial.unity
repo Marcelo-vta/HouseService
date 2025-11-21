@@ -252,7 +252,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3043616993849565294, guid: a4a5720e1ac8e504ab784a6341bf6c83, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -275,6 +275,10 @@ PrefabInstance:
     - target: {fileID: 3966051244694448174, guid: 8dc237b336dd2c54e90164b217fea895, type: 3}
       propertyPath: m_Name
       value: PizzaGuy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3966051244694448174, guid: 8dc237b336dd2c54e90164b217fea895, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7384240713905358394, guid: 8dc237b336dd2c54e90164b217fea895, type: 3}
       propertyPath: m_LocalPosition.x
