@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Porta : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Porta : MonoBehaviour
     private TransitionManager tm;
 
     private PlayerStates playerStates;
+    public bool tutorial = false;
 
     void Start()
     {
@@ -23,6 +25,11 @@ public class Porta : MonoBehaviour
     {
         if (jogadorPerto && Input.GetKeyDown(KeyCode.E))
         {
+            if (tutorial)
+            {
+                SceneManager.LoadScene(2);    
+            }
+
             if (tipo == TipoAnchor.Saida)
                 tm.GoForwardRandom();   // vai pra nova sala aleatória
             else

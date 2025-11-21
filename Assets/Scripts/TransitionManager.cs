@@ -5,6 +5,7 @@ using NavMeshPlus.Components;
 using Unity.XR.OpenVR;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TransitionManager : MonoBehaviour
@@ -148,7 +149,7 @@ public class TransitionManager : MonoBehaviour
 
     public void GoForwardRandom()
     {
-        if (salaAtualIndex == BOSS) return;
+        if (seenRooms.Count >= 8) SceneManager.LoadScene(3);
         int destino;
 
         // Se tem F2 e estamos no último do F2 -> boss
@@ -219,7 +220,6 @@ public class TransitionManager : MonoBehaviour
 
     private void CreateSala(int index)
     {
-
         seenRooms.Add(index);
 
         int currentFloor;

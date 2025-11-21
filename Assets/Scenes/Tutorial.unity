@@ -551,6 +551,10 @@ PrefabInstance:
       propertyPath: shortcutSuggestion
       value: 
       objectReference: {fileID: 1054716959}
+    - target: {fileID: 6907172258494215887, guid: f1b5ca71765286d4b8b64ed4e470b7b8, type: 3}
+      propertyPath: tutorial
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8040595527649739445, guid: f1b5ca71765286d4b8b64ed4e470b7b8, type: 3}
       propertyPath: m_Name
       value: TutorialRoom
