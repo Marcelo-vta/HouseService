@@ -33,7 +33,7 @@ public class PlayerRoll : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (InputManager.Instance.DashInput)
         {
             Roll();
         }
