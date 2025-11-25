@@ -51,8 +51,21 @@ public class playerRotation : MonoBehaviour
     }
     void rotatePlayer()
     {
-        Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        difference.Normalize();
+        Vector2 lookInput = InputManager.Instance.LookInput;
+        Vector2 difference;
+
+        if (lookInput != Vector2.zero)
+        {
+            // Joystick / Gamepad Aiming
+            difference = lookInput.normalized;
+        }
+        else
+        {
+            // Mouse Aiming (Fallback)
+            Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            difference = (Vector2)(worldMousePos - transform.position);
+            difference.Normalize();
+        }
 
         animator.SetFloat("mouseX", difference.x);
         animator.SetFloat("mouseY", difference.y);

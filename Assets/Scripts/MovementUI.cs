@@ -60,10 +60,10 @@ public class MovementUI : MonoBehaviour
         //   MOVEMENT (WASD)
         // ----------------------
 
-        if (Input.GetKeyDown(KeyCode.W)) keyW.SetActive(false);
-        if (Input.GetKeyDown(KeyCode.A)) keyA.SetActive(false);
-        if (Input.GetKeyDown(KeyCode.S)) keyS.SetActive(false);
-        if (Input.GetKeyDown(KeyCode.D)) keyD.SetActive(false);
+        if (InputManager.Instance.MoveInput.y > 0) keyW.SetActive(false);
+        if (InputManager.Instance.MoveInput.x < 0) keyA.SetActive(false);
+        if (InputManager.Instance.MoveInput.y < 0) keyS.SetActive(false);
+        if (InputManager.Instance.MoveInput.x > 0) keyD.SetActive(false);
 
         // Se TODOS os ícones do movement sumiram → apaga o texto "MOVEMENT"
         if (!keyW.activeSelf && !keyA.activeSelf && !keyS.activeSelf && !keyD.activeSelf)
@@ -76,7 +76,7 @@ public class MovementUI : MonoBehaviour
         // ----------------------
 
         // Quando SPACE for pressionado → ícone some
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (InputManager.Instance.DashInput)
         {
             keySpace.SetActive(false);
         }

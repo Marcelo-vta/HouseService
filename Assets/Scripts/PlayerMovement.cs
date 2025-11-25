@@ -29,8 +29,9 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        moveHorizontal = Input.GetAxisRaw("Horizontal");
-        moveVertical = Input.GetAxisRaw("Vertical");
+        Vector2 input = InputManager.Instance.MoveInput;
+        moveHorizontal = input.x;
+        moveVertical = input.y;
 
         playerStates.walkingState = MathF.Abs(moveHorizontal) + MathF.Abs(moveVertical) > 0;
 
