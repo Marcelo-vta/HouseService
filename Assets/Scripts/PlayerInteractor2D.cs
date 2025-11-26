@@ -9,8 +9,8 @@ public class PlayerInteractor2D : MonoBehaviour
     public KeyCode interactKey = KeyCode.E;
 
     [Header("Distances")]
-    public float maxConsiderDistance = 4f; // distancia máxima para considerar highlight/pulse
-    public float interactDistance = 1.5f; // distancia máxima para realmente "interagir" (E ativa)
+    public float maxConsiderDistance = 4f; // distancia maxima para considerar highlight/pulse
+    public float interactDistance = 1.5f; // distancia maxima para realmente "interagir" (E ativa)
 
     [Header("Tags (opcionais)")]
     public string[] interactableTags = new string[] { "Selectable", "Interactable" };
@@ -70,9 +70,10 @@ public class PlayerInteractor2D : MonoBehaviour
         float intensity = best != null ? DistanceToIntensity(bestDist, maxConsiderDistance) : 0f;
         SetHighlighted(best, intensity);
 
-        if (best != null && Input.GetKeyDown(interactKey))
+        // MODIFIED: Added InputManager check
+        if (best != null && (Input.GetKeyDown(interactKey) || InputManager.Instance.InteractInput))
         {
-            // só interage se estiver dentro do interactDistance
+            // so interage se estiver dentro do interactDistance
             if (bestDist <= interactDistance)
             {
                 best.OnInteract(gameObject);
@@ -115,12 +116,12 @@ public class PlayerInteractor2D : MonoBehaviour
         }
     }
 
-    // API pública para interação via código
+    // API publica para interacao via codigo
     public void InteractCurrent()
     {
         if (_currentHighlighted != null)
         {
-            // só interage se estiver próximo o suficiente
+            // so interage se estiver proximo o suficiente
             MonoBehaviour mb = _currentHighlighted as MonoBehaviour;
             if (mb != null)
             {
