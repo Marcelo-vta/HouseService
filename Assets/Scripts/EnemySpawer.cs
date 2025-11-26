@@ -4,6 +4,7 @@ using UnityEngine;
 public class EnemySpawer : MonoBehaviour
 {
     public List<GameObject> enemiesToSpawn;
+    public GameObject spawnEffect;
 
     private GameObject enemySpawned;
     private bool spawned = false;
@@ -12,6 +13,7 @@ public class EnemySpawer : MonoBehaviour
     {
         int chosenEnemy = Random.Range(0, enemiesToSpawn.Count);
         enemySpawned = Instantiate(enemiesToSpawn[chosenEnemy], transform);
+        Instantiate(spawnEffect, enemySpawned.transform);
         spawned = true;
     }
 

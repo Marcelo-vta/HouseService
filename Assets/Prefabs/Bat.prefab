@@ -1,5 +1,50 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1799953276882420601
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2168179867894193059}
+  - component: {fileID: 9184158452791574703}
+  m_Layer: 0
+  m_Name: DeathEffectPivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2168179867894193059
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799953276882420601}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.039, z: 0}
+  m_LocalScale: {x: 1.0071204, y: 1.0071204, z: 1.0071204}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6366563059975355216}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9184158452791574703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799953276882420601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e1e3ef3834b24b15a23f329bc13c7e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationDestroy
+  ableToDestroy: 0
 --- !u!1 &2023209073301492316
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,6 +254,7 @@ Transform:
   m_LocalScale: {x: 0.99293, y: 0.99293, z: 0.99293}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2168179867894193059}
   - {fileID: 5441843834623310956}
   - {fileID: 6483324215315850033}
   m_Father: {fileID: 0}
@@ -316,6 +362,7 @@ MonoBehaviour:
   flashDuration: 0.1
   target: {fileID: 0}
   currentHealth: 0
+  deathEffect: {fileID: 436501358805370403, guid: c71128320e6cc4a3d8d384b489aaafba, type: 3}
   sfxSource: {fileID: 4015838766261526270}
   hitClip: {fileID: 8300000, guid: 8c41769470bf3e741b2df3df86ad83aa, type: 3}
   obstacleLayer:

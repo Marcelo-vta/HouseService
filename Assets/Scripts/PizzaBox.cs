@@ -21,6 +21,8 @@ public class PizzaBox : MonoBehaviour, IWeapon
     public GameObject spicy;
     public GameObject pepperoni;
 
+    public GameObject shootEffect;
+
 
     private int throwingPepperoni = 0;
     private Stopwatch pepperoniTimer = new Stopwatch();
@@ -37,6 +39,8 @@ public class PizzaBox : MonoBehaviour, IWeapon
     public void Fire(Transform playerTransform = null)
     {
         GameObject bullet = ThrowProjectile(pizzaPrefab, accuracy);
+
+        Instantiate(shootEffect, firePoint.transform);
 
         if (playerStates.powerUps.Contains("pepperoni"))
         {
@@ -84,8 +88,6 @@ public class PizzaBox : MonoBehaviour, IWeapon
 
         float inaccuracy = 1f - shotAccuracy;
         inaccuracy = Random.Range(-inaccuracy, inaccuracy);
-
-        print(inaccuracy);
 
         float shotOffset = inaccuracy * innacuracyConstant;
 

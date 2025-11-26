@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -11,6 +12,8 @@ public class Pizza : MonoBehaviour
     public GameObject pepperoni;
     public GameObject cheese;
     public GameObject spicy;
+
+    public GameObject splashEffect;
 
     private PlayerStates playerStates;
     private List<IDamageable> hitTargets = new List<IDamageable>();
@@ -51,15 +54,29 @@ public class Pizza : MonoBehaviour
             // PASS THE KNOCKBACK HERE
             damageable.TakeDamage(damage, knockback, applySlow); 
             hitTargets.Add(damageable);
-            Destroy(gameObject);
-        }        
+
+            destroyPizza();
+        }
+
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Obstacles"))
+        {
+            destroyPizza();
+        }
     }
 
     void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.tag == "bulletRange")
         {
-            Destroy(gameObject);
+            destroyPizza();
         }
+    }
+
+    private void destroyPizza()
+    {
+        GameObject splashEffectInstantiated = Instantiate(splashEffect);
+        splashEffectInstantiated.transform.position = transform.position;
+
+        Destroy(gameObject);
     }
 }

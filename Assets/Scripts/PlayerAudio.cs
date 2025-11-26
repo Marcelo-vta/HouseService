@@ -208,6 +208,11 @@ public class PlayerAudio : MonoBehaviour
         // ROLL
         if (playerStates.rollingState && !wasRolling)
             PlaySFX(rollClip);
+
+        if (playerStates.insanity*2 != lastInsanityLevel)
+        {
+            UpdateMusicImmediate();
+        }
     }
 
     void SavePreviousStates()
@@ -301,5 +306,10 @@ public class PlayerAudio : MonoBehaviour
             musicSource.loop = true;
             musicSource.Play();
         }
+    }
+
+    public void clearedRoom()
+    {
+        PlaySFX(roundClearClip);
     }
 }

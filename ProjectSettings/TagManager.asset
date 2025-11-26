@@ -18,6 +18,7 @@ TagManager:
   - PlayerHurtbox
   - EnemyHurtbox
   - CinemachineCamera
+  - Mouse
   layers:
   - Default
   - TransparentFX

@@ -17,6 +17,8 @@ public class Enemy : MonoBehaviour, IDamageable
     protected NavMeshAgent agent;
     public float currentHealth;
 
+    public GameObject deathEffect;
+
     // Visuals
     private SpriteRenderer spriteRenderer;
     private Material originalMaterial;
@@ -143,6 +145,9 @@ public class Enemy : MonoBehaviour, IDamageable
 
     protected virtual void Die()
     {
+        deathEffect = Instantiate(deathEffect);
+        deathEffect.transform.position = GetComponentInChildren<AnimationDestroy>().transform.position;
+        
         Destroy(gameObject);
     }
 

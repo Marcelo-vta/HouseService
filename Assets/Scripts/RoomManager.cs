@@ -29,11 +29,18 @@ public class RoomManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+        }
+
         if (started && !ended)
         {
             if (spawners.transform.childCount == 0)
             {
                 ended = true;
+                PlayerAudio playerAudio = player.GetComponent<PlayerAudio>();
+                playerAudio.clearedRoom();
             }
         }
 

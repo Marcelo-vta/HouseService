@@ -233,6 +233,7 @@ MonoBehaviour:
   pepperoni: {fileID: 7963781036564526563}
   cheese: {fileID: 6340517544827119477}
   spicy: {fileID: 4426994555261347091}
+  splashEffect: {fileID: 9008160683344316488, guid: 77fc34cfe2a2949d1ba3e8adfe216f04, type: 3}
 --- !u!1 &4426994555261347091
 GameObject:
   m_ObjectHideFlags: 0

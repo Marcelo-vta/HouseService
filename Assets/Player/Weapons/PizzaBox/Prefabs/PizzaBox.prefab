@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PizzaBox
   pizzaPrefab: {fileID: 4062383134465746442, guid: 326272e4e319d5445afca66edc6d499b, type: 3}
-  pepperoniPrefab: {fileID: 0}
+  pepperoniPrefab: {fileID: 1174946054561463707, guid: 39e4dc4ad73974f34bf36ac47c080e47, type: 3}
   hand: {fileID: 8099402620112701193}
   firePoint: {fileID: 3980645928083043816}
   fireForce: 10
@@ -153,6 +153,7 @@ MonoBehaviour:
   cheese: {fileID: 9145966044146317855}
   spicy: {fileID: 6190036333133823707}
   pepperoni: {fileID: 1243248718594807789}
+  shootEffect: {fileID: 8349312260003542442, guid: c08e99665c1d546628c6f6265c464636, type: 3}
 --- !u!114 &307965229162488827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -329,7 +330,7 @@ Transform:
   m_GameObject: {fileID: 2956514113786542090}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.614, y: -0.103, z: 1}
+  m_LocalPosition: {x: 0.644, y: -0.004, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

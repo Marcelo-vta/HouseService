@@ -34,6 +34,7 @@ public class PlayerStates : MonoBehaviour
     public bool damageable;
 
     public bool deadState;
+    public bool isSpawning = true;
 
 
     public List<string> powerUps;
@@ -65,12 +66,13 @@ public class PlayerStates : MonoBehaviour
 
     private void Update()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 0)
+        if (SceneManager.GetActiveScene().buildIndex == 0 && !isSpawning)
         {
             Instance = null;
             Destroy(gameObject);
         }
-
+        if (SceneManager.GetActiveScene().buildIndex == 0) isSpawning = false;
+        
         if (SceneManager.GetActiveScene().buildIndex == 2 && lastScene == 1)
         {
             health = max_health;

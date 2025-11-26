@@ -6,26 +6,46 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Collider2D))]
 public class InteractableAdapter : MonoBehaviour
 {
-    public string playerType;
+    public GameObject playerType;
+    public GameObject hoverBg;
+
     private bool isHovered;
+    private bool started = false;
+
 
     void Update()
     {
-        if(Input.GetMouseButtonDown(1) && isHovered)
+        if(Input.GetMouseButtonDown(0) && isHovered && !started)
         {
+            // StartCoroutine(StartGame());
+            started = true;
+            GameObject player = Instantiate(playerType);
             SceneManager.LoadScene(1);
         }
     }
 
-    void OnMouseEnter()
-    {
-        isHovered = true;
-    }
+    // IEnumerator StartGame(){
 
-    void OnMouseExit()
-    {
-        isHovered = false;
-    }
+    //     print("click!");
+        
+    //     started = true;
+    //     GameObject player = Instantiate(playerType);
+    //     SceneManager.LoadScene(1);
+    // }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Mouse"))
+        {
+            isHovered = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Mouse"))
+        {
+            isHovered = false;
+        }
+    }
 
 }
