@@ -19,7 +19,7 @@ public class MobileUISetup : MonoBehaviour
         canvasGO.AddComponent<GraphicRaycaster>();
 
         // 2. Create EventSystem if missing
-        if (FindObjectOfType<EventSystem>() == null)
+        if (FindFirstObjectByType<EventSystem>() == null)
         {
             GameObject es = new GameObject("EventSystem");
             es.AddComponent<EventSystem>();

@@ -4895,11 +4895,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2404619834082641610}
-  - component: {fileID: 8424265298270827460}
   - component: {fileID: 4442211879298310332}
   - component: {fileID: 6625993758130103762}
   - component: {fileID: 3966551889827346984}
-  - component: {fileID: 8348042454992716644}
   m_Layer: 0
   m_Name: CleaningGuyUI
   m_TagString: PlayerUI
@@ -4926,19 +4924,6 @@ Transform:
   - {fileID: 1908649808376637901}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8424265298270827460
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3043616993849565294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b8cd7e27555fe5489fde14690255382, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  speed: 3.5
 --- !u!114 &4442211879298310332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4954,6 +4939,7 @@ MonoBehaviour:
   animator: {fileID: 7436644467246004146}
   playerRoll: {fileID: 0}
   playerMovement: {fileID: 0}
+  isUI: 0
 --- !u!70 &6625993758130103762
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -5003,25 +4989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 067d900f3f87bdf4f956c1e5e8dd7db0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractableAdapter
-  shiningBorder: {fileID: 0}
-  mensagem: {fileID: 0}
-  pulseBaseDuration: 0.6
-  pulseRepeat: 1
-  interactionMessage: 
---- !u!114 &8348042454992716644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3043616993849565294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d625b61a5e7d3464088827ee2055a199, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerIdentity
-  playerId: 1
-  playerName: cleaner
+  playerType: 
 --- !u!1 &3224788042219289296
 GameObject:
   m_ObjectHideFlags: 0

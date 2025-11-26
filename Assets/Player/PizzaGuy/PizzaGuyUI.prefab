@@ -9732,7 +9732,6 @@ GameObject:
   m_Component:
   - component: {fileID: 649261474240876527}
   - component: {fileID: 3467511068338663071}
-  - component: {fileID: 8579353389491671882}
   - component: {fileID: 572476977149961712}
   m_Layer: 0
   m_Name: Sprite
@@ -9815,21 +9814,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8579353389491671882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3214962337673347468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 935d8962c2e69b44bad78a8d1e55d91d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  animator: {fileID: 572476977149961712}
-  playerRoll: {fileID: 0}
-  playerMovement: {fileID: 3951429651935875577}
 --- !u!95 &572476977149961712
 Animator:
   serializedVersion: 7
@@ -9861,11 +9845,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7384240713905358394}
-  - component: {fileID: 3951429651935875577}
   - component: {fileID: 1961316463546840940}
   - component: {fileID: 8556181105269460930}
   - component: {fileID: 4618341995307852706}
-  - component: {fileID: 21813467965267841}
   m_Layer: 0
   m_Name: PizzaGuyUI
   m_TagString: PlayerUI
@@ -9892,19 +9874,6 @@ Transform:
   - {fileID: 5117119337782125328}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3951429651935875577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3966051244694448174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b8cd7e27555fe5489fde14690255382, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  speed: 3.5
 --- !u!114 &1961316463546840940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9920,6 +9889,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   playerRoll: {fileID: 0}
   playerMovement: {fileID: 0}
+  isUI: 0
 --- !u!70 &8556181105269460930
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -9969,25 +9939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 067d900f3f87bdf4f956c1e5e8dd7db0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractableAdapter
-  shiningBorder: {fileID: 4622574075639230218}
-  mensagem: {fileID: 0}
-  pulseBaseDuration: 0.6
-  pulseRepeat: 1
-  interactionMessage: 
---- !u!114 &21813467965267841
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3966051244694448174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d625b61a5e7d3464088827ee2055a199, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerIdentity
-  playerId: 0
-  playerName: pizzaGuy
+  playerType: 
 --- !u!1 &4622574075639230218
 GameObject:
   m_ObjectHideFlags: 0
@@ -10094,7 +10046,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   animator: {fileID: 3370821080050457035}
   playerRoll: {fileID: 0}
-  playerMovement: {fileID: 3951429651935875577}
+  playerMovement: {fileID: 0}
+  isUI: 0
 --- !u!95 &3370821080050457035
 Animator:
   serializedVersion: 7
