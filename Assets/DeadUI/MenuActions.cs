@@ -12,5 +12,20 @@ public class MenuActions : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
+    public void Options()
+    {
+        SceneController.Instance.LoadScene(5);
+    }
+
+    public void Credits()
+    {
+        SceneController.Instance.LoadScene(4);
+    }
+
+    public void Voltar()
+    {
+        SceneController.Instance.BackToPreviousScene();
+    }
 }
 

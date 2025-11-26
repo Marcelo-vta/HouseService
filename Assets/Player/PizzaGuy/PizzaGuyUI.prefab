@@ -9732,7 +9732,6 @@ GameObject:
   m_Component:
   - component: {fileID: 649261474240876527}
   - component: {fileID: 3467511068338663071}
-  - component: {fileID: 8579353389491671882}
   - component: {fileID: 572476977149961712}
   m_Layer: 0
   m_Name: Sprite
@@ -9815,21 +9814,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8579353389491671882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3214962337673347468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 935d8962c2e69b44bad78a8d1e55d91d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  animator: {fileID: 572476977149961712}
-  playerRoll: {fileID: 0}
-  playerMovement: {fileID: 3951429651935875577}
 --- !u!95 &572476977149961712
 Animator:
   serializedVersion: 7
@@ -9861,11 +9845,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7384240713905358394}
-  - component: {fileID: 3951429651935875577}
   - component: {fileID: 1961316463546840940}
   - component: {fileID: 8556181105269460930}
   - component: {fileID: 4618341995307852706}
-  - component: {fileID: 21813467965267841}
+  - component: {fileID: 3083402245514668003}
+  - component: {fileID: 6935541304592506909}
   m_Layer: 0
   m_Name: PizzaGuyUI
   m_TagString: PlayerUI
@@ -9892,19 +9876,6 @@ Transform:
   - {fileID: 5117119337782125328}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3951429651935875577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3966051244694448174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b8cd7e27555fe5489fde14690255382, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  speed: 3.5
 --- !u!114 &1961316463546840940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9920,6 +9891,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   playerRoll: {fileID: 0}
   playerMovement: {fileID: 0}
+  isUI: 0
 --- !u!70 &8556181105269460930
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -9969,12 +9941,66 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 067d900f3f87bdf4f956c1e5e8dd7db0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractableAdapter
-  shiningBorder: {fileID: 4622574075639230218}
-  mensagem: {fileID: 0}
-  pulseBaseDuration: 0.6
-  pulseRepeat: 1
-  interactionMessage: 
---- !u!114 &21813467965267841
+  playerType: 
+--- !u!212 &3083402245514668003
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3966051244694448174}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &6935541304592506909
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9983,11 +10009,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3966051244694448174}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d625b61a5e7d3464088827ee2055a199, type: 3}
+  m_Script: {fileID: 11500000, guid: 6314f00a4c5128b4995d74ff0715951f, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerIdentity
-  playerId: 0
-  playerName: pizzaGuy
+  m_EditorClassIdentifier: Assembly-CSharp::SetSpritePixelHeight
+  desiredPixelHeight: 96
+  pixelsPerUnit: 16
 --- !u!1 &4622574075639230218
 GameObject:
   m_ObjectHideFlags: 0
@@ -10094,7 +10120,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   animator: {fileID: 3370821080050457035}
   playerRoll: {fileID: 0}
-  playerMovement: {fileID: 3951429651935875577}
+  playerMovement: {fileID: 0}
+  isUI: 0
 --- !u!95 &3370821080050457035
 Animator:
   serializedVersion: 7
