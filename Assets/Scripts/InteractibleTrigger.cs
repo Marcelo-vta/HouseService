@@ -1,91 +1,87 @@
-using System.IO;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class InteractableDistanceFeedback : MonoBehaviour
-{   
-    public GameObject mensagem;          // Text (TMP) GameObject que mostra "Aperte E"
-    public GameObject shiningBorder;      // GameObject da borda brilhante (sprite, image, etc.)
+public class InteractibleTrigger : MonoBehaviour, IInteractable
+{
+    [Header("Settings")]
+    public bool holdToInteract = true;
+    public float holdDuration = 1.0f;
+    
+    [Header("Visuals")]
+    public GameObject highlightObject;
+    public GameObject progressBar; // Optional: visual feedback for holding
 
-    public float textShowDistance = 2f;   // até essa distância mostra "Aperte E"
-    private float glowDistance;            // até essa distância a borda começa a brilhar
+    [Header("Events")]
+    public UnityEvent onInteract;
 
-    public float pulseSpeed = 2f;         // velocidade do pulso
-    public float pulseAmount = 0.1f;     // amplitude do pulso (escala)
+    private float currentHoldTime = 0f;
+    private bool isInteracting = false;
+    private float lastInteractTime;
 
-    // internals
-    private float textShowSqr;
-    private float glowSqr;
-    private Vector3 borderBaseScale;
-
-    // Player
-    private PlayerStates player;
-
-    void Start()
+    public void ShowHighlight(bool show)
     {
-        glowDistance = textShowDistance * 2;
-        player = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<PlayerStates>();
-
-        textShowSqr = textShowDistance * textShowDistance;
-        glowSqr = glowDistance * glowDistance;
-
-        if (mensagem != null) mensagem.SetActive(false);
-        if (shiningBorder != null)
+        if (highlightObject != null)
         {
-            shiningBorder.SetActive(false);
-            borderBaseScale = shiningBorder.transform.localScale;
+            highlightObject.SetActive(show);
+        }
+        
+        if (!show)
+        {
+            ResetInteraction();
         }
     }
 
-    private void Update()
+    public void OnInteract(GameObject interactor)
     {
-        float sqrDist = (player.gameObject.transform.position - transform.position).sqrMagnitude;
+        lastInteractTime = Time.time;
 
-        // Interação com E quando estiver dentro da distância de texto
-        if (sqrDist <= textShowSqr && Input.GetKeyDown(KeyCode.E))
+        if (holdToInteract)
         {
-            DoInteraction();
-        }
-    }
+            currentHoldTime += Time.deltaTime;
+            
+            // Debug feedback
+            if (Time.frameCount % 10 == 0) Debug.Log($"InteractibleTrigger: Holding... {currentHoldTime:F2}/{holdDuration}");
 
-    void FixedUpdate()
-    {
-        if (player == null) return;
-
-        float sqrDist = (player.gameObject.transform.position - transform.position).sqrMagnitude;
-
-        // Mostrar/esconder texto "Aperte E"
-        if (mensagem != null)
-        {
-            bool showButton = sqrDist <= textShowSqr;
-            if (mensagem.activeSelf != showButton)
-                player.interactibleState = showButton;
-        }
-
-        // Glow / Border behavior
-        if (shiningBorder != null)
-        {
-            if (sqrDist <= glowSqr)
+            if (currentHoldTime >= holdDuration)
             {
-                if (!shiningBorder.activeSelf) shiningBorder.SetActive(true);
-                // pulso simples por escala
-                float pulse = 1f + Mathf.Sin(Time.time * pulseSpeed) * pulseAmount;
-                shiningBorder.transform.localScale = borderBaseScale * pulse;
-                // opcional: também pode alterar material color/alpha aqui
-            }
-            else
-            {
-                if (shiningBorder.activeSelf)
+                if (!isInteracting)
                 {
-                    shiningBorder.SetActive(false);
-                    shiningBorder.transform.localScale = borderBaseScale;
+                    TriggerInteraction();
+                    isInteracting = true; 
                 }
             }
         }
+        else
+        {
+            // Instant interaction
+            // We use a small cooldown or flag to prevent multiple triggers per frame
+            if (!isInteracting)
+            {
+                TriggerInteraction();
+                isInteracting = true;
+            }
+        }
     }
 
-    void DoInteraction()
+    private void TriggerInteraction()
     {
-        Debug.Log("Interagiu com " + gameObject.name);
-        // coloque aqui o código da interação
+        Debug.Log($"Interacted with {gameObject.name}");
+        onInteract?.Invoke();
+    }
+
+    private void LateUpdate()
+    {
+        // If OnInteract wasn't called this frame (plus a small buffer), reset
+        if (Time.time - lastInteractTime > Time.deltaTime * 2f)
+        {
+            ResetInteraction();
+        }
+    }
+
+    private void ResetInteraction()
+    {
+        currentHoldTime = 0f;
+        isInteracting = false;
+        // Optional: Reset progress bar
     }
 }

@@ -141,7 +141,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71dac7aeb2ff1474b876424c2748334e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  animator: {fileID: 621339363733542804}
   ivulnerableTime: 0.7
   recoverTime: 0.5
   playerRoll: {fileID: 500174908676776301}
@@ -193,7 +192,8 @@ MonoBehaviour:
   weapons:
   - {fileID: 9078255460718670152, guid: 9c05c7eba9e414632ab75c9cc0c73d59, type: 3}
   - {fileID: 1051484371045383496, guid: ef27b7f3cf78a4509849963026eec538, type: 3}
-  activeWeapon: {fileID: 0}
+  handFrontSprite: {fileID: 0}
+  handBackSprite: {fileID: 0}
 --- !u!1 &3391757293501716431
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,6 +208,7 @@ GameObject:
   - component: {fileID: 4182035996827774640}
   - component: {fileID: 4351599188309656264}
   - component: {fileID: 500174908676776301}
+  - component: {fileID: 3172170246376184133}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Untagged
@@ -247,11 +248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b8cd7e27555fe5489fde14690255382, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  animator: {fileID: 621339363733542804}
-  playerRoll: {fileID: 500174908676776301}
   speed: 3.5
-  meleeHit: {fileID: 1767328606531196417, guid: 2012192cc227b4add956d9c88a43b126, type: 3}
-  weapons: {fileID: 2109051813577215145}
 --- !u!50 &4846546243596662054
 Rigidbody2D:
   serializedVersion: 5
@@ -346,6 +343,18 @@ MonoBehaviour:
   animator: {fileID: 621339363733542804}
   anim: {fileID: 7400000, guid: c29e7ad19cd0b064ca1b29a47c2f580e, type: 2}
   hands: {fileID: 2109051813577215145}
+--- !u!114 &3172170246376184133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3391757293501716431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d443ea897c67e4949aff3c9a743f1392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractor2D
 --- !u!1 &4131371295595314562
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,7 +512,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &621339363733542804
@@ -543,6 +552,7 @@ MonoBehaviour:
   animator: {fileID: 621339363733542804}
   playerRoll: {fileID: 500174908676776301}
   playerMovement: {fileID: 4489000285832213776}
+  isUI: 0
 --- !u!1 &8769311556904013892
 GameObject:
   m_ObjectHideFlags: 0

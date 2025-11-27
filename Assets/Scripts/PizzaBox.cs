@@ -91,8 +91,27 @@ public class PizzaBox : MonoBehaviour, IWeapon
 
         float shotOffset = inaccuracy * innacuracyConstant;
 
+        Quaternion baseRotation = transform.rotation;
+        
+        Vector3 difference = Vector3.zero;
+        if (GameInput.Instance.IsMobileActive())
+        {
+             difference = GameInput.Instance.GetAim();
+        }
+        else
+        {
+             difference = Camera.main.ScreenToWorldPoint(GameInput.Instance.GetPointerPosition()) - transform.position;
+        }
+
+        if (difference != Vector3.zero)
+        {
+            difference.Normalize();
+            float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+            baseRotation = Quaternion.Euler(0f, 0f, rotationZ);
+        }
+
         Quaternion offset = Quaternion.Euler(0, 0, shotOffset);
-        Quaternion finalRotation = transform.rotation * offset;
+        Quaternion finalRotation = baseRotation * offset;
 
         GameObject bullet = Instantiate(projectile, firePoint.position, finalRotation);
 

@@ -33,8 +33,9 @@ public class PlayerRoll : MonoBehaviour
 
     void Update()
     {
-        if (InputManager.Instance.DashInput)
+        if (GameInput.Instance.IsDashing())
         {
+            Debug.Log("PlayerRoll: Dash Input Detected");
             Roll();
         }
 

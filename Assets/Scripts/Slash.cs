@@ -29,7 +29,16 @@ public class Slash : MonoBehaviour
         playerStates = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStates>();
         activeSprites = defaultSprites;
 
-        Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        Vector3 difference;
+        if (GameInput.Instance.IsMobileActive())
+        {
+            difference = GameInput.Instance.GetAim();
+        }
+        else
+        {
+            difference = Camera.main.ScreenToWorldPoint(GameInput.Instance.GetPointerPosition()) - transform.position;
+        }
+        
         difference.Normalize();
         float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rotationZ);

@@ -1,131 +1,138 @@
-#if UNITY_EDITOR
 using UnityEngine;
 using UnityEditor;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class MobileUISetup : MonoBehaviour
+public class MobileUISetup : EditorWindow
 {
-    [MenuItem("Mobile/Setup Mobile UI")]
-    public static void SetupMobileUI()
+    [MenuItem("Tools/Create Mobile UI")]
+    public static void CreateMobileUI()
     {
-        // 1. Create Canvas
-        GameObject canvasGO = new GameObject("MobileHUD");
-        Canvas canvas = canvasGO.AddComponent<Canvas>();
-        canvas.renderMode = RenderMode.ScreenSpaceOverlay;
-        CanvasScaler scaler = canvasGO.AddComponent<CanvasScaler>();
-        scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
-        scaler.referenceResolution = new Vector2(1920, 1080);
-        canvasGO.AddComponent<GraphicRaycaster>();
-
-        // 2. Create EventSystem if missing
-        if (FindFirstObjectByType<EventSystem>() == null)
+        // 1. Create GameInput if missing
+        GameInput gameInput = FindFirstObjectByType<GameInput>();
+        if (gameInput == null)
         {
-            GameObject es = new GameObject("EventSystem");
-            es.AddComponent<EventSystem>();
-            es.AddComponent<UnityEngine.InputSystem.UI.InputSystemUIInputModule>();
+            GameObject go = new GameObject("GameInput");
+            gameInput = go.AddComponent<GameInput>();
+            Debug.Log("Created GameInput object. PLEASE ASSIGN THE INPUT ACTION ASSET MANUALLY.");
+            Selection.activeGameObject = go;
         }
 
-        // 3. Create Left Joystick (Movement)
-        GameObject leftJoy = CreateJoystick(canvasGO.transform, "LeftJoystick", true);
-        RectTransform leftRect = leftJoy.GetComponent<RectTransform>();
-        leftRect.anchorMin = new Vector2(0, 0);
-        leftRect.anchorMax = new Vector2(0, 0);
-        leftRect.pivot = new Vector2(0, 0);
-        leftRect.anchoredPosition = new Vector2(100, 100);
-
-        // 4. Create Right Joystick (Aim)
-        GameObject rightJoy = CreateJoystick(canvasGO.transform, "RightJoystick", false);
-        RectTransform rightRect = rightJoy.GetComponent<RectTransform>();
-        rightRect.anchorMin = new Vector2(1, 0);
-        rightRect.anchorMax = new Vector2(1, 0);
-        rightRect.pivot = new Vector2(1, 0);
-        rightRect.anchoredPosition = new Vector2(-100, 100);
-
-        // 5. Create Dash Button (Left of Joystick)
-        GameObject dashBtn = CreateButton(canvasGO.transform, "DashButton", MobileButton.ButtonType.Dash);
-        RectTransform dashRect = dashBtn.GetComponent<RectTransform>();
-        dashRect.anchorMin = new Vector2(1, 0);
-        dashRect.anchorMax = new Vector2(1, 0);
-        dashRect.pivot = new Vector2(1, 0);
-        dashRect.anchoredPosition = new Vector2(-350, 150); // Left of Right Joystick
-
-        // 6. Create Interact Button (Above Joystick)
-        GameObject interactBtn = CreateButton(canvasGO.transform, "InteractButton", MobileButton.ButtonType.Interact);
-        RectTransform interactRect = interactBtn.GetComponent<RectTransform>();
-        interactRect.anchorMin = new Vector2(1, 0);
-        interactRect.anchorMax = new Vector2(1, 0);
-        interactRect.pivot = new Vector2(1, 0);
-        interactRect.anchoredPosition = new Vector2(-150, 350); // Above Right Joystick
-
-        Debug.Log("Mobile UI generated successfully!");
-    }
-
-    private static GameObject CreateButton(Transform parent, string name, MobileButton.ButtonType type)
-    {
-        GameObject btnGO = new GameObject(name);
-        btnGO.transform.SetParent(parent, false);
-
-        Image bg = btnGO.AddComponent<Image>();
-        bg.color = new Color(0.8f, 0.8f, 0.8f, 0.5f);
-        RectTransform rect = btnGO.GetComponent<RectTransform>();
-        rect.sizeDelta = new Vector2(100, 100);
-
-        MobileButton btn = btnGO.AddComponent<MobileButton>();
-        btn.buttonType = type;
-
-        // Add text label
-        GameObject textGO = new GameObject("Label");
-        textGO.transform.SetParent(btnGO.transform, false);
-        Text text = textGO.AddComponent<Text>();
-        text.text = type.ToString();
-        text.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
-        text.alignment = TextAnchor.MiddleCenter;
-        text.color = Color.black;
-        RectTransform textRect = textGO.GetComponent<RectTransform>();
-        textRect.anchorMin = Vector2.zero;
-        textRect.anchorMax = Vector2.one;
-        textRect.offsetMin = Vector2.zero;
-        textRect.offsetMax = Vector2.zero;
-
-        return btnGO;
-    }
-
-    private static GameObject CreateJoystick(Transform parent, string name, bool isLeft)
-    {
-        GameObject joyGO = new GameObject(name);
-        joyGO.transform.SetParent(parent, false);
+        // 2. Create Canvas
+        GameObject canvasObj = new GameObject("MobileHUD");
+        Canvas canvas = canvasObj.AddComponent<Canvas>();
+        canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+        CanvasScaler scaler = canvasObj.AddComponent<CanvasScaler>();
+        scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
+        scaler.referenceResolution = new Vector2(1920, 1080);
+        canvasObj.AddComponent<GraphicRaycaster>();
         
-        // Background
-        Image bg = joyGO.AddComponent<Image>();
-        bg.color = new Color(1, 1, 1, 0.3f); // Semi-transparent white
-        RectTransform bgRect = joyGO.GetComponent<RectTransform>();
-        bgRect.sizeDelta = new Vector2(200, 200);
-
-        // Handle
-        GameObject handleGO = new GameObject("Handle");
-        handleGO.transform.SetParent(joyGO.transform, false);
-        Image handleImg = handleGO.AddComponent<Image>();
-        handleImg.color = new Color(1, 1, 1, 0.8f);
-        RectTransform handleRect = handleGO.GetComponent<RectTransform>();
-        handleRect.sizeDelta = new Vector2(100, 100);
-
-        // Script
-        MobileJoystick joystick = joyGO.AddComponent<MobileJoystick>();
-        
-        // Use SerializedObject to set private fields if needed, or just rely on public/SerializeField
-        // Since we can't easily set private serialized fields via code without SerializedObject, 
-        // let's assume the user might need to assign them or we change MobileJoystick to find them.
-        // Better: Change MobileJoystick to be more robust or use SerializedObject here.
-        
-        SerializedObject so = new SerializedObject(joystick);
-        so.FindProperty("background").objectReferenceValue = bgRect;
-        so.FindProperty("handle").objectReferenceValue = handleRect;
-        so.FindProperty("handleRange").floatValue = 1f;
-        so.FindProperty("isLeftJoystick").boolValue = isLeft;
+        MobileUIManager uiManager = canvasObj.AddComponent<MobileUIManager>();
+        // Use SerializedObject to assign private field
+        SerializedObject so = new SerializedObject(uiManager);
+        so.FindProperty("mobileCanvas").objectReferenceValue = canvasObj;
         so.ApplyModifiedProperties();
 
-        return joyGO;
+        // 3. Create EventSystem if missing
+        if (FindFirstObjectByType<EventSystem>() == null)
+        {
+            GameObject eventSystem = new GameObject("EventSystem");
+            eventSystem.AddComponent<EventSystem>();
+            eventSystem.AddComponent<UnityEngine.InputSystem.UI.InputSystemUIInputModule>();
+        }
+
+        // Helper to create joystick
+        CreateJoystick(canvasObj.transform, "LeftJoystick", VirtualJoystick.JoystickType.Movement, new Vector2(250, 250), Anchor.BottomLeft);
+        CreateJoystick(canvasObj.transform, "RightJoystick", VirtualJoystick.JoystickType.Aim, new Vector2(-250, 250), Anchor.BottomRight);
+
+        // Helper to create button
+        CreateButton(canvasObj.transform, "DashButton", VirtualButton.ButtonType.Dash, new Vector2(-450, 150), Anchor.BottomRight);
+        CreateButton(canvasObj.transform, "InteractButton", VirtualButton.ButtonType.Interact, new Vector2(-600, 150), Anchor.BottomRight);
+
+        Debug.Log("Mobile UI Created Successfully!");
+    }
+
+    private enum Anchor { BottomLeft, BottomRight }
+
+    private static void CreateJoystick(Transform parent, string name, VirtualJoystick.JoystickType type, Vector2 pos, Anchor anchor)
+    {
+        GameObject bgObj = new GameObject(name);
+        bgObj.transform.SetParent(parent, false);
+        Image bgImage = bgObj.AddComponent<Image>();
+        bgImage.color = new Color(1, 1, 1, 0.3f); // Semi-transparent white
+        
+        RectTransform bgRect = bgObj.GetComponent<RectTransform>();
+        bgRect.sizeDelta = new Vector2(300, 300);
+        SetAnchor(bgRect, anchor);
+        bgRect.anchoredPosition = pos;
+
+        GameObject handleObj = new GameObject("Handle");
+        handleObj.transform.SetParent(bgObj.transform, false);
+        Image handleImage = handleObj.AddComponent<Image>();
+        handleImage.color = new Color(1, 1, 1, 0.8f); // Opaque white
+        
+        RectTransform handleRect = handleObj.GetComponent<RectTransform>();
+        handleRect.sizeDelta = new Vector2(100, 100);
+
+        VirtualJoystick joystick = bgObj.AddComponent<VirtualJoystick>();
+        // Use SerializedObject to assign private fields
+        SerializedObject so = new SerializedObject(joystick);
+        so.FindProperty("joystickType").enumValueIndex = (int)type;
+        so.FindProperty("background").objectReferenceValue = bgRect;
+        so.FindProperty("handle").objectReferenceValue = handleRect;
+        so.FindProperty("handleRange").floatValue = 100f;
+        so.ApplyModifiedProperties();
+    }
+
+    private static void CreateButton(Transform parent, string name, VirtualButton.ButtonType type, Vector2 pos, Anchor anchor)
+    {
+        GameObject btnObj = new GameObject(name);
+        btnObj.transform.SetParent(parent, false);
+        Image btnImage = btnObj.AddComponent<Image>();
+        btnImage.color = new Color(1, 0, 0, 0.5f); // Semi-transparent red
+
+        RectTransform btnRect = btnObj.GetComponent<RectTransform>();
+        btnRect.sizeDelta = new Vector2(120, 120);
+        SetAnchor(btnRect, anchor);
+        btnRect.anchoredPosition = pos;
+
+        // Add Text Label
+        GameObject textObj = new GameObject("Label");
+        textObj.transform.SetParent(btnObj.transform, false);
+        Text text = textObj.AddComponent<Text>();
+        text.text = (type == VirtualButton.ButtonType.Interact) ? "E" : "D";
+        text.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+        text.alignment = TextAnchor.MiddleCenter;
+        text.color = Color.white;
+        text.fontSize = 60;
+        text.resizeTextForBestFit = true;
+        text.resizeTextMinSize = 40;
+        text.resizeTextMaxSize = 80;
+        
+        RectTransform textRect = textObj.GetComponent<RectTransform>();
+        textRect.anchorMin = Vector2.zero;
+        textRect.anchorMax = Vector2.one;
+        textRect.sizeDelta = Vector2.zero;
+
+        VirtualButton btn = btnObj.AddComponent<VirtualButton>();
+        SerializedObject so = new SerializedObject(btn);
+        so.FindProperty("buttonType").enumValueIndex = (int)type;
+        so.ApplyModifiedProperties();
+    }
+
+    private static void SetAnchor(RectTransform rect, Anchor anchor)
+    {
+        if (anchor == Anchor.BottomLeft)
+        {
+            rect.anchorMin = Vector2.zero;
+            rect.anchorMax = Vector2.zero;
+            rect.pivot = Vector2.zero;
+        }
+        else
+        {
+            rect.anchorMin = Vector2.right;
+            rect.anchorMax = Vector2.right;
+            rect.pivot = Vector2.right;
+        }
     }
 }
-#endif

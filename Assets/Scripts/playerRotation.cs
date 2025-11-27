@@ -51,28 +51,30 @@ public class playerRotation : MonoBehaviour
     }
     void rotatePlayer()
     {
-        Vector2 lookInput = InputManager.Instance.LookInput;
-        Vector2 difference;
-
-        if (lookInput != Vector2.zero)
+        Vector3 difference;
+        if (GameInput.Instance.IsMobileActive())
         {
-            // Joystick / Gamepad Aiming
-            difference = lookInput.normalized;
+            difference = GameInput.Instance.GetAim();
         }
         else
         {
-            // Mouse Aiming (Fallback)
-            Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            difference = (Vector2)(worldMousePos - transform.position);
-            difference.Normalize();
+            difference = Camera.main.ScreenToWorldPoint(GameInput.Instance.GetPointerPosition()) - transform.position;
         }
+        // If using mobile and no input, keep last rotation
+        if (GameInput.Instance.IsMobileActive() && difference == Vector3.zero)
+        {
+            return;
+        }
+
+        difference.Normalize();
 
         animator.SetFloat("mouseX", difference.x);
         animator.SetFloat("mouseY", difference.y);
 
         if (difference.x == 0)
         {
-            direction = 1;
+            // Keep previous direction if x is 0, or default to 1 if we really want
+            // But usually we just want to update if x is non-zero
         }
         else
         {

@@ -7919,6 +7919,7 @@ GameObject:
   - component: {fileID: 6110856027736935542}
   - component: {fileID: 7653726093792796913}
   - component: {fileID: 6934171398079947624}
+  - component: {fileID: 1768454621208221655}
   m_Layer: 0
   m_Name: Interacao
   m_TagString: Untagged
@@ -8032,6 +8033,25 @@ MonoBehaviour:
   upgradeMessage: {fileID: 877949015886709615}
   trapMessage: {fileID: 496764447765474753}
   messageDuration: 2.5
+--- !u!114 &1768454621208221655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3432197011880924596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c306c98562c639f4b9f20349a8903aea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractibleTrigger
+  holdToInteract: 1
+  holdDuration: 1
+  highlightObject: {fileID: 0}
+  progressBar: {fileID: 0}
+  onInteract:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3519478473302489786
 GameObject:
   m_ObjectHideFlags: 0
@@ -25590,8 +25610,35 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1339616139250407681, guid: 2b82f0d47f27346e2a3d22c8deea51dc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1863272553005870496}
   m_SourcePrefab: {fileID: 100100000, guid: 2b82f0d47f27346e2a3d22c8deea51dc, type: 3}
+--- !u!1 &5753067255837231187 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1339616139250407681, guid: 2b82f0d47f27346e2a3d22c8deea51dc, type: 3}
+  m_PrefabInstance: {fileID: 6719447574861484370}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1863272553005870496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5753067255837231187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c306c98562c639f4b9f20349a8903aea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractibleTrigger
+  holdToInteract: 0
+  holdDuration: 1
+  highlightObject: {fileID: 0}
+  progressBar: {fileID: 0}
+  onInteract:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &7405975666792426081 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4289408537666517811, guid: 2b82f0d47f27346e2a3d22c8deea51dc, type: 3}
@@ -25676,10 +25723,37 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1339616139250407681, guid: 2b82f0d47f27346e2a3d22c8deea51dc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6831918760389772825}
   m_SourcePrefab: {fileID: 100100000, guid: 2b82f0d47f27346e2a3d22c8deea51dc, type: 3}
 --- !u!4 &5341049325001295985 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4289408537666517811, guid: 2b82f0d47f27346e2a3d22c8deea51dc, type: 3}
   m_PrefabInstance: {fileID: 8185347601536201538}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7138055332148783683 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1339616139250407681, guid: 2b82f0d47f27346e2a3d22c8deea51dc, type: 3}
+  m_PrefabInstance: {fileID: 8185347601536201538}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6831918760389772825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7138055332148783683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c306c98562c639f4b9f20349a8903aea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractibleTrigger
+  holdToInteract: 1
+  holdDuration: 1
+  highlightObject: {fileID: 0}
+  progressBar: {fileID: 0}
+  onInteract:
+    m_PersistentCalls:
+      m_Calls: []
