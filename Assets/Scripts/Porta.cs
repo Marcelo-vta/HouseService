@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Porta : MonoBehaviour
+public class Porta : MonoBehaviour, IInteractable
 {
     public enum TipoAnchor { Entrada, Saida }
 
@@ -21,21 +21,30 @@ public class Porta : MonoBehaviour
             .GetComponent<TransitionManager>();
     }
 
-    void Update()
+    // IInteractable Implementation
+    public void ShowHighlight(bool show)
     {
-        if (jogadorPerto && Input.GetKeyDown(KeyCode.E))
+        if (letraE != null)
         {
-            if (tutorial)
-            {
-                SceneManager.LoadScene(2);    
-            }
-
-            if (tipo == TipoAnchor.Saida)
-                tm.GoForwardRandom();   // vai pra nova sala aleatória
-            else
-                tm.GoBack();            // volta pra sala anterior
+            letraE.SetActive(show);
         }
     }
+
+    public void OnInteract(GameObject interactor)
+    {
+        // Execute interaction immediately
+        if (tutorial)
+        {
+            SceneManager.LoadScene(2);    
+        }
+
+        if (tipo == TipoAnchor.Saida)
+            tm.GoForwardRandom();   // vai pra nova sala aleatória
+        else
+            tm.GoBack();            // volta pra sala anterior
+    }
+
+    // Removed Update() as input is now handled by OnInteract
 
     void OnTriggerEnter2D(Collider2D other)
     {

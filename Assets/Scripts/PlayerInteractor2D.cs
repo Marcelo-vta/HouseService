@@ -1,132 +1,88 @@
-// PlayerInteractor2D.cs
 using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
 public class PlayerInteractor2D : MonoBehaviour
 {
-    [Header("Input")]
-    public KeyCode interactKey = KeyCode.E;
+    private List<IInteractable> interactablesInRange = new List<IInteractable>();
+    private IInteractable currentHighlighted;
 
-    [Header("Distances")]
-    public float maxConsiderDistance = 4f; // distancia máxima para considerar highlight/pulse
-    public float interactDistance = 1.5f; // distancia máxima para realmente "interagir" (E ativa)
-
-    [Header("Tags (opcionais)")]
-    public string[] interactableTags = new string[] { "Selectable", "Interactable" };
-
-    private readonly List<IInteractable> _nearby = new List<IInteractable>();
-    private IInteractable _currentHighlighted = null;
-    private Transform _playerTransform;
-
-    void Awake()
+    private void Update()
     {
-        _playerTransform = transform;
-        Collider2D col = GetComponent<Collider2D>();
-        if (col != null && !col.isTrigger)
+        IInteractable closest = GetClosestInteractable();
+
+        if (closest != currentHighlighted)
         {
-            Debug.LogWarning("PlayerInteractor2D: collider deve ser isTrigger para detectar proximidade.");
-        }
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        IInteractable ia = other.GetComponent<IInteractable>() ?? other.GetComponentInParent<IInteractable>();
-        if (ia != null && !_nearby.Contains(ia))
-            _nearby.Add(ia);
-    }
-
-    void OnTriggerExit2D(Collider2D other)
-    {
-        IInteractable ia = other.GetComponent<IInteractable>() ?? other.GetComponentInParent<IInteractable>();
-        if (ia != null)
-            _nearby.Remove(ia);
-    }
-
-    void Update()
-    {
-        if (_nearby.Count == 0)
-        {
-            SetHighlighted(null, 0f);
-            return;
-        }
-
-        float bestSqr = maxConsiderDistance * maxConsiderDistance;
-        IInteractable best = null;
-        float bestDist = maxConsiderDistance;
-
-        foreach (var ia in _nearby)
-        {
-            MonoBehaviour mb = ia as MonoBehaviour;
-            if (mb == null) continue;
-            float dist = Vector2.Distance(mb.transform.position, _playerTransform.position);
-            if (dist <= maxConsiderDistance && dist < bestDist)
+            if (currentHighlighted != null)
             {
-                bestDist = dist;
-                best = ia;
+                currentHighlighted.ShowHighlight(false);
             }
-        }
 
-        float intensity = best != null ? DistanceToIntensity(bestDist, maxConsiderDistance) : 0f;
-        SetHighlighted(best, intensity);
+            currentHighlighted = closest;
 
-        if (best != null && Input.GetKeyDown(interactKey))
-        {
-            // só interage se estiver dentro do interactDistance
-            if (bestDist <= interactDistance)
+            if (currentHighlighted != null)
             {
-                best.OnInteract(gameObject);
+                Debug.Log($"PlayerInteractor2D: Highlighted {((MonoBehaviour)currentHighlighted).name}");
+                currentHighlighted.ShowHighlight(true);
             }
             else
             {
-                // opcional: pulse fraco para sinalizar "muito longe"
-                IPulsable p = (best as MonoBehaviour)?.GetComponent<IPulsable>() ?? (best as MonoBehaviour)?.GetComponentInParent<IPulsable>();
-                if (p != null) p.Pulse(DistanceToIntensity(bestDist, maxConsiderDistance) * 0.3f);
-                // ou feedback sonoro, mensagem, etc.
+                Debug.Log("PlayerInteractor2D: No object highlighted");
+            }
+        }
+
+        if (GameInput.Instance.IsInteracting())
+        {
+            Debug.Log("PlayerInteractor2D: Interact Input Detected");
+            if (currentHighlighted != null)
+            {
+                currentHighlighted.OnInteract(gameObject);
             }
         }
     }
 
-    // converte distancia->intensity (0..1): 1 quando no jogador, 0 em maxDistance
-    private float DistanceToIntensity(float distance, float maxDistance)
+    private IInteractable GetClosestInteractable()
     {
-        if (maxDistance <= 0f) return 0f;
-        float t = Mathf.Clamp01(distance / maxDistance);
-        // queremos intensidade maior quando mais perto:
-        return 1f - t;
+        IInteractable closest = null;
+        float minDistance = float.MaxValue;
+
+        foreach (var interactable in interactablesInRange)
+        {
+            // Assuming interactable is a MonoBehaviour to get transform
+            MonoBehaviour mb = interactable as MonoBehaviour;
+            if (mb != null)
+            {
+                float dist = Vector2.Distance(transform.position, mb.transform.position);
+                if (dist < minDistance)
+                {
+                    minDistance = dist;
+                    closest = interactable;
+                }
+            }
+        }
+
+        return closest;
     }
 
-    private void SetHighlighted(IInteractable target, float intensity)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (_currentHighlighted == target) return;
-
-        if (_currentHighlighted != null)
-            _currentHighlighted.ShowHighlight(false);
-
-        _currentHighlighted = target;
-
-        if (_currentHighlighted != null)
+        IInteractable interactable = other.GetComponent<IInteractable>();
+        if (interactable != null && !interactablesInRange.Contains(interactable))
         {
-            _currentHighlighted.ShowHighlight(true);
-
-            // chama Pulse com intensidade proporcional (opcional)
-            IPulsable p = (_currentHighlighted as MonoBehaviour)?.GetComponent<IPulsable>() ?? (_currentHighlighted as MonoBehaviour)?.GetComponentInParent<IPulsable>();
-            if (p != null) p.Pulse(intensity);
+            interactablesInRange.Add(interactable);
         }
     }
 
-    // API pública para interação via código
-    public void InteractCurrent()
+    private void OnTriggerExit2D(Collider2D other)
     {
-        if (_currentHighlighted != null)
+        IInteractable interactable = other.GetComponent<IInteractable>();
+        if (interactable != null && interactablesInRange.Contains(interactable))
         {
-            // só interage se estiver próximo o suficiente
-            MonoBehaviour mb = _currentHighlighted as MonoBehaviour;
-            if (mb != null)
+            interactable.ShowHighlight(false);
+            interactablesInRange.Remove(interactable);
+            if (currentHighlighted == interactable)
             {
-                float dist = Vector2.Distance(mb.transform.position, _playerTransform.position);
-                if (dist <= interactDistance)
-                    _currentHighlighted.OnInteract(gameObject);
+                currentHighlighted = null;
             }
         }
     }

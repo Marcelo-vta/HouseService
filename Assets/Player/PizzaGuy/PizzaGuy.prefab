@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 4590745965421798139}
   - component: {fileID: 8975726947682090554}
   - component: {fileID: 7962942652420847862}
+  - component: {fileID: 237151386351075145}
   m_Layer: 11
   m_Name: PizzaGuy
   m_TagString: Player
@@ -319,6 +320,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &237151386351075145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2775655470024373661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d443ea897c67e4949aff3c9a743f1392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractor2D
 --- !u!1 &3122723181099278290
 GameObject:
   m_ObjectHideFlags: 0

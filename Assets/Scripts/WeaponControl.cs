@@ -38,7 +38,7 @@ public class WeaponControl : MonoBehaviour
         {
             activeWeapon.SetActive(true);
             
-            if (Input.GetMouseButtonDown(0) && playerStates.ableToAttack)
+            if (GameInput.Instance.IsFiring() && playerStates.ableToAttack)
             {
                 playerStates.ableToAttack = false;
 

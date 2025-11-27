@@ -51,7 +51,21 @@ public class playerRotation : MonoBehaviour
     }
     void rotatePlayer()
     {
-        Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        Vector3 difference;
+        if (GameInput.Instance.IsMobileActive())
+        {
+            difference = GameInput.Instance.GetAim();
+        }
+        else
+        {
+            difference = Camera.main.ScreenToWorldPoint(GameInput.Instance.GetPointerPosition()) - transform.position;
+        }
+        // If using mobile and no input, keep last rotation
+        if (GameInput.Instance.IsMobileActive() && difference == Vector3.zero)
+        {
+            return;
+        }
+
         difference.Normalize();
 
         animator.SetFloat("mouseX", difference.x);
@@ -59,7 +73,8 @@ public class playerRotation : MonoBehaviour
 
         if (difference.x == 0)
         {
-            direction = 1;
+            // Keep previous direction if x is 0, or default to 1 if we really want
+            // But usually we just want to update if x is non-zero
         }
         else
         {

@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class ItemSpawner : MonoBehaviour
+public class ItemSpawner : MonoBehaviour, IInteractable
 {
     public string selectedItem;
     public bool isTrap = false;
@@ -59,57 +59,74 @@ public class ItemSpawner : MonoBehaviour
             .GetComponent<PlayerActions>();
     }
 
-    private void Update() {
-
-        loadPlayer();
-
-        if (inRange && interactible)
+    // IInteractable Implementation
+    public void ShowHighlight(bool show)
+    {
+        if (shortcutSuggestion != null)
         {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                if (!interacting)
-                {
-                    holdingButton.Restart();
-                    interacting = true;
-                    playerStates.interactingState = true;
-                }
-            }
+            shortcutSuggestion.SetActive(show);
+        }
+        
+        if (!show)
+        {
+            // Reset interaction if we walk away
+            interacting = false;
+            holdingButton.Restart();
+            if (playerStates != null) playerStates.interactingState = false;
+        }
+    }
 
-            if (Input.GetKeyUp(KeyCode.E))
-            {
-                if (interacting)
-                {
-                    interacting = false;
-                    playerStates.interactingState = false;
-                }
-            }
-
-            if (interacting && holdingButton.ElapsedTimeSec() > 2)
-            {
-                Interact(playerStates);
-            }
+    public void OnInteract(GameObject interactor)
+    {
+        // Called every frame while button is held
+        if (!interacting)
+        {
+            interacting = true;
+            holdingButton.Restart();
+            if (playerStates != null) playerStates.interactingState = true;
         }
 
+        // Check hold time
+        if (holdingButton.ElapsedTimeSec() > 2)
+        {
+            Interact();
+        }
+    }
+
+    private void LateUpdate()
+    {
+        // If we stopped holding the button (GameInput check), reset
+        // We can check GameInput directly here since we are coupling to it anyway
+        if (interacting && !GameInput.Instance.IsInteracting())
+        {
+            interacting = false;
+            holdingButton.Restart();
+            if (playerStates != null) playerStates.interactingState = false;
+        }
+        
         animator.SetBool("Mimic", isTrap);
     }
-    void Interact(PlayerStates states)
 
+    public void Interact()
     {
         interacting = false;
         interactible = false;
 
-        states.interactingState = false;
-        states.interactibleState = false;
+        if (playerStates != null)
+        {
+            playerStates.interactingState = false;
+            playerStates.interactibleState = false;
+        }
         
         animator.SetBool("Open", true);
 
         if (!isTrap)
         {
-            playerActions.ObtainItem(selectedItem);
+            if (playerActions != null) playerActions.ObtainItem(selectedItem);
         }
         else
         {
-            playerActions.Scare();
+            if (playerActions != null) playerActions.Scare();
         }
     }
 }
