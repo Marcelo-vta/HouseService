@@ -9850,6 +9850,7 @@ GameObject:
   - component: {fileID: 4618341995307852706}
   - component: {fileID: 3083402245514668003}
   - component: {fileID: 6935541304592506909}
+  - component: {fileID: 6690692723679841627}
   m_Layer: 0
   m_Name: PizzaGuyUI
   m_TagString: PlayerUI
@@ -9941,7 +9942,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 067d900f3f87bdf4f956c1e5e8dd7db0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractableAdapter
-  playerType: 
+  playerType: {fileID: 2775655470024373661, guid: e1530e238d2144e52bf53fb1e3fade51, type: 3}
+  hoverBg: {fileID: 0}
 --- !u!212 &3083402245514668003
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10014,6 +10016,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SetSpritePixelHeight
   desiredPixelHeight: 96
   pixelsPerUnit: 16
+--- !u!114 &6690692723679841627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3966051244694448174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d625b61a5e7d3464088827ee2055a199, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerIdentity
+  playerId: 0
+  playerName: pizzaGuy
 --- !u!1 &4622574075639230218
 GameObject:
   m_ObjectHideFlags: 0

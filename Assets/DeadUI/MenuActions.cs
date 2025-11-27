@@ -4,13 +4,13 @@ public class MenuActions : MonoBehaviour
 {
     public void IniciaJogo()
     {
-        SceneManager.LoadScene(1);
+        SceneController.Instance.LoadScene(1);
         GameController.Init();
     }
 
     public void VoltaMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneController.Instance.LoadScene(0);
     }
 
     public void Options()

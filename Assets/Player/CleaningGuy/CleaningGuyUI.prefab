@@ -4900,6 +4900,7 @@ GameObject:
   - component: {fileID: 3966551889827346984}
   - component: {fileID: 6418137252063465132}
   - component: {fileID: 4373855672101254920}
+  - component: {fileID: 8886545556171376640}
   m_Layer: 0
   m_Name: CleaningGuyUI
   m_TagString: PlayerUI
@@ -4991,7 +4992,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 067d900f3f87bdf4f956c1e5e8dd7db0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractableAdapter
-  playerType: 
+  playerType: {fileID: 2775655470024373661, guid: a4a5720e1ac8e504ab784a6341bf6c83, type: 3}
+  hoverBg: {fileID: 0}
 --- !u!212 &6418137252063465132
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5064,6 +5066,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SetSpritePixelHeight
   desiredPixelHeight: 128
   pixelsPerUnit: 16
+--- !u!114 &8886545556171376640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3043616993849565294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d625b61a5e7d3464088827ee2055a199, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerIdentity
+  playerId: 1
+  playerName: cleaner
 --- !u!1 &3224788042219289296
 GameObject:
   m_ObjectHideFlags: 0

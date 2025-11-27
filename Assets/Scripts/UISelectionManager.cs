@@ -7,14 +7,14 @@ public class UISelectionManager : MonoBehaviour
     public Transform playerTransform;
 
     [Header("Configurações de distância")]
-    public float maxConsiderDistance = 4f;      // até onde o mouse detecta
-    public float clickActivateDistance = 1.5f;  // até onde pode realmente ativar
+    public float maxConsiderDistance = 4f;      // ate onde o mouse detecta
+    public float clickActivateDistance = 1.5f;  // ate onde pode realmente ativar
 
     // MenuActions
     public MenuActions menuActions;
     void Start()
     {
-        // Se não for atribuída manualmente, pega a câmera principal automaticamente
+        // Se não for atribuída manualmente, pega a camera principal automaticamente
         if (mainCamera == null)
             mainCamera = Camera.main;
     }
